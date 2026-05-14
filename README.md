@@ -125,12 +125,7 @@ Pick the one that matches what you're trying to do:
 
 ## Curator
 
-**Betty Guo (Dongxin Guo, 郭东欣)** — PhD candidate (final year),
-Department of Computer Science, University of Hong Kong, advised by
-Prof. Siu-Ming Yiu.
-
-GitHub: [@bettyguo](https://github.com/bettyguo) · ORCID:
-[0009-0000-2388-1072](https://orcid.org/0009-0000-2388-1072)
+**Betty Guo** ([Dongxin Guo](https://bettyguo.github.io)), PhD candidate in Computer Science at [The University of Hong Kong](https://www.cs.hku.hk/), advised by [Prof. Siu-Ming Yiu](https://www.cs.hku.hk/people/academic-staff/smyiu).
 
 ## Licensing
 
