@@ -14,7 +14,44 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": ["tx-model-anatomy"],
-      "resources": []
+      "resources": [
+        {
+          "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+          "author": "Kwon et al. (vLLM)",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2309.06180",
+          "annotation": "The vLLM paper. The KV cache section is the clearest treatment of how cache memory dominates serving and what PagedAttention does about it.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Transformer Inference Arithmetic",
+          "author": "Carol Chen (Kipply)",
+          "year": 2022,
+          "type": "blog",
+          "url": "https://kipp.ly/transformer-inference-arithmetic",
+          "annotation": "Back-of-envelope math for inference latency, memory, and bandwidth. The post that makes 'memory-bound' viscerally clear.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "The LLM-Inference Math",
+          "author": "Pratik Bhavsar / Hugging Face",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi",
+          "annotation": "Hugging Face's deep dive on the inference loop from the perspective of TGI. Pair with the vLLM paper for the two engines' framing.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "inf-quantization",
@@ -25,7 +62,42 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": ["inf-loop-kv-cache"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers",
+          "author": "Frantar et al.",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2210.17323",
+          "annotation": "GPTQ — the 4-bit recipe that put aggressive quantization in production. The math is approachable and grounds the practical choices.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
+          "author": "Lin et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2306.00978",
+          "annotation": "AWQ. The pragmatic alternative to GPTQ; often higher quality at 4-bit and the default in many open-weights workflows.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Hugging Face — Quantization",
+          "type": "official",
+          "url": "https://huggingface.co/docs/transformers/main/en/quantization/overview",
+          "annotation": "The 'how do I actually do this' page. Covers bitsandbytes, GPTQ, AWQ, and HQQ with one-line APIs.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "inf-batching",
@@ -36,7 +108,32 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["inf-loop-kv-cache"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Orca: A Distributed Serving System for Transformer-Based Generative Models",
+          "author": "Yu et al.",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://www.usenix.org/conference/osdi22/presentation/yu",
+          "annotation": "The paper that introduced continuous (iteration-level) batching. The idea is in vLLM and TGI today.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "How continuous batching enables 23x throughput in LLM inference",
+          "author": "Anyscale",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://www.anyscale.com/blog/continuous-batching-llm-inference",
+          "annotation": "The single best practitioner-level explainer. Diagrams, throughput plots, the why.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "inf-speculative-decoding",
@@ -47,7 +144,32 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": ["inf-loop-kv-cache"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Fast Inference from Transformers via Speculative Decoding",
+          "author": "Leviathan, Kalman, Matias (Google)",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2211.17192",
+          "annotation": "The canonical speculative-decoding paper. Eight pages; the rejection-sampling proof is the clean explanation of why outputs stay identical.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads",
+          "author": "Cai et al.",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2401.10774",
+          "annotation": "Medusa replaces the draft model with extra heads on the target. The pragmatic modern alternative; widely deployed.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "inf-latency-throughput",
@@ -58,7 +180,32 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": ["inf-batching"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "LLM Inference Performance Engineering: Best Practices",
+          "author": "Databricks Mosaic AI",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices",
+          "annotation": "The clearest practical guide to the latency / throughput / cost surface. Read once; you'll know the right questions to ask.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Transformer Inference Arithmetic",
+          "author": "Carol Chen (Kipply)",
+          "year": 2022,
+          "type": "blog",
+          "url": "https://kipp.ly/transformer-inference-arithmetic",
+          "annotation": "Repeat reference because it's the right lens here too: latency and throughput both fall out of the inference arithmetic.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "inf-engines-vllm-tgi-sglang",
@@ -69,7 +216,49 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": ["inf-loop-kv-cache"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "vLLM",
+          "type": "repo",
+          "url": "https://github.com/vllm-project/vllm",
+          "annotation": "The most-deployed open serving engine. Continuous batching + PagedAttention + a wide model zoo. The first one to try.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Hugging Face Text Generation Inference (TGI)",
+          "type": "repo",
+          "url": "https://github.com/huggingface/text-generation-inference",
+          "annotation": "The Hugging Face serving engine. Production-grade, tight integration with the HF ecosystem.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "SGLang",
+          "type": "repo",
+          "url": "https://github.com/sgl-project/sglang",
+          "annotation": "The engine optimized for complex agent + structured-output workloads. Fast prefix sharing and RadixAttention are the headline features.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "llama.cpp",
+          "author": "Georgi Gerganov",
+          "type": "repo",
+          "url": "https://github.com/ggml-org/llama.cpp",
+          "annotation": "The CPU / Apple-silicon / consumer-GPU serving engine. GGUF format, single-binary deploy. The right tool for laptop and edge.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "inf-model-apis",
@@ -80,7 +269,38 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Anthropic API documentation",
+          "type": "official",
+          "url": "https://docs.anthropic.com/",
+          "annotation": "Streaming, tool use, prompt caching, batch, structured output. The reference for Claude; the patterns transfer to other providers.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "OpenAI API documentation",
+          "type": "official",
+          "url": "https://platform.openai.com/docs",
+          "annotation": "The other half of the duopoly's reference. Functions, JSON mode, streaming, the Responses API.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "LiteLLM",
+          "type": "repo",
+          "url": "https://github.com/BerriAI/litellm",
+          "annotation": "A unified OpenAI-shaped API across 100+ providers. The pragmatic answer when you want to swap models behind one client.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "inf-structured-output",
@@ -91,7 +311,38 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Outlines — Structured generation for LLMs",
+          "type": "repo",
+          "url": "https://github.com/dottxt-ai/outlines",
+          "annotation": "Grammar / regex / JSON-schema constrained decoding. The reference open implementation; the README is a working tutorial.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Anthropic — Tool use",
+          "type": "official",
+          "url": "https://docs.anthropic.com/en/docs/build-with-claude/tool-use",
+          "annotation": "Function-call-shaped structured output, vendor-flavored. The cleanest reference for the closed-API approach.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Instructor — structured outputs for LLMs",
+          "type": "repo",
+          "url": "https://github.com/567-labs/instructor",
+          "annotation": "Pydantic-typed responses from any LLM. The right tool when you want validated, typed dataclasses out of a model.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "inf-prompt-engineering-craft",
@@ -102,7 +353,38 @@
       "position": { "x": 0, "y": 400 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Prompt engineering overview — Anthropic",
+          "type": "official",
+          "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+          "annotation": "The current best official guide. Be clear, use examples, structure with XML, chain-of-thought when helpful. The chapter on agentic systems is gold.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Anthropic's Interactive Prompt Engineering Tutorial",
+          "type": "repo",
+          "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
+          "annotation": "Nine chapters of working notebooks. The right way to learn the craft if you'd rather practice than read.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Prompting Guide",
+          "type": "blog",
+          "url": "https://www.promptingguide.ai/",
+          "annotation": "Vendor-neutral compendium of techniques. Use it as a reference for chain-of-thought / ReAct / self-consistency / TOT variants.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "inf-cost-engineering",
@@ -113,7 +395,30 @@
       "position": { "x": 320, "y": 400 },
       "dependsOn": ["inf-model-apis"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Prompt caching — Anthropic",
+          "type": "official",
+          "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching",
+          "annotation": "How provider-native prompt caching works and how to use it. The single highest-leverage cost lever for repeated-context workloads.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Patterns for Building LLM-based Systems & Products",
+          "author": "Eugene Yan",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://eugeneyan.com/writing/llm-patterns/",
+          "annotation": "The single best-organized practitioner's survey of LLM-system patterns, including the section on caching and cost.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

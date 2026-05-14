@@ -14,7 +14,31 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Stanford CS229 — Machine Learning",
+          "author": "Andrew Ng",
+          "type": "course",
+          "url": "https://cs229.stanford.edu/",
+          "annotation": "The canonical intro ML course. Lecture notes are clean and freely downloadable; the videos cover the supervised loop's whole vocabulary.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (3e)",
+          "author": "Aurélien Géron",
+          "year": 2022,
+          "type": "book",
+          "url": "https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/",
+          "annotation": "The practitioner's intro. The first half (classical ML with scikit-learn) is the cleanest 'supervised loop in code' you can read.",
+          "difficulty": "intermediate",
+          "free": false,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "ml-linear-regression",
@@ -25,7 +49,30 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": ["ml-supervised-loop"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "An Introduction to Statistical Learning (with Python)",
+          "author": "James, Witten, Hastie, Tibshirani",
+          "year": 2023,
+          "type": "book",
+          "url": "https://www.statlearning.com/",
+          "annotation": "Free PDF. The chapter on linear regression is the single best primer; pair with the labs to lock it in.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "scikit-learn — Linear Models",
+          "type": "official",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html",
+          "annotation": "The reference for the working flavor: ordinary least squares, ridge, lasso, elastic net. Read the docs alongside ISL.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "ml-logistic-regression",
@@ -36,7 +83,30 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["ml-linear-regression"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "An Introduction to Statistical Learning — Chapter on Classification",
+          "author": "James, Witten, Hastie, Tibshirani",
+          "year": 2023,
+          "type": "book",
+          "url": "https://www.statlearning.com/",
+          "annotation": "Free PDF. The classification chapter walks logistic regression with the same clarity as the linear chapter.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "scikit-learn — Logistic Regression",
+          "type": "official",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression",
+          "annotation": "Multinomial, regularization, solvers — the practical knobs. Read after you understand the math.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "ml-trees-forests",
@@ -47,7 +117,30 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "An Introduction to Statistical Learning — Trees",
+          "author": "James, Witten, Hastie, Tibshirani",
+          "year": 2023,
+          "type": "book",
+          "url": "https://www.statlearning.com/",
+          "annotation": "The trees chapter explains splits, bagging, random forests, and boosting with the same gentle clarity.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "scikit-learn — Decision Trees",
+          "type": "official",
+          "url": "https://scikit-learn.org/stable/modules/tree.html",
+          "annotation": "The practical interface plus the math. Pair with the ensemble docs for forests.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "ml-gradient-boosting",
@@ -58,7 +151,30 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": ["ml-trees-forests"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "XGBoost: A Scalable Tree Boosting System",
+          "author": "Chen & Guestrin",
+          "year": 2016,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1603.02754",
+          "annotation": "The original XGBoost paper. The math is approachable and grounds the hyperparameter intuition.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "XGBoost — official documentation",
+          "type": "official",
+          "url": "https://xgboost.readthedocs.io/",
+          "annotation": "The actual reference you'll keep open while you tune. The parameter tuning page is gold.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "ml-kmeans-clustering",
@@ -69,7 +185,29 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "scikit-learn — Clustering",
+          "type": "official",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html",
+          "annotation": "The single most-useful page: the comparison table of clustering algorithms with their strengths and failure modes.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "k-means visualized",
+          "author": "Naftali Harris",
+          "type": "interactive",
+          "url": "https://www.naftaliharris.com/blog/visualizing-k-means-clustering/",
+          "annotation": "Click-through animation of the algorithm. Five minutes; the intuition sticks.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "ml-dimensionality-reduction",
@@ -80,7 +218,41 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "How to Use t-SNE Effectively",
+          "author": "Wattenberg, Viégas, Johnson",
+          "year": 2016,
+          "type": "interactive",
+          "url": "https://distill.pub/2016/misread-tsne/",
+          "annotation": "Interactive Distill article. The 'how to not get fooled by your own t-SNE plot' resource.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Understanding UMAP",
+          "author": "Coenen & Pearce",
+          "type": "interactive",
+          "url": "https://pair-code.github.io/understanding-umap/",
+          "annotation": "The same idea as the t-SNE Distill piece but for UMAP. Pair them.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "scikit-learn — Decomposing signals in components (matrix factorization problems)",
+          "type": "official",
+          "url": "https://scikit-learn.org/stable/modules/decomposition.html",
+          "annotation": "The PCA reference plus the rest of the linear factor family in one place.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "ml-train-val-test",
@@ -91,7 +263,30 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": ["ml-supervised-loop"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "scikit-learn — Cross-validation: evaluating estimator performance",
+          "type": "official",
+          "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+          "annotation": "k-fold, stratified, time-series, leave-one-group-out. The full menu with the failure modes called out.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Leakage in Data Mining: Formulation, Detection, and Avoidance",
+          "author": "Kaufman et al.",
+          "year": 2012,
+          "type": "paper",
+          "url": "https://dl.acm.org/doi/10.1145/2382577.2382579",
+          "annotation": "The classic taxonomy of leakage. Read once; you'll start spotting it in your own pipelines.",
+          "difficulty": "intermediate",
+          "free": false,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "ml-bias-variance-regularization",
@@ -102,7 +297,32 @@
       "position": { "x": 0, "y": 400 },
       "dependsOn": ["ml-train-val-test"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "An Introduction to Statistical Learning — Chapter 2",
+          "author": "James, Witten, Hastie, Tibshirani",
+          "year": 2023,
+          "type": "book",
+          "url": "https://www.statlearning.com/",
+          "annotation": "Chapter 2 is the canonical treatment of bias-variance. Free PDF; ten pages that pay back a hundred times.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Reconciling modern machine-learning practice and the classical bias–variance trade-off",
+          "author": "Belkin et al.",
+          "year": 2019,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1812.11118",
+          "annotation": "The double-descent paper. Required when you wonder why a 175B model isn't overfitting; the modern picture is more interesting than the classical curve.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "ml-evaluation-metrics",
@@ -113,7 +333,30 @@
       "position": { "x": 320, "y": 400 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "scikit-learn — Metrics and scoring",
+          "type": "official",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+          "annotation": "The complete menu of metrics with the formulas and the gotchas inline. The page you'll bookmark.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "The Relationship Between Precision-Recall and ROC Curves",
+          "author": "Davis & Goadrich",
+          "year": 2006,
+          "type": "paper",
+          "url": "https://mark.goadrich.com/articles/davisgoadrichcamera2.pdf",
+          "annotation": "Why PR-AUC beats ROC-AUC on imbalanced data. A short read that prevents a common interview mistake.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

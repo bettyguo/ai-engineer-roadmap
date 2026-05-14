@@ -14,7 +14,32 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": ["train-dpo-preference"],
-      "resources": []
+      "resources": [
+        {
+          "title": "Constitutional AI: Harmlessness from AI Feedback",
+          "author": "Bai et al. (Anthropic)",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2212.08073",
+          "annotation": "The CAI paper. The clearest open description of how a frontier lab trains for helpfulness-plus-harmlessness, and a working alternative to vanilla RLHF.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Training Language Models to Follow Instructions with Human Feedback",
+          "author": "Ouyang et al. (OpenAI)",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2203.02155",
+          "annotation": "The InstructGPT paper, reread with the alignment-not-just-tuning lens. The starting point for the modern post-training stack.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "frontier-jailbreaks-prompt-injection",
@@ -25,7 +50,41 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": ["frontier-alignment-basics"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Prompt Injection — Simon Willison's running coverage",
+          "author": "Simon Willison",
+          "type": "blog",
+          "url": "https://simonwillison.net/series/prompt-injection/",
+          "annotation": "The longest-running practitioner coverage. Direct, indirect, exfiltration via tool outputs — keeps tracking the field.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Universal and Transferable Adversarial Attacks on Aligned Language Models",
+          "author": "Zou et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2307.15043",
+          "annotation": "GCG — the optimized-suffix jailbreak that demonstrated transferable attacks. The paper to read for the rigorous-attack lens.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "OWASP Top 10 for LLM Applications",
+          "type": "official",
+          "url": "https://genai.owasp.org/llm-top-10/",
+          "annotation": "The taxonomy of LLM-app vulnerabilities. Pair with Willison's writing; the OWASP doc is what your security team will reference.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "frontier-red-teaming",
@@ -36,7 +95,30 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["frontier-jailbreaks-prompt-injection"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Red Teaming Language Models with Language Models",
+          "author": "Perez et al. (DeepMind)",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2202.03286",
+          "annotation": "The paper that established automated red-teaming. The patterns recur in every modern eval pipeline.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "type": "official",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "annotation": "The vendor-neutral framework. Useful when red-teaming has to interface with compliance or risk-management functions.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "frontier-mech-interp",
@@ -47,7 +129,42 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "A Mathematical Framework for Transformer Circuits",
+          "author": "Elhage et al. (Anthropic)",
+          "year": 2021,
+          "type": "paper",
+          "url": "https://transformer-circuits.pub/2021/framework/index.html",
+          "annotation": "The foundational paper of modern mech-interp. The residual-stream framing carries through everything that came after.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Towards Monosemanticity",
+          "author": "Bricken et al. (Anthropic)",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://transformer-circuits.pub/2023/monosemantic-features/index.html",
+          "annotation": "Sparse autoencoders for finding monosemantic features. The paper that put mech-interp on the practical-tools map.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Neel Nanda — Mech-interp tutorials",
+          "type": "blog",
+          "url": "https://www.neelnanda.io/mechanistic-interpretability/getting-started",
+          "annotation": "The practitioner's on-ramp. If the papers are too dense, start here.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "frontier-reasoning-models",
@@ -58,7 +175,32 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+          "author": "DeepSeek-AI",
+          "year": 2025,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2501.12948",
+          "annotation": "The open reasoning-model paper. The recipe (pure-RL on verifiable rewards, then SFT) is the clearest open replication of the o-series approach.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Learning to Reason with LLMs (OpenAI o1)",
+          "author": "OpenAI",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://openai.com/index/learning-to-reason-with-llms/",
+          "annotation": "The o1 announcement post. The clearest framing of test-time compute as a scaling axis.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "frontier-long-context",
@@ -69,7 +211,32 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "YaRN: Efficient Context Window Extension of Large Language Models",
+          "author": "Peng et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2309.00071",
+          "annotation": "YaRN — the RoPE-extension recipe that became the open default for context extension.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Ring Attention with Blockwise Transformers",
+          "author": "Liu et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2310.01889",
+          "annotation": "Ring attention — the parallelism trick that enables million-token contexts. The right reference when you wonder how 1M context windows actually run.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "frontier-open-research",
@@ -80,7 +247,40 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Anthropic — Core Views on AI Safety",
+          "type": "blog",
+          "url": "https://www.anthropic.com/news/core-views-on-ai-safety",
+          "annotation": "The strategic frame from one frontier lab. The 'when, why, and what' framing for safety research.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Lilian Weng's blog",
+          "author": "Lilian Weng",
+          "type": "blog",
+          "url": "https://lilianweng.github.io/",
+          "annotation": "The single best running survey of frontier ML research, with deeply-thought essays on attention, agents, RLHF, and more.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Sebastian Raschka's Magazine",
+          "author": "Sebastian Raschka",
+          "type": "blog",
+          "url": "https://magazine.sebastianraschka.com/",
+          "annotation": "The monthly newsletter that summarizes what's actually new in the field. The right way to track the frontier without drowning.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "frontier-career-community",
@@ -91,7 +291,48 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "llm-interview-prep",
+          "type": "repo",
+          "url": "https://github.com/bettyguo/llm-interview-prep",
+          "annotation": "The peer roadmap for AI-engineer interview preparation. Open when you're about to interview.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "build-your-own-ai",
+          "type": "repo",
+          "url": "https://github.com/bettyguo/build-your-own-ai",
+          "annotation": "Hands-on 'build it yourself' projects (transformer, RAG, agent harness, etc.). The companion to this roadmap for learners-by-doing.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "AlphaSignal — daily AI newsletter",
+          "type": "blog",
+          "url": "https://alphasignal.ai/",
+          "annotation": "The shortest sustainable daily-ish read for AI engineering. Pair with weekly Sebastian Raschka / Latent Space.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Latent Space podcast",
+          "type": "blog",
+          "url": "https://www.latent.space/",
+          "annotation": "The AI-engineer podcast. Interviews with the people shipping the systems you'll be reading about a month later.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

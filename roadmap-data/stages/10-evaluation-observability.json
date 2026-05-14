@@ -14,7 +14,40 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": ["ml-evaluation-metrics"],
-      "resources": []
+      "resources": [
+        {
+          "title": "Holistic Evaluation of Language Models (HELM)",
+          "author": "Stanford CRFM",
+          "type": "interactive",
+          "url": "https://crfm.stanford.edu/helm/",
+          "annotation": "Stanford's comprehensive benchmark suite. The leaderboards plus the documentation are an education in what benchmarks measure (and don't).",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "lm-evaluation-harness",
+          "author": "EleutherAI",
+          "type": "repo",
+          "url": "https://github.com/EleutherAI/lm-evaluation-harness",
+          "annotation": "The standard open harness. If a paper reports MMLU / HellaSwag / etc., it was probably this code.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Open LLM Leaderboard",
+          "type": "interactive",
+          "url": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard",
+          "annotation": "Live ranking of open-weights models on a standard set of evals. Useful when you want a quick read on the field.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "eval-llm-as-judge",
@@ -25,7 +58,32 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+          "author": "Zheng et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2306.05685",
+          "annotation": "The canonical paper on LLM-as-judge. Position bias, length bias, agreement with humans — the failure modes are catalogued here.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Evaluating the Effectiveness of LLM-Evaluators (aka LLM-as-Judge)",
+          "author": "Eugene Yan",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://eugeneyan.com/writing/llm-evaluators/",
+          "annotation": "The practitioner's how-to: rubric design, agreement measurement, debiasing tricks. The post you'll send your team.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "eval-golden-datasets",
@@ -36,7 +94,32 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Task-Specific LLM Evals That Do & Don't Work",
+          "author": "Eugene Yan",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://eugeneyan.com/writing/evals/",
+          "annotation": "The pragmatic 'how to build a useful eval set' guide. Covers the rubric design and the failure-modes practitioners actually hit.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Your AI Product Needs Evals",
+          "author": "Hamel Husain",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://hamel.dev/blog/posts/evals/",
+          "annotation": "Why a small custom eval set beats every public benchmark, and how to build one. The 'start eval before training' argument in practice.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "eval-ab-testing",
@@ -47,7 +130,32 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Trustworthy Online Controlled Experiments",
+          "author": "Kohavi, Tang, Xu",
+          "year": 2020,
+          "type": "book",
+          "url": "https://experimentguide.com/",
+          "annotation": "The canonical reference for A/B testing in software. Applies to LLM products with the obvious mappings.",
+          "difficulty": "intermediate",
+          "free": false,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "The Practical Guide to LLM Evals",
+          "author": "Arize AI",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://arize.com/blog-course/llm-evaluation-the-definitive-guide/",
+          "annotation": "Covers the online-vs-offline trade-offs from a tooling vendor that lives in this space. Useful framing.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "eval-tracing-observability",
@@ -58,7 +166,38 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Langfuse",
+          "type": "repo",
+          "url": "https://github.com/langfuse/langfuse",
+          "annotation": "Open-source LLM-observability with traces, evals, and prompt management. Self-hostable; widely adopted.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Arize Phoenix",
+          "type": "repo",
+          "url": "https://github.com/Arize-ai/phoenix",
+          "annotation": "Open-source LLM observability and eval, OpenTelemetry-native. The right pick if you already speak OTel.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "OpenTelemetry Semantic Conventions for GenAI",
+          "type": "official",
+          "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/",
+          "annotation": "The standard schema for LLM telemetry. Useful when picking tools or rolling your own observability.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "eval-harnesses",
@@ -69,7 +208,29 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": ["eval-task-benchmarks"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Inspect — UK AISI",
+          "type": "repo",
+          "url": "https://github.com/UKGovernmentBEIS/inspect_ai",
+          "annotation": "Strong choice for custom-task evals; clean Python DSL, structured tracing, multi-model support.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "simple-evals",
+          "author": "OpenAI",
+          "type": "repo",
+          "url": "https://github.com/openai/simple-evals",
+          "annotation": "OpenAI's reproducible-eval harness for the benchmarks they report on. Useful as a reference implementation.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "eval-cost-monitoring",
@@ -80,7 +241,28 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": ["eval-tracing-observability"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "LiteLLM cost tracking",
+          "type": "official",
+          "url": "https://docs.litellm.ai/docs/proxy/cost_tracking",
+          "annotation": "How the LiteLLM proxy attributes spend per key, model, and tenant. The pragmatic answer when you need cost dashboards yesterday.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Langfuse — Cost tracking",
+          "type": "official",
+          "url": "https://langfuse.com/docs/model-usage-and-cost",
+          "annotation": "Same problem, the observability-tool answer. Choose based on whether you already own a proxy or a tracing system.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "eval-continuous-production",
@@ -91,7 +273,32 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": ["eval-tracing-observability"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Designing Machine Learning Systems",
+          "author": "Chip Huyen",
+          "year": 2022,
+          "type": "book",
+          "url": "https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/",
+          "annotation": "Not LLM-specific but the chapters on monitoring, drift, and continual learning are still the best treatment of the production-eval problem.",
+          "difficulty": "intermediate",
+          "free": false,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "What We Learned from a Year of Building with LLMs (Part II)",
+          "author": "Yan, Bryan, et al.",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://www.oreilly.com/radar/what-we-learned-from-a-year-of-building-with-llms-part-ii/",
+          "annotation": "The operational section is the clearest writing on what 'continuous evaluation' actually looks like in a real LLM product team.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

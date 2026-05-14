@@ -14,7 +14,40 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "The Python Tutorial (official docs)",
+          "type": "official",
+          "url": "https://docs.python.org/3/tutorial/",
+          "annotation": "The single best Python intro. Free, comprehensive, current; the first place to look up anything.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Fluent Python (2e)",
+          "author": "Luciano Ramalho",
+          "year": 2022,
+          "type": "book",
+          "url": "https://www.fluentpython.com/",
+          "annotation": "The book that turns survival-Python into idiomatic-Python. Iterators, descriptors, async — the parts you actually need on a real codebase.",
+          "difficulty": "intermediate",
+          "free": false,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Real Python",
+          "type": "blog",
+          "url": "https://realpython.com/",
+          "annotation": "The reference site for focused Python tutorials. Use it when you hit a tooling question (uv, pytest, asyncio) and need the right answer quickly.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tool-numpy-scientific-stack",
@@ -25,7 +58,40 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": ["tool-python"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "NumPy: the absolute basics for beginners",
+          "type": "official",
+          "url": "https://numpy.org/doc/stable/user/absolute_beginners.html",
+          "annotation": "The official intro. Start here; the docs are unusually well-written.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "From Python to NumPy",
+          "author": "Nicolas Rougier",
+          "year": 2017,
+          "type": "book",
+          "url": "https://www.labri.fr/perso/nrougier/from-python-to-numpy/",
+          "annotation": "Free online book that drills vectorized thinking. The 'how do I stop writing for-loops?' resource.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "einops — tensor operations for readable code",
+          "type": "repo",
+          "url": "https://github.com/arogozhnikov/einops",
+          "annotation": "The library that makes tensor reshaping legible. Read the README; you'll start writing rearrange/repeat/reduce within an hour.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tool-pytorch",
@@ -36,7 +102,41 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["tool-numpy-scientific-stack"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "PyTorch — Deep Learning with PyTorch: A 60 Minute Blitz",
+          "type": "official",
+          "url": "https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html",
+          "annotation": "The official quickstart. The fastest path from 'I know NumPy' to 'I can train a model'.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Neural Networks: Zero to Hero",
+          "author": "Andrej Karpathy",
+          "type": "course",
+          "url": "https://karpathy.ai/zero-to-hero.html",
+          "annotation": "Build neural nets in PyTorch from scratch, one micrograd-flavored step at a time. The closest thing to a canonical PyTorch+ML course.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Deep Learning with PyTorch",
+          "author": "Stevens, Antiga, Viehmann",
+          "year": 2020,
+          "type": "book",
+          "url": "https://www.manning.com/books/deep-learning-with-pytorch",
+          "annotation": "Free PDF from PyTorch.org. The official book; covers tensors through nn.Module through training in depth.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tool-git",
@@ -47,7 +147,41 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Pro Git",
+          "author": "Scott Chacon",
+          "type": "book",
+          "url": "https://git-scm.com/book/en/v2",
+          "annotation": "The free official book. Skim the early chapters, internalize the chapter on branching, and revisit the rebase chapter when you need it.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Oh My Git!",
+          "type": "interactive",
+          "url": "https://ohmygit.org/",
+          "annotation": "An interactive game that teaches the actual graph model behind branches and merges. The clearest 30 minutes you'll spend on git.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "How to Write a Git Commit Message",
+          "author": "Chris Beams",
+          "year": 2014,
+          "type": "blog",
+          "url": "https://cbea.ms/git-commit/",
+          "annotation": "The seven rules. Re-read whenever your messages start to feel like 'fix stuff'.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tool-linux-shell",
@@ -58,7 +192,39 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "The Missing Semester of Your CS Education (MIT)",
+          "type": "course",
+          "url": "https://missing.csail.mit.edu/",
+          "annotation": "The shell, tmux, ssh, dotfiles, build systems — everything CS curricula skip. The single best resource.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "tldr pages",
+          "type": "tool",
+          "url": "https://tldr.sh/",
+          "annotation": "`man` pages reduced to the five flags you actually use. Install once; reach for it instead of Googling.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Bash Guide for Beginners",
+          "author": "Machtelt Garrels",
+          "type": "book",
+          "url": "https://tldp.org/LDP/Bash-Beginners-Guide/html/",
+          "annotation": "The free Linux Documentation Project guide. The right depth when shell scripting goes beyond a one-liner.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tool-docker",
@@ -69,7 +235,38 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": ["tool-linux-shell"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Docker — Get Started",
+          "type": "official",
+          "url": "https://docs.docker.com/get-started/",
+          "annotation": "The official guide. Read it once, build the sample app, then your mental model is set.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Best practices for writing Dockerfiles",
+          "type": "official",
+          "url": "https://docs.docker.com/build/building/best-practices/",
+          "annotation": "Layer caching, multi-stage builds, what to put in .dockerignore. The 10 minutes that prevent 4GB images.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "NVIDIA Container Toolkit",
+          "type": "official",
+          "url": "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html",
+          "annotation": "How to run a CUDA workload inside a container. The bridge you cross the first time you Dockerize a training job.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tool-gpu-cuda-basics",
@@ -80,7 +277,42 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "GPUs Go Brrr",
+          "author": "Hazy Research (Stanford)",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://hazyresearch.stanford.edu/blog/2024-05-12-tk",
+          "annotation": "A vivid, accessible explainer of what makes modern GPUs fast and where the bottlenecks live. The mental model you want.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Making Deep Learning Go Brrrr From First Principles",
+          "author": "Horace He",
+          "year": 2022,
+          "type": "blog",
+          "url": "https://horace.io/brrr_intro.html",
+          "annotation": "Compute vs memory-bound vs overhead-bound. The single best intro to GPU-shaped performance thinking.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "PyTorch CUDA semantics",
+          "type": "official",
+          "url": "https://pytorch.org/docs/stable/notes/cuda.html",
+          "annotation": "Device placement, streams, OOM diagnostics. The reference you'll come back to.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tool-data-formats",
@@ -91,7 +323,38 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": ["tool-python"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Apache Arrow — Format Specification",
+          "type": "official",
+          "url": "https://arrow.apache.org/docs/format/Columnar.html",
+          "annotation": "Why columnar storage is fast and what Arrow / Parquet are doing under the hood. A short read; useful intuition.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Hugging Face Datasets",
+          "type": "official",
+          "url": "https://huggingface.co/docs/datasets",
+          "annotation": "The library you'll use to load, stream, and shard training data in practice. Memory-mapped Arrow under the hood.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Polars — DataFrames for the modern era",
+          "type": "tool",
+          "url": "https://pola.rs/",
+          "annotation": "The Pandas successor most teams reach for in 2026 when data work outgrows Pandas. Lazy, Arrow-native, fast.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

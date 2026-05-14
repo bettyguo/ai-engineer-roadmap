@@ -1,0 +1,27 @@
+# URL prefixes to skip during linkcheck.
+#
+# One prefix per line. Blank lines and lines starting with `#` are ignored.
+# A prefix matches if the URL starts with it.
+#
+# Use this for:
+#   - URLs that are self-references to repos / sites that don't exist yet
+#     (the peer constellation). Remove these entries once the repos go live.
+#   - URLs that block bots (Medium, OpenAI platform, etc.) but resolve fine
+#     in a real browser. Keep these but skip the automated check.
+#   - Endpoints that rate-limit harshly and produce flaky CI runs.
+
+# Pre-launch peer repos and the live-site self-link. Remove once they exist.
+https://github.com/bettyguo/ai-engineer-roadmap
+https://github.com/bettyguo/harness-engineer-roadmap
+https://github.com/bettyguo/llm-interview-prep
+https://github.com/bettyguo/build-your-own-ai
+https://bettyguo.github.io/ai-engineer-roadmap/
+
+# Known bot-blockers and rate-limiters. URLs verified manually in a browser.
+https://medium.com/@karpathy/
+https://platform.openai.com/docs
+https://openai.com/index/
+https://www.neelnanda.io/
+https://projects.iq.harvard.edu/
+https://dl.acm.org/
+https://kipp.ly/

@@ -31,6 +31,7 @@ from typing import Iterable
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = REPO_ROOT / "roadmap-data"
 REPORT_PATH = REPO_ROOT / "tools" / "_linkcheck_report.md"
+IGNORE_FILE = REPO_ROOT / "tools" / ".linkcheck-ignore"
 
 UA = (
     "Mozilla/5.0 (compatible; ai-engineer-roadmap-linkcheck/1.0; "
@@ -41,9 +42,22 @@ MAX_RETRIES = 1
 MAX_WORKERS = 8
 
 
-def _collect_urls() -> dict[str, list[str]]:
+def _load_ignore_prefixes() -> list[str]:
+    """Read tools/.linkcheck-ignore. One URL prefix per line; blank and #-comment lines ignored."""
+    if not IGNORE_FILE.exists():
+        return []
+    prefixes: list[str] = []
+    for line in IGNORE_FILE.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        if s and not s.startswith("#"):
+            prefixes.append(s)
+    return prefixes
+
+
+def _collect_urls(ignore_prefixes: list[str] | None = None) -> dict[str, list[str]]:
     """Walk every JSON under roadmap-data/ and collect URLs → list of source files."""
     urls: dict[str, list[str]] = {}
+    ignore_prefixes = ignore_prefixes or []
 
     def _walk(value, path: Path) -> None:
         if isinstance(value, dict):
@@ -53,6 +67,8 @@ def _collect_urls() -> dict[str, list[str]]:
             for v in value:
                 _walk(v, path)
         elif isinstance(value, str) and value.startswith(("http://", "https://")):
+            if any(value.startswith(p) for p in ignore_prefixes):
+                return
             urls.setdefault(value, []).append(str(path.relative_to(REPO_ROOT)))
 
     for jf in DATA_ROOT.rglob("*.json"):
@@ -148,7 +164,10 @@ def _format_report(results: list[tuple[str, int | None, str, list[str]]]) -> str
 
 
 def run(only_changed: bool = False) -> int:
-    urls = _collect_urls()
+    ignore_prefixes = _load_ignore_prefixes()
+    if ignore_prefixes:
+        print(f"Ignoring {len(ignore_prefixes)} URL prefix(es) from .linkcheck-ignore")
+    urls = _collect_urls(ignore_prefixes=ignore_prefixes)
     if only_changed:
         urls = _filter_urls_to_changed(urls)
 

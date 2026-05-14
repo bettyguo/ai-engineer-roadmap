@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/bettyguo/ai-engineer-roadmap/roadmap-data/schema/resource.schema.json",
+  "$id": "urn:ai-engineer-roadmap:schema:resource",
   "title": "Resource",
   "description": "A curated learning resource attached to a node.",
   "type": "object",

@@ -14,7 +14,32 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "OLMo: Accelerating the Science of Language Models",
+          "author": "Groeneveld et al. (AI2)",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2402.00838",
+          "annotation": "The open, fully-documented pretraining recipe. Code, data, checkpoints, and all the engineering decisions written down.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "The Llama 3 Herd of Models",
+          "author": "Meta AI",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2407.21783",
+          "annotation": "The closest thing to a fully-documented frontier pretraining recipe outside Anthropic / OpenAI. The data section alone is education.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "train-data-curation",
@@ -25,7 +50,42 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "The Pile: An 800GB Dataset of Diverse Text for Language Modeling",
+          "author": "Gao et al. (EleutherAI)",
+          "year": 2020,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2101.00027",
+          "annotation": "The first openly-documented large-scale pretraining dataset. Read for the mixing-ratio discussion alone.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Textbooks Are All You Need",
+          "author": "Gunasekar et al. (Microsoft)",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2306.11644",
+          "annotation": "The Phi-series paper that put data quality on the map. The case for 'fewer, higher-quality tokens' over 'more tokens'.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Hugging Face — FineWeb",
+          "type": "blog",
+          "url": "https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1",
+          "annotation": "Detailed walk-through of curating a 15T-token pretraining dataset. The most accessible data-curation case study published.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "train-sft",
@@ -36,7 +96,28 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["train-data-curation"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Hugging Face — Supervised Fine-Tuning (TRL)",
+          "type": "official",
+          "url": "https://huggingface.co/docs/trl/sft_trainer",
+          "annotation": "The TRL library's SFTTrainer is the production default. The docs are a working tutorial.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Axolotl",
+          "type": "repo",
+          "url": "https://github.com/axolotl-ai-cloud/axolotl",
+          "annotation": "The community-default config-driven fine-tuning wrapper. Read the example configs; you'll learn the practical knobs.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "train-instruction-tuning",
@@ -47,7 +128,32 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": ["train-sft"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Training Language Models to Follow Instructions with Human Feedback (InstructGPT)",
+          "author": "Ouyang et al. (OpenAI)",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2203.02155",
+          "annotation": "The paper that defined the modern alignment pipeline: SFT, reward modeling, RLHF. The starting point for everything that followed.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+          "author": "Wang et al.",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2212.10560",
+          "annotation": "The bootstrap data-synthesis recipe that put Alpaca-style fine-tuning on the map. Still the simplest path to a usable instruction dataset.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "train-rlhf",
@@ -58,7 +164,30 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": ["train-instruction-tuning"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Illustrating Reinforcement Learning from Human Feedback (RLHF)",
+          "author": "Hugging Face",
+          "year": 2022,
+          "type": "blog",
+          "url": "https://huggingface.co/blog/rlhf",
+          "annotation": "The accessible illustrated explainer of the three-stage RLHF pipeline. Read this before the original paper.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "TRL — Transformer Reinforcement Learning",
+          "type": "repo",
+          "url": "https://github.com/huggingface/trl",
+          "annotation": "The library you'd actually use to run PPO, DPO, GRPO. The implementations are the cleanest open reference.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "train-dpo-preference",
@@ -69,7 +198,42 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": ["train-instruction-tuning"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+          "author": "Rafailov et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2305.18290",
+          "annotation": "The DPO paper. Closed-form policy update, no reward model, no PPO. Short and worth re-reading.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Hugging Face — DPO Trainer",
+          "type": "official",
+          "url": "https://huggingface.co/docs/trl/dpo_trainer",
+          "annotation": "Production-shaped DPO. The 'how to actually run it' page; pair with the paper for the why.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "KTO: Model Alignment as Prospect Theoretic Optimization",
+          "author": "Ethayarajh et al.",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2402.01306",
+          "annotation": "KTO trains on unpaired signals (good / bad), not pairs. The right answer when collecting paired preferences is impractical.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "train-lora-qlora-adapters",
@@ -80,7 +244,42 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": ["train-sft"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "author": "Hu et al.",
+          "year": 2021,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2106.09685",
+          "annotation": "The LoRA paper. Eight pages; the math is approachable and the empirical results changed how the field fine-tunes.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+          "author": "Dettmers et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2305.14314",
+          "annotation": "Quantize the base to 4-bit, train LoRA on top. The combination that puts 65B fine-tunes on a single A6000.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Hugging Face PEFT — Parameter-Efficient Fine-Tuning",
+          "type": "official",
+          "url": "https://huggingface.co/docs/peft",
+          "annotation": "The library. LoRA, QLoRA, prefix tuning, and friends, with one-line APIs. The reference for the practical knobs.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "train-distillation-compression",
@@ -91,7 +290,32 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Distilling the Knowledge in a Neural Network",
+          "author": "Hinton, Vinyals, Dean",
+          "year": 2015,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1503.02531",
+          "annotation": "The original distillation paper. Eight pages; the temperature trick is still relevant to every modern LLM-distillation recipe.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "DistilBERT, a distilled version of BERT",
+          "author": "Sanh et al. (Hugging Face)",
+          "year": 2019,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1910.01108",
+          "annotation": "The canonical 'distill a transformer' recipe. The architecture is dated but the recipe transfers to modern LLMs.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "train-eval-during-training",
@@ -102,7 +326,30 @@
       "position": { "x": 0, "y": 400 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Eleuther — lm-evaluation-harness",
+          "type": "repo",
+          "url": "https://github.com/EleutherAI/lm-evaluation-harness",
+          "annotation": "The standard harness for running benchmarks. Wire one regression-test task into your training loop on day one.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "What We Learned from a Year of Building with LLMs",
+          "author": "Yan, Bryan, et al.",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://www.oreilly.com/radar/what-we-learned-from-a-year-of-building-with-llms-part-i/",
+          "annotation": "The collective wisdom from six practitioners. The section on evals is the best 'why your loss isn't enough' argument in print.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "train-distributed-infra",
@@ -113,7 +360,42 @@
       "position": { "x": 320, "y": 400 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "PyTorch FSDP — Getting Started",
+          "type": "official",
+          "url": "https://pytorch.org/tutorials/intermediate/FSDP_tutorial.html",
+          "annotation": "The official tutorial. FSDP is the default distributed strategy in 2026; this is the right place to start.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models",
+          "author": "Rajbhandari et al. (DeepSpeed)",
+          "year": 2019,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1910.02054",
+          "annotation": "The ZeRO paper. The three stages of sharding (optimizer / gradients / parameters) are the foundation of every modern strategy.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "The Ultra-Scale Playbook",
+          "author": "Hugging Face",
+          "year": 2025,
+          "type": "blog",
+          "url": "https://huggingface.co/spaces/nanotron/ultrascale-playbook",
+          "annotation": "An interactive guide to the parallelism strategies of large-scale training. The most accessible map of the distributed-training landscape.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

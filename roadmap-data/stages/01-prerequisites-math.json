@@ -14,7 +14,54 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Essence of Linear Algebra",
+          "author": "Grant Sanderson (3Blue1Brown)",
+          "type": "video",
+          "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+          "annotation": "The visual intuition for vectors, matrices, and eigenstuff. Watch this before any textbook.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "MIT 18.06 — Linear Algebra (OCW)",
+          "author": "Gilbert Strang",
+          "type": "course",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+          "annotation": "The classic university course with full video lectures. Pair with 3Blue1Brown for intuition first, rigor second.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Introduction to Applied Linear Algebra (VMLS)",
+          "author": "Boyd & Vandenberghe",
+          "year": 2018,
+          "type": "book",
+          "url": "https://web.stanford.edu/~boyd/vmls/",
+          "annotation": "Free PDF. The applied view — least-squares-centric, engineering-flavored. The right book if you want LA for ML, not for pure math.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Mathematics for Machine Learning",
+          "author": "Deisenroth, Faisal, Ong",
+          "year": 2020,
+          "type": "book",
+          "url": "https://mml-book.github.io/",
+          "annotation": "Free PDF. The linear-algebra chapters cover exactly what ML practitioners need, scoped to ML examples throughout.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "math-calculus",
@@ -25,7 +72,41 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Essence of Calculus",
+          "author": "Grant Sanderson (3Blue1Brown)",
+          "type": "video",
+          "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+          "annotation": "Same visual treatment as Essence of Linear Algebra; derivatives and the chain rule made concrete in two hours.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Khan Academy — Multivariable Calculus",
+          "type": "course",
+          "url": "https://www.khanacademy.org/math/multivariable-calculus",
+          "annotation": "Problem-driven, free, the standard 'fill in the gaps' resource for partial derivatives and gradient intuition.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Matrix Calculus for Deep Learning",
+          "author": "Parr & Howard",
+          "year": 2018,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1802.01528",
+          "annotation": "The bridge from scalar calculus to the matrix-shaped derivatives that show up in every backprop derivation.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "math-probability-statistics",
@@ -36,7 +117,40 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Harvard Stat 110 — Probability",
+          "author": "Joe Blitzstein",
+          "type": "course",
+          "url": "https://projects.iq.harvard.edu/stat110/about",
+          "annotation": "Free lectures plus the famous Probability Cheatsheet. The gold-standard intro: rigorous and oddly entertaining.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "MIT 6.041 — Introduction to Probability (OCW)",
+          "type": "course",
+          "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/",
+          "annotation": "MIT's intro probability with full videos, problem sets, and rigorous treatment of distributions and limit theorems.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Think Stats (2e)",
+          "author": "Allen Downey",
+          "type": "book",
+          "url": "https://greenteapress.com/wp/think-stats-2e/",
+          "annotation": "Free book. Computational statistics taught in Python — the right book if you learn by coding rather than proving.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "math-optimization",
@@ -47,7 +161,44 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": ["math-calculus"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Convex Optimization",
+          "author": "Boyd & Vandenberghe",
+          "year": 2004,
+          "type": "book",
+          "url": "https://web.stanford.edu/~boyd/cvxbook/",
+          "annotation": "The reference. Free PDF. The convex half is the prerequisite for understanding why non-convex deep-learning loss landscapes are hard.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "An overview of gradient descent optimization algorithms",
+          "author": "Sebastian Ruder",
+          "year": 2016,
+          "type": "blog",
+          "url": "https://www.ruder.io/optimizing-gradient-descent/",
+          "annotation": "Survey of SGD / momentum / Adam / RMSprop with intuition for when each one wins. Older but still the canonical reference.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Why Momentum Really Works",
+          "author": "Gabriel Goh",
+          "year": 2017,
+          "type": "interactive",
+          "url": "https://distill.pub/2017/momentum/",
+          "annotation": "Interactive Distill article that makes momentum geometrically obvious in 10 minutes.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "math-information-theory",
@@ -58,7 +209,32 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": ["math-probability-statistics"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Visual Information Theory",
+          "author": "Christopher Olah",
+          "year": 2015,
+          "type": "blog",
+          "url": "https://colah.github.io/posts/2015-09-Visual-Information/",
+          "annotation": "The single best intro post: entropy, KL divergence, cross-entropy, all made visual. Read once and the formulas stop being magic.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Information Theory, Inference, and Learning Algorithms",
+          "author": "David MacKay",
+          "year": 2003,
+          "type": "book",
+          "url": "http://www.inference.org.uk/itila/book.html",
+          "annotation": "Free PDF of the classic textbook. The rigorous treatment when you want to go deeper than Olah's overview.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "math-numerical-floating-point",
@@ -69,7 +245,40 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "What Every Computer Scientist Should Know About Floating-Point Arithmetic",
+          "author": "David Goldberg",
+          "year": 1991,
+          "type": "paper",
+          "url": "https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html",
+          "annotation": "The classic primer. Read once, keep handy. Old but the IEEE 754 fundamentals haven't moved.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "PyTorch Automatic Mixed Precision (AMP)",
+          "type": "official",
+          "url": "https://pytorch.org/docs/stable/amp.html",
+          "annotation": "The actual reference for FP16 / BF16 in training and inference. The documentation reads as a tutorial.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "NVIDIA Mixed-Precision Training User Guide",
+          "type": "official",
+          "url": "https://docs.nvidia.com/deeplearning/performance/mixed-precision-training/index.html",
+          "annotation": "How GPUs actually do mixed precision — Tensor Cores, loss scaling, the practical gotchas. Pair with the PyTorch AMP docs.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "math-discrete",
@@ -80,7 +289,30 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "MIT 6.042J — Mathematics for Computer Science (OCW)",
+          "author": "Leighton, Meyer",
+          "type": "course",
+          "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/",
+          "annotation": "The standard CS-foundations course. Right depth if you're filling in CS-1xx gaps before getting to algorithms.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Algorithms Illuminated",
+          "author": "Tim Roughgarden",
+          "type": "book",
+          "url": "https://www.algorithmsilluminated.org/",
+          "annotation": "A four-volume gentle re-introduction to algorithms. Useful for the retrieval and search-flavored parts of AI systems.",
+          "difficulty": "intermediate",
+          "free": false,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "math-how-much-is-enough",
@@ -91,7 +323,32 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Mathematics for Machine Learning",
+          "author": "Deisenroth, Faisal, Ong",
+          "year": 2020,
+          "type": "book",
+          "url": "https://mml-book.github.io/",
+          "annotation": "Free PDF. The scoped middle ground: more than Khan Academy, less than a real-analysis textbook. Read this and you have enough.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "A Recipe for Training Neural Networks",
+          "author": "Andrej Karpathy",
+          "year": 2019,
+          "type": "blog",
+          "url": "https://karpathy.github.io/2019/04/25/recipe/",
+          "annotation": "Not strictly about math — the spirit of the answer. Deep ML practice is debugging plus engineering, not theorem-proving.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

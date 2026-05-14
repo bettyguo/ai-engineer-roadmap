@@ -14,7 +14,42 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": ["inf-prompt-engineering-craft"],
-      "resources": []
+      "resources": [
+        {
+          "title": "Building effective agents",
+          "author": "Anthropic",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://www.anthropic.com/research/building-effective-agents",
+          "annotation": "The single most-cited practitioner essay on agents. The framing 'workflows vs agents' is now field-standard vocabulary.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Anthropic — Tool use overview",
+          "type": "official",
+          "url": "https://docs.anthropic.com/en/docs/build-with-claude/tool-use",
+          "annotation": "The canonical reference for the tool-use flow: schema, model call, tool result, continue. Read once.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+          "author": "Schick et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2302.04761",
+          "annotation": "The paper that established self-supervised tool use. Useful as context for where the field came from.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "agent-function-calling-mcp",
@@ -25,7 +60,28 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": ["agent-tool-use"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Model Context Protocol",
+          "type": "official",
+          "url": "https://modelcontextprotocol.io/",
+          "annotation": "The open standard for connecting tools and data to agents. Read the spec overview first, then the SDK quickstart.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "MCP Servers (reference implementations)",
+          "type": "repo",
+          "url": "https://github.com/modelcontextprotocol/servers",
+          "annotation": "Working MCP servers for filesystem, git, GitHub, browser, and more. The fastest path to understanding the protocol concretely.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "agent-planning-patterns",
@@ -36,7 +92,44 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["agent-tool-use"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+          "author": "Yao et al.",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2210.03629",
+          "annotation": "The ReAct paper. The thought / action / observation loop became the default mental model for tool-using agents.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+          "author": "Shinn et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2303.11366",
+          "annotation": "Self-reflection as a planning improvement. The paper that established 'let the agent critique its own trace' as a pattern.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+          "author": "Yao et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2305.10601",
+          "annotation": "Search over thought trees. The right reference when sequential CoT isn't enough.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "agent-memory-context",
@@ -47,7 +140,32 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Effective context engineering for AI agents",
+          "author": "Anthropic",
+          "year": 2025,
+          "type": "blog",
+          "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+          "annotation": "The current best treatment of context-as-a-managed-resource: what to compact, what to surface, what to forget.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "MemGPT: Towards LLMs as Operating Systems",
+          "author": "Packer et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2310.08560",
+          "annotation": "The OS-shaped memory hierarchy framing. The paper has aged well; the pattern shows up in most modern long-running agents.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "agent-multi-agent",
@@ -58,7 +176,32 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": ["agent-planning-patterns"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Don't Build Multi-Agents",
+          "author": "Cognition",
+          "year": 2025,
+          "type": "blog",
+          "url": "https://cognition.ai/blog/dont-build-multi-agents",
+          "annotation": "The counter-argument every multi-agent enthusiast should read. Frames the context-passing problem clearly.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "How we built our multi-agent research system",
+          "author": "Anthropic",
+          "year": 2025,
+          "type": "blog",
+          "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+          "annotation": "The case where multi-agent wins, written by a team that shipped it. Read it after the Cognition counter-argument.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "agent-harnesses-scaffolds",
@@ -69,7 +212,30 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": ["agent-tool-use"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "harness-engineer-roadmap",
+          "type": "repo",
+          "url": "https://github.com/bettyguo/harness-engineer-roadmap",
+          "annotation": "The depth roadmap for this whole stage. Open it when you want to specialize in the harness craft.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Building effective agents",
+          "author": "Anthropic",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://www.anthropic.com/research/building-effective-agents",
+          "annotation": "Reread with the harness lens: what the scaffold does, what the model does, where the boundary should live.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "agent-evaluation",
@@ -80,7 +246,40 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "SWE-bench",
+          "type": "official",
+          "url": "https://www.swebench.com/",
+          "annotation": "The standard end-to-end coding-agent benchmark. The leaderboard tells you the state of the field at a glance.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction",
+          "author": "Yao et al.",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2406.12045",
+          "annotation": "The right multi-turn tool-use benchmark. The user-simulator design is what makes the evaluation realistic.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Inspect — AI safety evaluation framework",
+          "type": "repo",
+          "url": "https://github.com/UKGovernmentBEIS/inspect_ai",
+          "annotation": "UK AISI's framework. The most-extensible open agent-eval harness; tasks, scorers, and a structured tracing model.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "agent-safety",
@@ -91,7 +290,29 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "OWASP Top 10 for LLM Applications",
+          "type": "official",
+          "url": "https://genai.owasp.org/llm-top-10/",
+          "annotation": "The community-maintained taxonomy of LLM-app vulnerabilities. Read it once and the rest of agent-security writing makes sense.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Prompt Injection — Simon Willison",
+          "author": "Simon Willison",
+          "type": "blog",
+          "url": "https://simonwillison.net/series/prompt-injection/",
+          "annotation": "The single best running coverage of prompt injection in the wild — direct, indirect, exfiltration. Updated for years.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ],
   "sidewaysLinks": [

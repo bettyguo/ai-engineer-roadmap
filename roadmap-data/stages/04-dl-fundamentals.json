@@ -14,7 +14,43 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Neural Networks: Zero to Hero — micrograd",
+          "author": "Andrej Karpathy",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=VMj-3S1tku0",
+          "annotation": "Builds a working autograd in 100 lines on video. The clearest 'computational graph' tutorial that exists.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Deep Learning",
+          "author": "Goodfellow, Bengio, Courville",
+          "year": 2016,
+          "type": "book",
+          "url": "https://www.deeplearningbook.org/",
+          "annotation": "The MIT Press canonical reference, free online. Chapter 6 is the formal treatment of feedforward nets and computational graphs.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Dive into Deep Learning (D2L)",
+          "author": "Zhang, Lipton, Li, Smola",
+          "year": 2023,
+          "type": "book",
+          "url": "https://d2l.ai/",
+          "annotation": "Free interactive textbook. Code-first; every concept comes with a notebook you can run.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "dl-backprop",
@@ -25,7 +61,31 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": ["dl-neural-net-computational-graph"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Yes you should understand backprop",
+          "author": "Andrej Karpathy",
+          "year": 2016,
+          "type": "blog",
+          "url": "https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b",
+          "annotation": "Why backprop's leaky abstraction matters in practice. Read after you've coded a backward pass yourself.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "CS231n notes — Backpropagation",
+          "author": "Andrej Karpathy",
+          "type": "course",
+          "url": "https://cs231n.github.io/optimization-2/",
+          "annotation": "The classic Stanford notes. Walks the computation graph for a real example with index gymnastics.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "dl-optimizers",
@@ -36,7 +96,42 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["dl-backprop"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "An overview of gradient descent optimization algorithms",
+          "author": "Sebastian Ruder",
+          "year": 2016,
+          "type": "blog",
+          "url": "https://www.ruder.io/optimizing-gradient-descent/",
+          "annotation": "Side-by-side comparison of every optimizer with intuition. Dated on the frontier but still the canonical map.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Decoupled Weight Decay Regularization",
+          "author": "Loshchilov & Hutter",
+          "year": 2017,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1711.05101",
+          "annotation": "The AdamW paper. Required reading because AdamW is the default for every transformer in 2026.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "PyTorch — torch.optim",
+          "type": "official",
+          "url": "https://pytorch.org/docs/stable/optim.html",
+          "annotation": "The reference for every optimizer and lr scheduler you'll touch. Read the lr-scheduler section once.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "dl-init-normalization",
@@ -47,7 +142,44 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": ["dl-neural-net-computational-graph"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Delving Deep into Rectifiers",
+          "author": "He et al.",
+          "year": 2015,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1502.01852",
+          "annotation": "The He-initialization paper. Short and worth the read; the math motivates why init matters more than people expect.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Layer Normalization",
+          "author": "Ba, Kiros, Hinton",
+          "year": 2016,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1607.06450",
+          "annotation": "The paper. Pair with the BatchNorm and RMSNorm papers — the contrast is what makes it click.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Root Mean Square Layer Normalization",
+          "author": "Zhang & Sennrich",
+          "year": 2019,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1910.07467",
+          "annotation": "RMSNorm — the norm of choice in most 2026 LLMs. The paper explains why dropping the mean is fine.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "dl-activations-losses",
@@ -58,7 +190,30 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": ["dl-neural-net-computational-graph"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "GLU Variants Improve Transformer",
+          "author": "Noam Shazeer",
+          "year": 2020,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2002.05202",
+          "annotation": "Why SwiGLU is the activation of choice in modern transformers. A two-page paper; read it.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "PyTorch — Loss Functions",
+          "type": "official",
+          "url": "https://pytorch.org/docs/stable/nn.html#loss-functions",
+          "annotation": "The reference catalog. Use it to discover the losses you didn't know you needed (e.g., NLLLoss vs CrossEntropyLoss).",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "dl-cnns",
@@ -69,7 +224,30 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": ["dl-neural-net-computational-graph"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Stanford CS231n — Convolutional Neural Networks for Visual Recognition",
+          "type": "course",
+          "url": "https://cs231n.github.io/",
+          "annotation": "The course that taught a generation of researchers CNNs. The notes alone are worth a full pass.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Deep Residual Learning for Image Recognition (ResNet)",
+          "author": "He et al.",
+          "year": 2015,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1512.03385",
+          "annotation": "ResNet. The residual-connection idea outlasted CNN dominance and now lives inside every transformer block.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "dl-rnns-lstms",
@@ -80,7 +258,32 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "The Unreasonable Effectiveness of Recurrent Neural Networks",
+          "author": "Andrej Karpathy",
+          "year": 2015,
+          "type": "blog",
+          "url": "https://karpathy.github.io/2015/05/21/rnn-effectiveness/",
+          "annotation": "The classic post. Historical context, but useful intuition for why sequence modeling was hard before transformers.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Understanding LSTM Networks",
+          "author": "Christopher Olah",
+          "year": 2015,
+          "type": "blog",
+          "url": "https://colah.github.io/posts/2015-08-Understanding-LSTMs/",
+          "annotation": "The canonical visual explainer. Skim once and move on; mostly history in 2026.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "dl-embeddings-representations",
@@ -91,7 +294,40 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "The Illustrated Word2vec",
+          "author": "Jay Alammar",
+          "year": 2019,
+          "type": "blog",
+          "url": "https://jalammar.github.io/illustrated-word2vec/",
+          "annotation": "The visual intro to word embeddings — and by extension to every dense embedding you'll use later.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Sentence-Transformers — official site",
+          "type": "official",
+          "url": "https://www.sbert.net/",
+          "annotation": "The practical entry point. Pretrained sentence embedding models with one-line APIs; the basis of most RAG stacks.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Massive Text Embedding Benchmark (MTEB) Leaderboard",
+          "type": "interactive",
+          "url": "https://huggingface.co/spaces/mteb/leaderboard",
+          "annotation": "The current state of the embedding-model field. Pick by task; the top models change every few months.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "dl-attention-history",
@@ -102,7 +338,32 @@
       "position": { "x": 0, "y": 400 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+          "author": "Bahdanau, Cho, Bengio",
+          "year": 2014,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1409.0473",
+          "annotation": "The Bahdanau paper — the introduction of attention to neural sequence models. Read for historical context.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Attention? Attention!",
+          "author": "Lilian Weng",
+          "year": 2018,
+          "type": "blog",
+          "url": "https://lilianweng.github.io/posts/2018-06-24-attention/",
+          "annotation": "The pre-transformer attention zoo, summarized with care. Pair with the Bahdanau paper.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "dl-generative-overview",
@@ -113,7 +374,44 @@
       "position": { "x": 320, "y": 400 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Lilian Weng's blog — From Autoencoder to Beta-VAE",
+          "author": "Lilian Weng",
+          "year": 2018,
+          "type": "blog",
+          "url": "https://lilianweng.github.io/posts/2018-08-12-vae/",
+          "annotation": "The clearest VAE primer on the open web. Skim her blog for the GAN and diffusion posts too.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "What are Diffusion Models?",
+          "author": "Lilian Weng",
+          "year": 2021,
+          "type": "blog",
+          "url": "https://lilianweng.github.io/posts/2021-07-11-diffusion-models/",
+          "annotation": "The reference intro. Survives every diffusion revision because the foundations are unchanged.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Generative Adversarial Networks",
+          "author": "Goodfellow et al.",
+          "year": 2014,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1406.2661",
+          "annotation": "The original GAN paper. Mostly historical now but the adversarial framing keeps showing up.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

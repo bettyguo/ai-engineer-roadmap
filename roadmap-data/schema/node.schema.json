@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/bettyguo/ai-engineer-roadmap/roadmap-data/schema/node.schema.json",
+  "$id": "urn:ai-engineer-roadmap:schema:node",
   "title": "Node",
   "description": "A single roadmap node belonging to a stage.",
   "type": "object",

@@ -14,7 +14,44 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": ["dl-attention-history"],
-      "resources": []
+      "resources": [
+        {
+          "title": "The Illustrated Transformer",
+          "author": "Jay Alammar",
+          "year": 2018,
+          "type": "blog",
+          "url": "https://jalammar.github.io/illustrated-transformer/",
+          "annotation": "The single best visual intro to self-attention. Eight years old and still uncontested.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Attention Is All You Need",
+          "author": "Vaswani et al.",
+          "year": 2017,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "annotation": "The original transformer paper. Required reading; the architecture and the math are both in eight pages.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Let's build GPT: from scratch, in code, spelled out",
+          "author": "Andrej Karpathy",
+          "year": 2023,
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY",
+          "annotation": "Build a GPT from scratch on video in two hours, attention included. After this, the architecture stops feeling like magic.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tx-multi-head-attention",
@@ -25,7 +62,30 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": ["tx-self-attention"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "The Annotated Transformer",
+          "author": "Sasha Rush et al.",
+          "year": 2022,
+          "type": "interactive",
+          "url": "https://nlp.seas.harvard.edu/annotated-transformer/",
+          "annotation": "Harvard's line-by-line implementation of 'Attention Is All You Need'. The clearest multi-head reading you can do.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "PyTorch — nn.MultiheadAttention",
+          "type": "official",
+          "url": "https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html",
+          "annotation": "The reference for the production primitive. Read it once after you've implemented MHA yourself; the API choices make more sense afterwards.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tx-architecture",
@@ -36,7 +96,41 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["tx-multi-head-attention"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "A Mathematical Framework for Transformer Circuits",
+          "author": "Elhage et al. (Anthropic)",
+          "year": 2021,
+          "type": "paper",
+          "url": "https://transformer-circuits.pub/2021/framework/index.html",
+          "annotation": "The residual-stream framing. Once you read this you can never un-see the transformer as a writer-reader system on a shared stream.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Stanford CS336 — Language Modeling from Scratch (Spring 2025)",
+          "type": "course",
+          "url": "https://stanford-cs336.github.io/spring2025/",
+          "annotation": "Stanford's hands-on course on building modern LLMs from scratch. The lecture videos are on YouTube; the assignments are the reason to enroll.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "nanoGPT",
+          "author": "Andrej Karpathy",
+          "type": "repo",
+          "url": "https://github.com/karpathy/nanoGPT",
+          "annotation": "The simplest production-style decoder-only transformer in 300 lines of PyTorch. Read it once end-to-end.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tx-tokenization",
@@ -47,7 +141,40 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Let's build the GPT Tokenizer",
+          "author": "Andrej Karpathy",
+          "year": 2024,
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=zduSFxRajkE",
+          "annotation": "Builds a BPE tokenizer from scratch and shows every weird tokenization edge case you'll meet in production.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Hugging Face — The tokenizers tutorial",
+          "type": "official",
+          "url": "https://huggingface.co/docs/tokenizers/en/quicktour",
+          "annotation": "The library every production-LLM stack uses. The tutorial is the right depth for understanding the practical API.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Tiktokenizer",
+          "type": "tool",
+          "url": "https://tiktokenizer.vercel.app/",
+          "annotation": "Live tokenizer-visualizer for GPT, Claude, Llama, and others. Paste text, see tokens; the fastest intuition-builder.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tx-positional-encoding-rope",
@@ -58,7 +185,30 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": ["tx-architecture"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+          "author": "Su et al.",
+          "year": 2021,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2104.09864",
+          "annotation": "The RoPE paper. Eu Wen Su's blog (rotated embeddings) is a nice companion; the paper has the math.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Eleuther — Rotary Embeddings: A Relative Revolution",
+          "type": "blog",
+          "url": "https://blog.eleuther.ai/rotary-embeddings/",
+          "annotation": "The clearest explainer of why RoPE is geometrically appealing. Read after the paper and it clicks.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tx-pretraining-objectives",
@@ -69,7 +219,32 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": ["tx-architecture"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Language Models are Few-Shot Learners (GPT-3)",
+          "author": "Brown et al.",
+          "year": 2020,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "annotation": "The paper that established next-token prediction as the dominant objective. Skim sections 1–3 for the framing.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers",
+          "author": "Devlin et al.",
+          "year": 2018,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1810.04805",
+          "annotation": "The MLM objective in its canonical form. Read for contrast with causal LM.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tx-scaling-laws",
@@ -80,7 +255,32 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": ["tx-pretraining-objectives"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Scaling Laws for Neural Language Models",
+          "author": "Kaplan et al.",
+          "year": 2020,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2001.08361",
+          "annotation": "The original scaling-laws paper. Read for the empirical curves and the framing that drove every follow-up.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Training Compute-Optimal Large Language Models (Chinchilla)",
+          "author": "Hoffmann et al. (DeepMind)",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2203.15556",
+          "annotation": "The Chinchilla paper. The revision that established 'tokens scale with params' as the right budget rule.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "tx-model-anatomy",
@@ -91,7 +291,44 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": ["tx-architecture", "tx-positional-encoding-rope"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Llama 3 Herd of Models",
+          "author": "Meta AI",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2407.21783",
+          "annotation": "Detailed model card for a frontier open-weights model. The architecture, training, and infrastructure all in one document.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Mixtral of Experts",
+          "author": "Jiang et al. (Mistral)",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2401.04088",
+          "annotation": "The clearest open MoE paper. The MoE design choice is now mainstream; read this for the modern reference.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "The Llama 3 Herd Architecture (annotated)",
+          "author": "Sebastian Raschka",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://magazine.sebastianraschka.com/p/understanding-large-language-models",
+          "annotation": "Raschka's series annotates the Llama / Mistral / Phi / Gemma stacks one design choice at a time. Excellent gloss on the model cards.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

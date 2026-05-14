@@ -14,7 +14,40 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": ["dl-embeddings-representations"],
-      "resources": []
+      "resources": [
+        {
+          "title": "Massive Text Embedding Benchmark (MTEB)",
+          "type": "interactive",
+          "url": "https://huggingface.co/spaces/mteb/leaderboard",
+          "annotation": "Live leaderboard. Filter by task, language, license; the cheapest way to pick a starting model.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Sentence-Transformers documentation",
+          "type": "official",
+          "url": "https://www.sbert.net/",
+          "annotation": "The practical entry point. Pretrained models, one-line APIs, training scripts. Read the Pretrained Models page first.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Matryoshka Representation Learning",
+          "author": "Kusupati et al.",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2205.13147",
+          "annotation": "Matryoshka embeddings — one model, many usable dimension cutoffs. The technique behind OpenAI's truncation-friendly embeddings.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "rag-vector-stores",
@@ -25,7 +58,40 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": ["rag-embeddings"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "pgvector",
+          "type": "repo",
+          "url": "https://github.com/pgvector/pgvector",
+          "annotation": "Postgres extension. Often the right answer: your existing database becomes your vector store, with HNSW and filtering built in.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Qdrant",
+          "type": "repo",
+          "url": "https://github.com/qdrant/qdrant",
+          "annotation": "A modern open-source vector store with a strong rust core. The right choice when Postgres isn't enough but a managed service is too much.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Efficient and robust approximate nearest neighbor search using HNSW",
+          "author": "Malkov & Yashunin",
+          "year": 2016,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1603.09320",
+          "annotation": "The HNSW paper. The index every modern vector store uses; eight pages and worth reading once.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "rag-hybrid-search",
@@ -36,7 +102,30 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["rag-vector-stores"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "BM25 — Probabilistic Relevance Framework",
+          "author": "Robertson & Zaragoza",
+          "year": 2009,
+          "type": "paper",
+          "url": "https://www.staff.city.ac.uk/~sbrp622/papers/foundations_bm25_review.pdf",
+          "annotation": "The canonical BM25 reference. Read once; understanding it gives you the right baseline to argue against.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Elastic — Hybrid search with reciprocal rank fusion",
+          "type": "blog",
+          "url": "https://www.elastic.co/blog/whats-new-elasticsearch-platform-8-9-0",
+          "annotation": "The practical recipe: RRF fuses BM25 and vector scores without normalization. Two-paragraph idea; you'll use it everywhere.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "rag-reranking",
@@ -47,7 +136,30 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": ["rag-hybrid-search"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Cohere — Rerank",
+          "type": "official",
+          "url": "https://docs.cohere.com/docs/rerank-overview",
+          "annotation": "The most-used reranker API. The docs explain when reranking helps and how to wire it into a retrieval stack.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+          "author": "Santhanam et al.",
+          "year": 2021,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2112.01488",
+          "annotation": "Late-interaction retrieval. The right reference when 'just a reranker' isn't enough and you want to push the retrieval stack harder.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "rag-chunking",
@@ -58,7 +170,30 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Chunking Strategies for LLM Applications",
+          "author": "Pinecone",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://www.pinecone.io/learn/chunking-strategies/",
+          "annotation": "The pragmatic taxonomy: fixed-size, sentence, recursive, structure-aware. The right first read on a problem most teams underweight.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "LangChain — Text Splitters",
+          "type": "official",
+          "url": "https://python.langchain.com/docs/concepts/text_splitters/",
+          "annotation": "The implementations behind most production RAG splitters. Useful as a 'menu of strategies' reference even if you don't use LangChain.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "rag-document-parsing",
@@ -69,7 +204,28 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Docling — IBM",
+          "type": "repo",
+          "url": "https://github.com/docling-project/docling",
+          "annotation": "An open document-parsing toolkit covering PDFs, Word, HTML, with layout-aware structure. The strongest single open answer in 2026.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Unstructured.io",
+          "type": "repo",
+          "url": "https://github.com/Unstructured-IO/unstructured",
+          "annotation": "The other workhorse. Wider format coverage; pragmatic for messy enterprise corpora.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "rag-query-reformulation",
@@ -80,7 +236,32 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Precise Zero-Shot Dense Retrieval without Relevance Labels (HyDE)",
+          "author": "Gao et al.",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2212.10496",
+          "annotation": "HyDE — generate a hypothetical answer, embed that, search with it. Surprisingly strong on zero-shot retrieval.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models",
+          "author": "Zheng et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2310.06117",
+          "annotation": "Step-back prompting — ask a more abstract question first. The cleanest read on query reformulation by abstraction.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "rag-architecture-patterns",
@@ -91,7 +272,32 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": ["rag-reranking"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
+          "author": "Gao et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2312.10997",
+          "annotation": "The current canonical RAG survey. The Naive / Advanced / Modular taxonomy is the vocabulary the field uses now.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Patterns for Building LLM-based Systems & Products — Section on RAG",
+          "author": "Eugene Yan",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://eugeneyan.com/writing/llm-patterns/",
+          "annotation": "The pragmatic-engineer view of RAG patterns. Pair with the survey for the production-shaped angle.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "rag-advanced-contextual-graph",
@@ -102,7 +308,30 @@
       "position": { "x": 0, "y": 400 },
       "dependsOn": ["rag-architecture-patterns"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Introducing Contextual Retrieval",
+          "author": "Anthropic",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://www.anthropic.com/news/contextual-retrieval",
+          "annotation": "Prepend each chunk with model-generated context before embedding. Simple and a measured ~50% reduction in retrieval failures.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "GraphRAG — Microsoft",
+          "type": "repo",
+          "url": "https://github.com/microsoft/graphrag",
+          "annotation": "Build a knowledge graph from the corpus, then retrieve over it. The right tool when global / connection-spanning queries dominate.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "rag-evaluation",
@@ -113,7 +342,30 @@
       "position": { "x": 320, "y": 400 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "ragas — Evaluation framework for RAG pipelines",
+          "type": "repo",
+          "url": "https://github.com/explodinggradients/ragas",
+          "annotation": "Faithfulness, answer relevance, context precision, context recall. The most-used open RAG-eval toolkit.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Evaluating RAG: A roadmap for retrievers and rerankers",
+          "author": "Pinecone",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://www.pinecone.io/learn/series/vector-databases-in-production-for-busy-engineers/rag-evaluation/",
+          "annotation": "Clear practitioner-level guide. Pair with ragas for the open-source-toolkit angle.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

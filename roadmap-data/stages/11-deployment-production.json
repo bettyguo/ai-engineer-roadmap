@@ -14,7 +14,30 @@
       "position": { "x": 0, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "OpenAI API reference (as a design reference)",
+          "type": "official",
+          "url": "https://platform.openai.com/docs/api-reference",
+          "annotation": "Whatever you think of OpenAI, their API is the de-facto reference shape for LLM endpoints. Read it as a design document.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Designing Web APIs (Resilient, Performant, Versionable)",
+          "author": "Brenda Jin et al.",
+          "year": 2018,
+          "type": "book",
+          "url": "https://www.oreilly.com/library/view/designing-web-apis/9781492026914/",
+          "annotation": "Not LLM-specific but the right foundation. Versioning, idempotency, error semantics — the parts you'll re-do badly if you skip them.",
+          "difficulty": "intermediate",
+          "free": false,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "prod-latency-slos",
@@ -25,7 +48,31 @@
       "position": { "x": 320, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Google SRE Book — Service Level Objectives",
+          "author": "Beyer et al. (Google)",
+          "type": "book",
+          "url": "https://sre.google/sre-book/service-level-objectives/",
+          "annotation": "The canonical SRE chapter on SLOs and error budgets. The framing applies directly to LLM endpoints.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "LLM Inference Performance Engineering: Best Practices",
+          "author": "Databricks Mosaic AI",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices",
+          "annotation": "The latency-budget decomposition specific to LLMs: prefill, decode, network, serialization. Read alongside the SRE chapter.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "prod-caching",
@@ -36,7 +83,38 @@
       "position": { "x": 640, "y": 0 },
       "dependsOn": ["prod-api-design"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Anthropic prompt caching",
+          "type": "official",
+          "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching",
+          "annotation": "Prefix-based provider caching. The single highest-leverage cost lever for repeated-context workloads.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "OpenAI prompt caching",
+          "type": "official",
+          "url": "https://platform.openai.com/docs/guides/prompt-caching",
+          "annotation": "The OpenAI flavor of the same idea. Automatic on long prompts; useful to understand the eligibility rules.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "GPTCache",
+          "type": "repo",
+          "url": "https://github.com/zilliztech/GPTCache",
+          "annotation": "Open-source semantic caching layer. The application-layer answer when prefix-caching doesn't apply.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "prod-rate-limit-fallback",
@@ -47,7 +125,28 @@
       "position": { "x": 960, "y": 0 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "LiteLLM — Fallbacks, retries, timeouts",
+          "type": "official",
+          "url": "https://docs.litellm.ai/docs/proxy/reliability",
+          "annotation": "The canonical reference for the fallback patterns you'll need. The proxy ships them; the docs explain the choices.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Stripe Engineering — Rate limiters",
+          "type": "blog",
+          "url": "https://stripe.com/blog/rate-limiters",
+          "annotation": "The clearest explainer of token-bucket and concurrency limiters. Old but the mechanics haven't moved.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "prod-secrets-access",
@@ -58,7 +157,28 @@
       "position": { "x": 0, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "OWASP API Security Top 10",
+          "type": "official",
+          "url": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+          "annotation": "The vendor-neutral baseline for API security. The broken-object-auth and excessive-data-exposure items show up in LLM services routinely.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Anthropic — API key best practices",
+          "type": "official",
+          "url": "https://docs.anthropic.com/en/api/overview",
+          "annotation": "Vendor-specific guidance but the principles travel: short-lived keys, per-tenant scoping, rotation policy.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "prod-multi-tenant",
@@ -69,7 +189,28 @@
       "position": { "x": 320, "y": 200 },
       "dependsOn": ["prod-rate-limit-fallback"],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "LiteLLM Proxy — Virtual Keys & Teams",
+          "type": "official",
+          "url": "https://docs.litellm.ai/docs/proxy/virtual_keys",
+          "annotation": "The pragmatic multi-tenant pattern for LLM access: virtual keys, per-team budgets, model allow-lists.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "AWS SaaS Lens — Silo, Pool, and Bridge Models",
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/silo-pool-and-bridge-models.html",
+          "annotation": "The canonical silo / pool / bridge taxonomy for SaaS multi-tenancy. Applies to LLM services with minor adjustments.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "prod-mlops-llmops",
@@ -80,7 +221,32 @@
       "position": { "x": 640, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "Designing Machine Learning Systems",
+          "author": "Chip Huyen",
+          "year": 2022,
+          "type": "book",
+          "url": "https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/",
+          "annotation": "The canonical MLOps reference. The chapters on deployment, monitoring, and infrastructure travel directly to LLMOps.",
+          "difficulty": "intermediate",
+          "free": false,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "AI Engineering",
+          "author": "Chip Huyen",
+          "year": 2024,
+          "type": "book",
+          "url": "https://www.oreilly.com/library/view/ai-engineering/9781098166298/",
+          "annotation": "The LLM-specific successor. The chapters on inference, evaluation, and feedback loops are the cleanest treatment of the LLMOps loop.",
+          "difficulty": "intermediate",
+          "free": false,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     },
     {
       "id": "prod-cost-engineering-at-scale",
@@ -91,7 +257,40 @@
       "position": { "x": 960, "y": 200 },
       "dependsOn": [],
       "crossStageDependsOn": [],
-      "resources": []
+      "resources": [
+        {
+          "title": "OpenAI Batch API",
+          "type": "official",
+          "url": "https://platform.openai.com/docs/guides/batch",
+          "annotation": "Asynchronous batch at half the cost. The first big lever for any workload that doesn't need sub-minute latency.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Anthropic Message Batches",
+          "type": "official",
+          "url": "https://docs.anthropic.com/en/docs/build-with-claude/batch-processing",
+          "annotation": "The Anthropic equivalent. Both APIs are the same architectural choice; familiarity with both lets you route by price.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Patterns for Building LLM-based Systems & Products",
+          "author": "Eugene Yan",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://eugeneyan.com/writing/llm-patterns/",
+          "annotation": "Re-read with the cost lens. The caching and small-model-routing sections are the highest-leverage patterns once you're at scale.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }
