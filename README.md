@@ -27,13 +27,25 @@
 AI engineering moves so fast that no single course, blog post, or Twitter
 thread holds the whole picture. The result is the most common anxiety in
 the industry right now: *am I learning the right things? am I about to
-fall behind?* This roadmap is the picture: every stage of the career path,
-every required idea, the best one or two resources for each, kept current
-and link-verified.
+fall behind?* This roadmap is the picture: **12 stages, 106 nodes, 227
+link-verified resources**, every stage of the career path, every required
+idea, the best one or two resources for each, kept current.
 
 It is curated by **one person who is actively working in the field**, not
 crowdsourced into a brand-flavored mush. That single editorial voice is
 the whole point — you should be able to trust the picks.
+
+### Why standalone, vs `roadmap.sh/ai-engineer`?
+
+`roadmap.sh/ai-engineer` is a great page inside a 354k-star platform —
+but it is deliberately scoped to **applied** AI (using pre-trained
+models), not the full career path; it is community-edited within a
+multi-topic brand; it cannot be cited, forked, or branded as a
+standalone reference. This roadmap is the standalone alternative:
+**end-to-end** (math through frontier, not applied-only),
+**single-curator** (one editorial voice, a real name behind the picks),
+and **citable** (CC BY 4.0 + ORCID + a `CITATION.cff`). Different game,
+different win condition.
 
 ## How to use this roadmap
 

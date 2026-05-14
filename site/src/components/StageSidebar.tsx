@@ -10,6 +10,28 @@ interface Props {
 export function StageSidebar({ stages, palette, focusedStageId, onFocus }: Props) {
   return (
     <aside className="hidden lg:flex flex-col w-[240px] shrink-0 border-r border-ink-900/60 bg-ink-950/85 overflow-y-auto">
+      <div className="px-4 py-3 border-b border-ink-900/60 space-y-2">
+        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-100/55">
+          Legend
+        </div>
+        <ul className="space-y-1.5 text-[11px] text-ink-100/85">
+          <li className="flex items-center gap-2">
+            <span className="inline-block w-3 h-3 rounded-sm bg-ink-200/70 shrink-0" aria-hidden />
+            <span><span className="font-medium">core</span> — study this</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-block w-3 h-3 rounded-sm border border-ink-200/70 shrink-0" aria-hidden />
+            <span><span className="font-medium">recommended</span> — if your role touches it</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-block w-3 h-3 rounded-sm border border-dashed border-ink-200/50 shrink-0" aria-hidden />
+            <span><span className="font-medium">optional</span> — depth detour</span>
+          </li>
+        </ul>
+        <p className="text-[11px] text-ink-100/65 leading-snug pt-1">
+          Read top to bottom for the linear path; click any node for resources.
+        </p>
+      </div>
       <div className="px-4 py-3 border-b border-ink-900/60">
         <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-100/55">
           The path

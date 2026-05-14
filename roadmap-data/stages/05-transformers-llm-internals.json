@@ -84,6 +84,18 @@
           "free": true,
           "addedAt": "2026-05-14",
           "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+          "author": "Ainslie et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2305.13245",
+          "annotation": "GQA — the attention variant in every modern open LLM. The MHA-to-MQA-to-GQA interpolation is the central design choice for inference-efficient attention.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
         }
       ]
     },
@@ -324,6 +336,30 @@
           "url": "https://magazine.sebastianraschka.com/p/understanding-large-language-models",
           "annotation": "Raschka's series annotates the Llama / Mistral / Phi / Gemma stacks one design choice at a time. Excellent gloss on the model cards.",
           "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+          "author": "Dao et al.",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2205.14135",
+          "annotation": "The IO-aware exact-attention algorithm that's now standard in every modern LLM. The attention design choice for 2026.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Switch Transformers: Scaling to Trillion Parameter Models",
+          "author": "Fedus, Zoph, Shazeer",
+          "year": 2021,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2101.03961",
+          "annotation": "The single-expert-routing simplification that put MoE in production. The reference behind every modern open MoE model.",
+          "difficulty": "advanced",
           "free": true,
           "addedAt": "2026-05-14",
           "verifiedAt": "2026-05-14"

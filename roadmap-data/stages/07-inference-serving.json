@@ -50,6 +50,17 @@
           "free": true,
           "addedAt": "2026-05-14",
           "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "FlashAttention",
+          "author": "Dao et al.",
+          "type": "repo",
+          "url": "https://github.com/Dao-AILab/flash-attention",
+          "annotation": "The reference implementation. FlashAttention-2 and -3 are the attention kernels that make modern inference KV-cache-bound rather than attention-bound.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
         }
       ]
     },
