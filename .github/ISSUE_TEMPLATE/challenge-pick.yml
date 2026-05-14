@@ -1,0 +1,64 @@
+name: "Challenge a curatorial pick"
+description: "Disagree with a resource the roadmap currently picks. Make the case for a better one."
+title: "[challenge] <node-id>: <short description>"
+labels: ["challenge", "curation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Editorial bias on this roadmap is intentional and visible (every resource
+        has a "why this one" annotation). This template is the right way to
+        argue against a pick. The curator reads every one of these.
+
+        Strong challenges include: a more current resource for a fast-moving
+        topic, a resource that explains the concept better at the stated
+        difficulty, a resource that hasn't link-rotted, or a resource that
+        better matches the node's "done when" criterion.
+
+        Weak challenges include: "I prefer X" with no comparison, or
+        "this is outdated" without naming a replacement.
+  - type: input
+    id: node
+    attributes:
+      label: "Node ID"
+      placeholder: "tx-architecture"
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: "The resource you're challenging (title or URL)"
+    validations:
+      required: true
+  - type: textarea
+    id: critique
+    attributes:
+      label: "Why the current pick is wrong / no longer best"
+      description: "Be specific. What's stale, wrong, harder than necessary, or paywalled?"
+    validations:
+      required: true
+  - type: input
+    id: proposal
+    attributes:
+      label: "Proposed replacement (URL)"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why this replacement is better"
+      description: "Why this resource better serves the node's 'done when' criterion. ≤25 words is fine."
+    validations:
+      required: true
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: "Your relationship to the proposed replacement"
+      description: "Are you the author, an unaffiliated reader, or somewhere in between?"
+      options:
+        - "Unaffiliated reader who found it useful"
+        - "Author of the resource"
+        - "Colleague of the author / from the same lab or company"
+        - "Other"
+    validations:
+      required: true

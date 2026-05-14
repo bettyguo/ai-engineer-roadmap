@@ -91,10 +91,16 @@ These should land in `.github/ISSUE_TEMPLATE/`-tracked issues post-launch so con
 1. **Add a node:** State-space models (Mamba, RWKV) — Stage 5 or 12.
 2. **Add a node:** Multimodal models (CLIP / LLaVA / multimodal MoE) — Stage 12 `frontier-multimodal`.
 3. **Add a node:** Disaggregated inference (prefill/decode-pool separation) — Stage 7 once a major engine ships it stably.
-4. **Enrich `edges.json`:** 3–5 more cross-stage suggestion edges.
+4. ~~**Enrich `edges.json`:** 3–5 more cross-stage suggestion edges.~~ **CLOSED 2026-05-14:** added 5 edges (ml-bias-variance → train-eval, tool-pytorch → train-sft, dl-optimizers → train-pretraining, ml-train-val-test → eval-golden-datasets, tool-gpu-cuda-basics → inf-quantization). edges.json now has 13 cross-stage suggestion edges.
 5. **Add a tooltip / first-interaction hint** in the renderer to make dependency-chip clickability legible.
-6. **Add a "challenge a curatorial pick" issue template** to honor the editorial-transparency posture in `CONTRIBUTING.md`.
-7. **Produce the launch assets:** `assets/diagram-hero.png`, `assets/social-card-1200x630.png`, `site/public/og-card.png`. Spec is in `assets/MAKE_BANNER.md`.
+6. ~~**Add a "challenge a curatorial pick" issue template** to honor the editorial-transparency posture in `CONTRIBUTING.md`.~~ **CLOSED 2026-05-14:** `.github/ISSUE_TEMPLATE/challenge-pick.yml` shipped. CONTRIBUTING.md and CODE_OF_CONDUCT.md both link to it.
+7. **Produce the launch assets:** ~~`assets/diagram-hero.png`~~, ~~`assets/social-card-1200x630.png`~~, `site/public/og-card.png`. **PARTIALLY CLOSED 2026-05-14:** SVG versions of the hero and social card ship (`assets/diagram-hero.svg`, `assets/social-card-1200x630.svg`, `site/public/og-card.svg`); the README now renders cleanly. Still open: rasterize to PNG for OG-card consumers (Twitter / LinkedIn / Slack); recipe in `assets/MAKE_BANNER.md`.
+
+Also shipped in the same enhancement pass (not previously in the backlog but related to launch hygiene):
+
+- `CODE_OF_CONDUCT.md` — Contributor Covenant 2.1 with editorial-disagreement carve-out clarifying the "Challenge a pick" channel.
+- `tools/.linkcheck-ignore` — URL-prefix allowlist for the link-checker, with documented entries for the pre-launch peer-repo URLs and known bot-blockers.
+- CI workflow migration pnpm → npm with verified build (`npm ci && npx tsc --noEmit && npx vite build` all green).
 
 ## Sign-off
 

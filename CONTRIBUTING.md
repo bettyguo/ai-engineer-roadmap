@@ -68,20 +68,22 @@ python tools/linkcheck.py                # check every resource URL
 python tools/build.py                    # generate content/ and site data
 ```
 
-Site (Vite + React; Node 20+ and pnpm):
+Site (Vite + React; Node 20+, npm):
 
 ```
 cd site
-pnpm install
-pnpm dev          # local dev server
-pnpm build        # production build to site/dist
+npm install
+npm run dev       # local dev server (Vite, on http://localhost:5173)
+npm run build     # production build to site/dist
 ```
 
 ## Code of conduct
 
-Be respectful. Disagreement about resources or ordering is the entire
-point of this repo and is welcome; personal attacks aren't. The curator
-has final editorial say on what ships.
+This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
+TL;DR — disagreement about resources or ordering is the entire point of
+this repo and is welcome; the [Challenge a curatorial pick](https://github.com/bettyguo/ai-engineer-roadmap/issues/new?template=challenge-pick.yml)
+issue template is the right channel for it. Personal attacks aren't
+welcome and the curator has final editorial say on what ships.
 
 ## Editorial bias is visible on purpose
 

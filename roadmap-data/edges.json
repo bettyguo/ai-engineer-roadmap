@@ -22,6 +22,11 @@
     { "from": "train-dpo-preference", "to": "frontier-alignment-basics", "kind": "feeds" },
     { "from": "inf-prompt-engineering-craft", "to": "agent-tool-use", "kind": "feeds" },
     { "from": "agent-evaluation", "to": "eval-continuous-production", "kind": "feeds" },
-    { "from": "rag-evaluation", "to": "eval-llm-as-judge", "kind": "feeds" }
+    { "from": "rag-evaluation", "to": "eval-llm-as-judge", "kind": "feeds" },
+    { "from": "ml-bias-variance-regularization", "to": "train-eval-during-training", "kind": "feeds" },
+    { "from": "tool-pytorch", "to": "train-sft", "kind": "feeds" },
+    { "from": "dl-optimizers", "to": "train-pretraining-pipeline", "kind": "feeds" },
+    { "from": "ml-train-val-test", "to": "eval-golden-datasets", "kind": "feeds" },
+    { "from": "tool-gpu-cuda-basics", "to": "inf-quantization", "kind": "feeds" }
   ]
 }
