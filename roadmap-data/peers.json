@@ -1,0 +1,29 @@
+{
+  "description": "The constellation of standalone-equal peer roadmaps and companion artifacts in the bettyguo author profile. Each entry is a separate canonical repository that this roadmap points to sideways — not subordinated, not nested. All four together form the AI-engineer canonical set.",
+  "peers": [
+    {
+      "id": "harness-engineer-roadmap",
+      "title": "Harness Engineer Roadmap",
+      "role": "depth-peer",
+      "blurb": "The depth roadmap for the Agents & Harnesses stage of this roadmap. Where this repo treats agents and harnesses as one summarized stage of the AI-engineer career path, that repo dives all the way down on the harness-engineering craft.",
+      "url": "https://github.com/bettyguo/harness-engineer-roadmap",
+      "openWhen": "You want to specialize in building agent harnesses / scaffolds."
+    },
+    {
+      "id": "llm-interview-prep",
+      "title": "LLM Interview Prep",
+      "role": "interview-peer",
+      "blurb": "Interview preparation tailored to AI engineer / LLM engineer / ML engineer roles. Concepts, system-design prompts, behavioral patterns, calibration on what 2026 interviews actually ask.",
+      "url": "https://github.com/bettyguo/llm-interview-prep",
+      "openWhen": "You are about to interview for an AI engineer role."
+    },
+    {
+      "id": "build-your-own-ai",
+      "title": "Build Your Own AI",
+      "role": "hands-on-peer",
+      "blurb": "A hands-on 'build it yourself' companion. Implement a transformer from scratch, a RAG pipeline from scratch, an agent harness from scratch — small, self-contained projects that lock the concepts in.",
+      "url": "https://github.com/bettyguo/build-your-own-ai",
+      "openWhen": "You learn best by building."
+    }
+  ]
+}

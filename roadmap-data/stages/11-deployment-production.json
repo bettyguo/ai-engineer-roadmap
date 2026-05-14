@@ -1,0 +1,97 @@
+{
+  "id": "11-deployment-production",
+  "stageNumber": 11,
+  "title": "Deployment & Production",
+  "blurb": "The unglamorous part: APIs, latency budgets, caching, rate limits, secrets, multi-tenancy, cost engineering, the LLMOps stack. This is where AI engineers earn their keep.",
+  "color": "#D946EF",
+  "nodes": [
+    {
+      "id": "prod-api-design",
+      "label": "API design for LLM products",
+      "status": "core",
+      "description": "Streaming vs batch endpoints, idempotency, request schemas, error semantics, versioning. The user-facing contract that has to absorb LLM weirdness.",
+      "doneWhen": "You can design a streaming LLM endpoint contract and defend the error-semantics choices.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "prod-latency-slos",
+      "label": "Latency budgets & SLOs",
+      "status": "core",
+      "description": "p50/p95/p99 latency targets, end-to-end budgets, time-to-first-token vs time-to-last-token, SLO/SLA distinctions, error budgets.",
+      "doneWhen": "You can set realistic latency SLOs for an LLM feature and decompose them by stage.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "prod-caching",
+      "label": "Caching strategies (prompt cache, semantic cache)",
+      "status": "core",
+      "description": "Provider-native prompt caching (Anthropic, OpenAI), semantic caching at the application layer, cache invalidation, the safety question of caching personalized output.",
+      "doneWhen": "You can pick between prompt caching and semantic caching for a feature and quantify the hit rate.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["prod-api-design"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "prod-rate-limit-fallback",
+      "label": "Rate limiting & fallback",
+      "status": "core",
+      "description": "Token-bucket and concurrency limits, model-failover (primary → secondary), graceful degradation, queueing under load.",
+      "doneWhen": "You can design a fallback policy that survives a primary-model outage without users noticing.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "prod-secrets-access",
+      "label": "Secrets, keys & access control",
+      "status": "core",
+      "description": "API key handling, per-tenant keys, BYOK, signing, the on-call horror story of leaked credentials in logs.",
+      "doneWhen": "You can audit an LLM service for credential handling and find at least one weakness.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "prod-multi-tenant",
+      "label": "Multi-tenant patterns",
+      "status": "recommended",
+      "description": "Per-tenant rate limits, per-tenant model routing, per-tenant evals and cost, isolation. The B2B reality of every AI product company.",
+      "doneWhen": "You can describe how a multi-tenant LLM platform isolates noisy-neighbor workloads.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": ["prod-rate-limit-fallback"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "prod-mlops-llmops",
+      "label": "MLOps / LLMOps",
+      "status": "recommended",
+      "description": "Model registries, prompt registries, dataset versioning, eval-as-CI, blue/green model swaps, the standard ops loop for an LLM product team.",
+      "doneWhen": "You can describe a basic LLMOps pipeline and identify the difference from classical MLOps.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "prod-cost-engineering-at-scale",
+      "label": "Cost engineering at scale",
+      "status": "core",
+      "description": "Model routing, distillation in production, batch jobs, off-peak inference, the tradeoff curve between cost and quality at scale.",
+      "doneWhen": "You can take a $10k/month LLM bill and design a plan to cut it 50% without losing user-visible quality.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

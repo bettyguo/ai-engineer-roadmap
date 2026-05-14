@@ -1,0 +1,80 @@
+name: "Suggest a resource"
+description: "Suggest a new resource for an existing node (or a swap into a full node)."
+title: "[resource] <node-id>: <short description>"
+labels: ["resource", "triage"]
+body:
+  - type: input
+    id: node
+    attributes:
+      label: "Node ID"
+      description: "The node this resource belongs on (e.g. `tx-architecture`)."
+      placeholder: "tx-architecture"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: "Resource URL"
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: "Title"
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: "Author"
+  - type: input
+    id: year
+    attributes:
+      label: "Year"
+  - type: dropdown
+    id: type
+    attributes:
+      label: "Type"
+      options:
+        - paper
+        - course
+        - repo
+        - book
+        - video
+        - blog
+        - tool
+        - official
+        - interactive
+    validations:
+      required: true
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: "Difficulty"
+      options:
+        - intro
+        - intermediate
+        - advanced
+    validations:
+      required: true
+  - type: dropdown
+    id: free
+    attributes:
+      label: "Free?"
+      options:
+        - "true"
+        - "false"
+    validations:
+      required: true
+  - type: textarea
+    id: annotation
+    attributes:
+      label: "Annotation"
+      description: "Why this resource? In ≤25 words."
+    validations:
+      required: true
+  - type: textarea
+    id: displaces
+    attributes:
+      label: "If the node is at the 8-resource cap, what should be dropped?"

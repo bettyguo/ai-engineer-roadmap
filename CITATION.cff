@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "AI Engineer Roadmap"
+message: "If you reference this roadmap in academic, educational, or professional work, please cite it as follows."
+type: dataset
+authors:
+  - given-names: "Dongxin"
+    family-names: "Guo"
+    alias: "Betty Guo"
+    name-suffix: "郭东欣"
+    affiliation: "Department of Computer Science, University of Hong Kong"
+    orcid: "https://orcid.org/0009-0000-2388-1072"
+repository-code: "https://github.com/bettyguo/ai-engineer-roadmap"
+url: "https://bettyguo.github.io/ai-engineer-roadmap/"
+abstract: >
+  An interactive, single-curator roadmap for the AI-engineer career path,
+  covering the field end-to-end from mathematical prerequisites to the
+  research frontier, with curated and link-verified resources on every
+  node.
+keywords:
+  - "AI engineering"
+  - "machine learning"
+  - "large language models"
+  - "career roadmap"
+  - "curriculum"
+  - "RAG"
+  - "agents"
+  - "MLOps"
+license: "CC-BY-4.0"
+license-url: "https://creativecommons.org/licenses/by/4.0/"
+date-released: "2026-05-14"
+version: "0.1.0"

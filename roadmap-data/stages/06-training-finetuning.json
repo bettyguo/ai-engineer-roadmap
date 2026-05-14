@@ -1,0 +1,119 @@
+{
+  "id": "06-training-finetuning",
+  "stageNumber": 6,
+  "title": "Training & Fine-tuning",
+  "blurb": "How a base model becomes a useful product. Pretraining at a glance, then the fine-tuning techniques that actually fit on a single engineer's GPU budget: SFT, instruction tuning, RLHF, DPO, LoRA, distillation.",
+  "color": "#EAB308",
+  "nodes": [
+    {
+      "id": "train-pretraining-pipeline",
+      "label": "The pretraining pipeline (overview)",
+      "status": "recommended",
+      "description": "Data, tokenization, mixed-precision training, optimizer state, checkpointing, the scale. You will not pretrain a frontier model — but you should understand the pipeline you're inheriting.",
+      "doneWhen": "You can describe the end-to-end pretraining pipeline at a level that lets you read a model card.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "train-data-curation",
+      "label": "Data curation",
+      "status": "core",
+      "description": "Filtering, deduplication, quality scoring, mixing ratios, contamination. In 2026, data work is the highest-leverage thing most fine-tuners do.",
+      "doneWhen": "You can design a small SFT dataset and defend each filtering and mixing choice.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "train-sft",
+      "label": "Supervised fine-tuning (SFT)",
+      "status": "core",
+      "description": "Take a base model, train it on prompt-response pairs. The bread and butter of most adaptation work today.",
+      "doneWhen": "You can run an SFT pass on a small open-weights model and evaluate the result.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["train-data-curation"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "train-instruction-tuning",
+      "label": "Instruction tuning",
+      "status": "core",
+      "description": "SFT with instruction-following data, multi-task and multi-format. Why every base model needs this before it's product-shaped.",
+      "doneWhen": "You can distinguish a base model from an instruction-tuned one by their outputs.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": ["train-sft"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "train-rlhf",
+      "label": "RLHF",
+      "status": "recommended",
+      "description": "Reward model + PPO, the InstructGPT recipe. Still the conceptual reference even where it's been replaced by simpler methods.",
+      "doneWhen": "You can describe the RLHF loop end-to-end and identify its three training stages.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": ["train-instruction-tuning"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "train-dpo-preference",
+      "label": "DPO & direct preference methods",
+      "status": "core",
+      "description": "Direct Preference Optimization and the family of reward-model-free preference methods. The pragmatic default for preference learning in 2026.",
+      "doneWhen": "You can explain why DPO simplified preference training versus RLHF and where it falls short.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": ["train-instruction-tuning"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "train-lora-qlora-adapters",
+      "label": "LoRA / QLoRA / adapters",
+      "status": "core",
+      "description": "Parameter-efficient fine-tuning. Why you can fine-tune a 7B+ model on a single consumer GPU and why low-rank decomposition works.",
+      "doneWhen": "You can fine-tune an open-weights model with LoRA on a single GPU and explain the rank/alpha trade-offs.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": ["train-sft"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "train-distillation-compression",
+      "label": "Distillation & model compression",
+      "status": "recommended",
+      "description": "Teacher-student training, distillation from a larger model into a smaller one, why this is the only practical path to cheap-fast specialized models.",
+      "doneWhen": "You can describe a distillation setup and identify when it's the right tool versus SFT.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "train-eval-during-training",
+      "label": "Evaluation during training",
+      "status": "core",
+      "description": "Loss is not evaluation. Train-time evals: holdout sets, regression tests, mid-run sanity checks, the eval suite you need before you fine-tune anything serious.",
+      "doneWhen": "You set up a meaningful eval suite before kicking off your first fine-tuning run, not after.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "train-distributed-infra",
+      "label": "Distributed training infrastructure",
+      "status": "recommended",
+      "description": "Data parallel, tensor parallel, pipeline parallel, ZeRO / FSDP. How a frontier model trains across thousands of GPUs.",
+      "doneWhen": "You can describe FSDP's sharding strategy and explain when tensor parallelism is required.",
+      "position": { "x": 320, "y": 400 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bettyguo/ai-engineer-roadmap/roadmap-data/schema/stage.schema.json",
+  "title": "Stage",
+  "description": "A stage cluster of nodes in the roadmap.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "stageNumber", "title", "blurb", "color", "nodes"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^\\d{2}-[a-z0-9-]+$" },
+    "stageNumber": { "type": "integer", "minimum": 1, "maximum": 99 },
+    "title": { "type": "string", "minLength": 2 },
+    "blurb": { "type": "string", "minLength": 10 },
+    "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "node.schema.json" }
+    },
+    "sidewaysLinks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["to", "url", "label", "blurb"],
+        "properties": {
+          "to": { "type": "string" },
+          "url": { "type": "string", "format": "uri", "pattern": "^https?://" },
+          "label": { "type": "string" },
+          "blurb": { "type": "string" }
+        }
+      }
+    }
+  }
+}

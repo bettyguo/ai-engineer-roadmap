@@ -1,0 +1,97 @@
+{
+  "id": "10-evaluation-observability",
+  "stageNumber": 10,
+  "title": "Evaluation & Observability",
+  "blurb": "How you know your LLM product actually works — and how you keep knowing once real users hit it. Eval is a separate craft from training and serving; in 2026 it's a hireable specialty.",
+  "color": "#EC4899",
+  "nodes": [
+    {
+      "id": "eval-task-benchmarks",
+      "label": "Task evaluations & public benchmarks",
+      "status": "core",
+      "description": "MMLU, GSM8K, HumanEval, SWE-bench, MMMU, the rest. What each measures, where it's saturated, how to read a benchmark table without being fooled.",
+      "doneWhen": "You can read a model card's benchmark table and call out at least two ways it might mislead.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": ["ml-evaluation-metrics"],
+      "resources": []
+    },
+    {
+      "id": "eval-llm-as-judge",
+      "label": "LLM-as-judge",
+      "status": "core",
+      "description": "Using a model to grade another model's outputs. Position bias, length bias, calibration, pairwise vs pointwise. How to make it actually correlate with humans.",
+      "doneWhen": "You can set up an LLM-judge eval, measure its agreement with humans, and explain its biases.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "eval-golden-datasets",
+      "label": "Golden datasets & rubrics",
+      "status": "core",
+      "description": "Building a small, high-quality eval set that catches regressions. Rubric design, inter-annotator agreement, the temptation to use the test set as a training set.",
+      "doneWhen": "You can build a 100-example golden eval set with rubric scoring and use it to detect a deliberate regression.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "eval-ab-testing",
+      "label": "A/B testing for LLM products",
+      "status": "recommended",
+      "description": "Online evaluation: random assignment, novelty effects, what to log, why offline-eval wins don't always translate.",
+      "doneWhen": "You can design an A/B test for a prompt change and pick the right success metric.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "eval-tracing-observability",
+      "label": "Tracing & observability (Langfuse, Phoenix, etc.)",
+      "status": "core",
+      "description": "Per-request traces, prompt/response logging, latency and cost telemetry, OpenTelemetry conventions for LLM apps.",
+      "doneWhen": "You can debug a failing LLM request by reading its trace, not by re-running it.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "eval-harnesses",
+      "label": "Eval harnesses",
+      "status": "recommended",
+      "description": "lm-evaluation-harness, HELM, Inspect, simple-evals. The standard harnesses for running benchmarks reproducibly.",
+      "doneWhen": "You can run a standard eval harness on an open-weights model and reproduce a reported score.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": ["eval-task-benchmarks"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "eval-cost-monitoring",
+      "label": "Cost monitoring",
+      "status": "recommended",
+      "description": "Per-feature cost dashboards, per-tenant attribution, tokens-per-request alarms, the cost regression that nobody notices until the bill arrives.",
+      "doneWhen": "You can produce a per-feature cost breakdown of an LLM product on demand.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": ["eval-tracing-observability"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "eval-continuous-production",
+      "label": "Continuous evaluation in production",
+      "status": "core",
+      "description": "Sampling live traffic, drift detection, human review queues, slice-by-slice quality dashboards. Eval as a continuous loop, not a launch gate.",
+      "doneWhen": "You have a production eval loop that catches a quality regression within a day of it shipping.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": ["eval-tracing-observability"],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bettyguo/ai-engineer-roadmap/roadmap-data/schema/node.schema.json",
+  "title": "Node",
+  "description": "A single roadmap node belonging to a stage.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "label",
+    "status",
+    "description",
+    "doneWhen",
+    "position",
+    "dependsOn",
+    "crossStageDependsOn",
+    "resources"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$", "minLength": 2 },
+    "label": { "type": "string", "minLength": 2 },
+    "status": { "enum": ["core", "recommended", "optional"] },
+    "description": { "type": "string", "minLength": 20 },
+    "doneWhen": { "type": "string", "minLength": 6 },
+    "position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" }
+      }
+    },
+    "dependsOn": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "uniqueItems": true
+    },
+    "crossStageDependsOn": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "uniqueItems": true
+    },
+    "resources": {
+      "type": "array",
+      "maxItems": 8,
+      "items": { "$ref": "resource.schema.json" }
+    }
+  }
+}

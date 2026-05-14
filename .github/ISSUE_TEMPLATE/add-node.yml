@@ -1,0 +1,63 @@
+name: "Propose a new node"
+description: "The roadmap is missing something. Pitch the curator on adding a new node."
+title: "[node] Add: <proposed label>"
+labels: ["node", "triage"]
+body:
+  - type: input
+    id: label
+    attributes:
+      label: "Proposed node label"
+      placeholder: "e.g. Mixture-of-Experts"
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: "Stage"
+      options:
+        - "01-prerequisites-math"
+        - "02-programming-tooling"
+        - "03-ml-fundamentals"
+        - "04-dl-fundamentals"
+        - "05-transformers-llm-internals"
+        - "06-training-finetuning"
+        - "07-inference-serving"
+        - "08-retrieval-rag"
+        - "09-agents-harnesses"
+        - "10-evaluation-observability"
+        - "11-deployment-production"
+        - "12-safety-alignment-frontier"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Rationale"
+      description: "Why does this belong in the roadmap? Why now? What would a reader miss without it?"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Proposed description"
+      description: "A one-paragraph description (≥20 chars)."
+    validations:
+      required: true
+  - type: textarea
+    id: doneWhen
+    attributes:
+      label: "Proposed 'done when' criterion"
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: "1–3 candidate resources"
+      description: "Title — URL — annotation, one per line. The curator will pick the best for the initial node."
+    validations:
+      required: true
+  - type: input
+    id: dependsOn
+    attributes:
+      label: "Depends on (other node ids in the same stage)"
+      placeholder: "tx-architecture, tx-self-attention"

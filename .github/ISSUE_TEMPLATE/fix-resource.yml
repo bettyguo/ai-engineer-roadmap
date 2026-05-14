@@ -1,0 +1,30 @@
+name: "Fix a resource (broken link, wrong author, wrong year)"
+description: "An existing resource is broken or wrong."
+title: "[fix] <node-id>: <short description>"
+labels: ["fix", "linkcheck"]
+body:
+  - type: input
+    id: node
+    attributes:
+      label: "Node ID"
+      placeholder: "tx-architecture"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: "Resource URL (the one that's broken or wrong)"
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What's wrong"
+      description: "404? Wrong author? Wrong year? Stale content? Paywalled now?"
+    validations:
+      required: true
+  - type: input
+    id: replacement
+    attributes:
+      label: "Suggested replacement URL (optional)"

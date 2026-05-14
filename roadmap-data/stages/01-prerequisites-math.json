@@ -1,0 +1,97 @@
+{
+  "id": "01-prerequisites-math",
+  "stageNumber": 1,
+  "title": "Prerequisites & Math",
+  "blurb": "The math you actually need to understand AI engineering. Enough to read papers, enough to debug models — and a meta-node on how much is enough so you don't get stuck here.",
+  "color": "#6366F1",
+  "nodes": [
+    {
+      "id": "math-linear-algebra",
+      "label": "Linear algebra",
+      "status": "core",
+      "description": "Vectors, matrices, the four fundamental subspaces, eigenvalues, SVD, matrix decompositions. The mental model behind every weight matrix, embedding, and attention computation in modern AI.",
+      "doneWhen": "You can describe what an SVD does and why low-rank decompositions matter for LoRA and PCA.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "math-calculus",
+      "label": "Calculus (derivatives & gradients)",
+      "status": "core",
+      "description": "Derivatives, partial derivatives, gradients, the chain rule, Jacobians. The chain rule is the engine of backpropagation; you should be able to derive it on a whiteboard.",
+      "doneWhen": "You can hand-derive the gradient of a simple two-layer network's loss with respect to its weights.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "math-probability-statistics",
+      "label": "Probability & statistics",
+      "status": "core",
+      "description": "Random variables, distributions, expectation, variance, conditional probability, Bayes' rule, MLE, hypothesis testing, the basics of estimators. The language of every ML loss function and every evaluation report.",
+      "doneWhen": "You can read a results table with confidence intervals and explain what the numbers mean.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "math-optimization",
+      "label": "Optimization",
+      "status": "core",
+      "description": "Convex vs non-convex, gradient descent variants, line search, second-order intuition (Newton, quasi-Newton), why deep learning's loss landscape is weird. The training-time view of every model.",
+      "doneWhen": "You can explain why SGD with momentum often beats plain gradient descent and where Adam fails.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": ["math-calculus"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "math-information-theory",
+      "label": "Information theory basics",
+      "status": "recommended",
+      "description": "Entropy, cross-entropy, KL divergence, mutual information. The currency of every loss function in modern AI and the basis of compression-flavored arguments about learning.",
+      "doneWhen": "You can derive cross-entropy loss from KL divergence and explain why it's the standard classification objective.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": ["math-probability-statistics"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "math-numerical-floating-point",
+      "label": "Numerical methods & floating point",
+      "status": "recommended",
+      "description": "Floating-point representations (FP32, FP16, BF16, FP8), numerical stability, log-sum-exp, gradient explosion, mixed precision. What actually happens when a model trains on a GPU.",
+      "doneWhen": "You can explain why softmax is computed via log-sum-exp and what BF16 trades off vs FP16.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "math-discrete",
+      "label": "Discrete math (graphs & combinatorics)",
+      "status": "optional",
+      "description": "Graphs, trees, combinatorics, basic algorithms — the CS-fundamentals layer that's useful for tokenization, retrieval, and the algorithmic side of AI systems. Skip if your CS background already covers it.",
+      "doneWhen": "You're comfortable thinking about retrieval, search, and graph-flavored algorithms.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "math-how-much-is-enough",
+      "label": "How much math is enough?",
+      "status": "core",
+      "description": "A meta-node addressing the most common anxiety: 'do I need to master measure theory before I touch a transformer?' Short answer: no. Be able to read papers and debug models; you don't need to prove convergence theorems.",
+      "doneWhen": "You stop deferring AI work because you 'don't know enough math' and start the next stage.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

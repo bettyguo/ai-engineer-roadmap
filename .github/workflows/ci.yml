@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-data:
+    name: Validate data model
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate
+        run: python tools/validate_data.py
+
+  linkcheck:
+    name: Link check
+    runs-on: ubuntu-latest
+    needs: validate-data
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Link check (only-changed on PR, full on push)
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            python tools/linkcheck.py --only-changed
+          else
+            python tools/linkcheck.py
+          fi
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linkcheck-report
+          path: tools/_linkcheck_report.md
+
+  build-site:
+    name: Build site
+    runs-on: ubuntu-latest
+    needs: validate-data
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Generate site data
+        run: python tools/build.py
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+          cache-dependency-path: site/pnpm-lock.yaml
+      - name: Install
+        working-directory: site
+        run: pnpm install --frozen-lockfile
+      - name: Type-check
+        working-directory: site
+        run: pnpm tsc --noEmit
+      - name: Build
+        working-directory: site
+        run: pnpm build
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: site/dist

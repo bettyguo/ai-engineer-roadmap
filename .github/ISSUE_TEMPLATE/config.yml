@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Read CONTRIBUTING.md first"
+    url: "https://github.com/bettyguo/ai-engineer-roadmap/blob/main/CONTRIBUTING.md"
+    about: "The fastest path to a merged PR is to read the rules first."

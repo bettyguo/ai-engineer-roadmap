@@ -1,0 +1,27 @@
+{
+  "description": "Cross-stage dependency edges. Within-stage dependencies live in each node's `dependsOn` field. Cross-stage edges are listed here so the renderer can draw them as dotted suggestion-edges without cluttering the source-of-truth stage files. Edges here are advisory — they tell a reader 'this concept feeds that one across stages', not 'you cannot proceed without this'.",
+  "stageOrder": [
+    "01-prerequisites-math",
+    "02-programming-tooling",
+    "03-ml-fundamentals",
+    "04-dl-fundamentals",
+    "05-transformers-llm-internals",
+    "06-training-finetuning",
+    "07-inference-serving",
+    "08-retrieval-rag",
+    "09-agents-harnesses",
+    "10-evaluation-observability",
+    "11-deployment-production",
+    "12-safety-alignment-frontier"
+  ],
+  "crossStageEdges": [
+    { "from": "dl-embeddings-representations", "to": "rag-embeddings", "kind": "feeds" },
+    { "from": "dl-attention-history", "to": "tx-self-attention", "kind": "feeds" },
+    { "from": "ml-evaluation-metrics", "to": "eval-task-benchmarks", "kind": "feeds" },
+    { "from": "tx-model-anatomy", "to": "inf-loop-kv-cache", "kind": "feeds" },
+    { "from": "train-dpo-preference", "to": "frontier-alignment-basics", "kind": "feeds" },
+    { "from": "inf-prompt-engineering-craft", "to": "agent-tool-use", "kind": "feeds" },
+    { "from": "agent-evaluation", "to": "eval-continuous-production", "kind": "feeds" },
+    { "from": "rag-evaluation", "to": "eval-llm-as-judge", "kind": "feeds" }
+  ]
+}

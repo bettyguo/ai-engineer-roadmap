@@ -1,0 +1,31 @@
+name: "Bug (site, tooling, or build)"
+description: "Something on the site, in CI, or in the tooling is broken."
+title: "[bug] <short description>"
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Area"
+      options:
+        - "site (interactive diagram, resource panel, etc.)"
+        - "tooling (validate_data.py / linkcheck.py / build.py)"
+        - "CI (GitHub Actions workflows)"
+        - "data (a JSON file doesn't validate)"
+        - "other"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: "What happened"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "What should happen"
+  - type: textarea
+    id: repro
+    attributes:
+      label: "Steps to reproduce"

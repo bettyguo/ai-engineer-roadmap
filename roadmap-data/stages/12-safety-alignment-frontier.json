@@ -1,0 +1,97 @@
+{
+  "id": "12-safety-alignment-frontier",
+  "stageNumber": 12,
+  "title": "Safety, Alignment & the Research Frontier",
+  "blurb": "What's at the moving edge of AI engineering in 2026. Alignment, attacks, interpretability, reasoning models, long context, the open research problems — and the career & community node that closes the roadmap.",
+  "color": "#A855F7",
+  "nodes": [
+    {
+      "id": "frontier-alignment-basics",
+      "label": "Alignment basics",
+      "status": "core",
+      "description": "What 'alignment' means in practice, the helpful/harmless/honest framing, refusal training, the gap between training-time and deployment-time alignment.",
+      "doneWhen": "You can explain why an aligned model can still be misused and where alignment training breaks.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": ["train-dpo-preference"],
+      "resources": []
+    },
+    {
+      "id": "frontier-jailbreaks-prompt-injection",
+      "label": "Jailbreaks & prompt injection",
+      "status": "core",
+      "description": "Direct jailbreaks, indirect (data-driven) prompt injection, exfiltration via tool outputs, the OWASP-for-LLM threat model. The attack surface every AI engineer should know.",
+      "doneWhen": "You can list five jailbreak / injection vectors and the production mitigations for each.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": ["frontier-alignment-basics"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "frontier-red-teaming",
+      "label": "Red-teaming",
+      "status": "recommended",
+      "description": "Structured red-teaming of LLM products, automated red-teaming, the pre-launch eval playbook. What 'security review' means for a model.",
+      "doneWhen": "You can plan a structured red-team exercise for an LLM product launch.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["frontier-jailbreaks-prompt-injection"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "frontier-mech-interp",
+      "label": "Mechanistic interpretability",
+      "status": "recommended",
+      "description": "Probing inside the model: features, circuits, sparse autoencoders, induction heads. Where the field is trying to make 'understanding a model' a real thing.",
+      "doneWhen": "You can describe what an SAE feature is and why mech-interp matters for safety.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "frontier-reasoning-models",
+      "label": "Reasoning models (o-style)",
+      "status": "core",
+      "description": "Test-time compute, chain-of-thought as a training target, the OpenAI o-series and the open replications. The newest capability paradigm and how to deploy it.",
+      "doneWhen": "You can explain why a reasoning model trades latency for accuracy and when that trade is worth it.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "frontier-long-context",
+      "label": "Long context techniques",
+      "status": "recommended",
+      "description": "Sliding window attention, position interpolation, YaRN, ring attention, the 1M-context frontier. Why long context isn't just 'more memory'.",
+      "doneWhen": "You can describe one technique that extends context length and what it costs.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "frontier-open-research",
+      "label": "Open research areas",
+      "status": "recommended",
+      "description": "World models, embodied agents, continual learning, robust generalization, alignment science. The active frontiers that may reshape engineering practice next.",
+      "doneWhen": "You can name three open research problems and explain why they matter to engineering.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "frontier-career-community",
+      "label": "Career, community & staying current",
+      "status": "core",
+      "description": "How to keep up (papers, newsletters, conferences), how to contribute, how to interview. Peers: llm-interview-prep for interview preparation; build-your-own-ai for hands-on practice.",
+      "doneWhen": "You have a sustainable monthly routine for staying current — and you've contributed once.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

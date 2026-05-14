@@ -1,0 +1,119 @@
+{
+  "id": "07-inference-serving",
+  "stageNumber": 7,
+  "title": "Inference & Serving",
+  "blurb": "From a trained model to a useful product: how inference actually runs on a GPU, how to make it fast and cheap, how to call APIs, and the craft of writing the prompts that drive it.",
+  "color": "#F59E0B",
+  "nodes": [
+    {
+      "id": "inf-loop-kv-cache",
+      "label": "The inference loop & KV cache",
+      "status": "core",
+      "description": "Prefill vs decode, what the KV cache stores, why prefill is FLOP-bound and decode is memory-bound. The mental model behind every serving choice.",
+      "doneWhen": "You can explain why an LLM's first token is slower than the rest and why KV cache size dominates memory at long context.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": ["tx-model-anatomy"],
+      "resources": []
+    },
+    {
+      "id": "inf-quantization",
+      "label": "Quantization (8-bit, 4-bit, GGUF, AWQ)",
+      "status": "core",
+      "description": "Why a 4-bit model fits in a quarter of the VRAM and still works. INT8, NF4, AWQ, GGUF formats; what each loses.",
+      "doneWhen": "You can pick a quantization scheme for a deployment target and predict its quality cost.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": ["inf-loop-kv-cache"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "inf-batching",
+      "label": "Batching strategies (continuous batching)",
+      "status": "recommended",
+      "description": "Static vs dynamic vs continuous batching. Why continuous batching is the single biggest throughput win in LLM serving.",
+      "doneWhen": "You can describe continuous batching and explain why vLLM and TGI default to it.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["inf-loop-kv-cache"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "inf-speculative-decoding",
+      "label": "Speculative decoding",
+      "status": "recommended",
+      "description": "A small draft model proposes, a big target model verifies. The trick that gives most modern serving stacks their decode-time speedup.",
+      "doneWhen": "You can explain how speculative decoding preserves the target model's output distribution while running faster.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": ["inf-loop-kv-cache"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "inf-latency-throughput",
+      "label": "Latency vs throughput trade-offs",
+      "status": "core",
+      "description": "Time-to-first-token, tokens-per-second, requests-per-second, the trade-off between user latency and aggregate throughput. The lens behind every serving decision.",
+      "doneWhen": "You can pick batching, model size, and precision to hit a stated latency-and-cost target.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": ["inf-batching"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "inf-engines-vllm-tgi-sglang",
+      "label": "Serving engines (vLLM, TGI, SGLang, llama.cpp)",
+      "status": "core",
+      "description": "The open-source LLM serving stack. Each engine's sweet spot, when to reach for which, what they share in common.",
+      "doneWhen": "You can pick the right serving engine for a deployment scenario and justify it.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": ["inf-loop-kv-cache"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "inf-model-apis",
+      "label": "Model APIs (closed and open)",
+      "status": "core",
+      "description": "Anthropic, OpenAI, Google, the open-model APIs (Together, Groq, Fireworks). Streaming, tool use, structured output, caching, rate limits.",
+      "doneWhen": "You're fluent in at least one closed-model API and one open-model API.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "inf-structured-output",
+      "label": "Structured output & constrained decoding",
+      "status": "core",
+      "description": "JSON-mode, function-calling schemas, grammar-constrained decoding, outlines / lm-format-enforcer. How you make an LLM produce a string your program can parse.",
+      "doneWhen": "You can get reliable JSON out of a model and explain why constrained decoding outperforms 'please reply in JSON'.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "inf-prompt-engineering-craft",
+      "label": "Prompt engineering as a craft",
+      "status": "core",
+      "description": "System prompts, few-shot, chain-of-thought, when to specify formats, when to give examples, when to break problems down. Treat it as engineering, not folklore.",
+      "doneWhen": "You can systematically iterate on a prompt with measurements, not vibes.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "inf-cost-engineering",
+      "label": "Inference cost engineering",
+      "status": "core",
+      "description": "Prompt caching, semantic caching, model routing, smaller-model fallbacks, batching at the application layer. The difference between a system that scales economically and one that doesn't.",
+      "doneWhen": "You can break down the dollar cost of an LLM feature and find the top three places to cut it.",
+      "position": { "x": 320, "y": 400 },
+      "dependsOn": ["inf-model-apis"],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

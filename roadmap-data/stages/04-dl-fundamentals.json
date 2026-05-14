@@ -1,0 +1,119 @@
+{
+  "id": "04-dl-fundamentals",
+  "stageNumber": 4,
+  "title": "Deep Learning Fundamentals",
+  "blurb": "The mechanics of neural networks before transformers entered the building. Backprop, optimization, the architectures that came before — and the early generative ideas that still echo in 2026.",
+  "color": "#10B981",
+  "nodes": [
+    {
+      "id": "dl-neural-net-computational-graph",
+      "label": "Neural nets as computational graphs",
+      "status": "core",
+      "description": "A neural network is a graph of differentiable operations. This mental model — not 'neurons' — is what carries you all the way to transformers.",
+      "doneWhen": "You can draw the forward and backward computational graph of a 2-layer MLP and a 1-D conv.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "dl-backprop",
+      "label": "Backpropagation",
+      "status": "core",
+      "description": "The chain rule applied at scale. Implement it once by hand on a tiny example so it stops feeling like magic.",
+      "doneWhen": "You can implement a 2-layer net's forward and backward pass from scratch in NumPy.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": ["dl-neural-net-computational-graph"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "dl-optimizers",
+      "label": "Optimizers (SGD, momentum, Adam) & lr schedules",
+      "status": "core",
+      "description": "Plain SGD, momentum, Nesterov, Adam, AdamW, learning-rate schedules (cosine, warmup, linear decay). The choices that decide whether a model trains at all.",
+      "doneWhen": "You can pick an optimizer and lr schedule for a new model and defend the choice.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["dl-backprop"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "dl-init-normalization",
+      "label": "Initialization & normalization",
+      "status": "core",
+      "description": "Xavier / He initialization, batch norm, layer norm, RMS norm. Why a model that won't train is usually a normalization-or-init problem.",
+      "doneWhen": "You can explain why layer norm replaced batch norm in transformers.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": ["dl-neural-net-computational-graph"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "dl-activations-losses",
+      "label": "Activations & loss functions",
+      "status": "core",
+      "description": "ReLU, GELU, SwiGLU, sigmoid, softmax; MSE, cross-entropy, contrastive losses. Which one to use and when.",
+      "doneWhen": "You can match an activation and loss to a task type without thinking.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": ["dl-neural-net-computational-graph"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "dl-cnns",
+      "label": "Convolutional neural networks",
+      "status": "recommended",
+      "description": "Conv, pooling, the standard CNN architectures (ResNet, EfficientNet). Even in 2026, CNNs win on edge vision and inside multi-modal stacks.",
+      "doneWhen": "You can train a small CNN on CIFAR-10 and explain its receptive field.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": ["dl-neural-net-computational-graph"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "dl-rnns-lstms",
+      "label": "RNNs & LSTMs (historical)",
+      "status": "optional",
+      "description": "How sequences were modeled before attention. Mostly historical now, but the vocabulary still shows up. Skim, don't dwell.",
+      "doneWhen": "You can explain in one sentence why transformers replaced RNNs for long sequences.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "dl-embeddings-representations",
+      "label": "Embeddings & representation learning",
+      "status": "core",
+      "description": "Words, tokens, items, users — all as vectors in a learned space. word2vec, fastText, sentence embeddings. The bridge to retrieval and RAG.",
+      "doneWhen": "You can compute cosine similarity between sentence embeddings and reason about the geometry.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "dl-attention-history",
+      "label": "Attention (the pre-transformer history)",
+      "status": "recommended",
+      "description": "Bahdanau attention, Luong attention, the seq2seq with attention era. Useful context for understanding why the transformer was a leap.",
+      "doneWhen": "You can describe what 'attention' added to seq2seq before the transformer paper.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "dl-generative-overview",
+      "label": "Generative models (overview)",
+      "status": "recommended",
+      "description": "Autoencoders, VAEs, GANs, diffusion. An overview, not a deep dive — enough to recognize them and connect them to the LLM-and-multimodal world that follows.",
+      "doneWhen": "You can sketch the training objective of each family in one sentence.",
+      "position": { "x": 320, "y": 400 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

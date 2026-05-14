@@ -1,0 +1,119 @@
+{
+  "id": "03-ml-fundamentals",
+  "stageNumber": 3,
+  "title": "Machine Learning Fundamentals",
+  "blurb": "Classical ML — not because you'll train SVMs in production, but because every concept in deep learning has its roots here. Bias-variance, regularization, and evaluation are the load-bearing ideas.",
+  "color": "#14B8A6",
+  "nodes": [
+    {
+      "id": "ml-supervised-loop",
+      "label": "The supervised learning loop",
+      "status": "core",
+      "description": "Inputs, labels, a loss function, an optimizer, iteration. The same six-step mental model that every model in this roadmap reduces to.",
+      "doneWhen": "You can describe the supervised loop and locate every component in any ML codebase you read.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "ml-linear-regression",
+      "label": "Linear regression",
+      "status": "core",
+      "description": "The simplest model that still teaches everything: parameters, loss, the normal equation vs gradient descent, regularization (ridge, lasso). Build it from scratch once.",
+      "doneWhen": "You can implement linear regression from scratch in NumPy, with and without regularization.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": ["ml-supervised-loop"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "ml-logistic-regression",
+      "label": "Logistic regression",
+      "status": "core",
+      "description": "Binary classification, the sigmoid, the log-loss, decision boundaries. The conceptual root of every classifier head you'll write later.",
+      "doneWhen": "You can derive the log-loss gradient and explain why logistic regression is a one-layer neural net.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["ml-linear-regression"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "ml-trees-forests",
+      "label": "Decision trees & random forests",
+      "status": "core",
+      "description": "How a tree splits, information gain, ensembles, why a random forest works. Still the right tool for many tabular problems in 2026.",
+      "doneWhen": "You can explain why a single tree overfits and why bagging reduces variance.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "ml-gradient-boosting",
+      "label": "Gradient boosting (XGBoost / LightGBM)",
+      "status": "recommended",
+      "description": "Boosting as additive modeling, gradient boosting, XGBoost and LightGBM. The default winner on tabular benchmarks; you'll meet it in interviews and in production.",
+      "doneWhen": "You can train a gradient-boosted model on a tabular dataset and explain its hyperparameters.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": ["ml-trees-forests"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "ml-kmeans-clustering",
+      "label": "k-means & clustering",
+      "status": "recommended",
+      "description": "Unsupervised learning's hello-world. k-means, hierarchical clustering, DBSCAN, when each one wins. Useful intuition for embedding spaces later.",
+      "doneWhen": "You can pick a clustering algorithm for a dataset and justify the choice.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "ml-dimensionality-reduction",
+      "label": "Dimensionality reduction (PCA, t-SNE, UMAP)",
+      "status": "recommended",
+      "description": "Compressing high-dimensional data while preserving structure. PCA (linear), t-SNE (local), UMAP (global+local). Critical for understanding embedding spaces.",
+      "doneWhen": "You can choose between PCA, t-SNE, and UMAP for a visualization task and defend the choice.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "ml-train-val-test",
+      "label": "Train / validation / test splits",
+      "status": "core",
+      "description": "Why three splits, what cross-validation buys you, data leakage and how to spot it. The single most-violated rule in ML and the most common reason 'my model is great' fails in production.",
+      "doneWhen": "You can identify data leakage in a sloppy ML pipeline review.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": ["ml-supervised-loop"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "ml-bias-variance-regularization",
+      "label": "Bias-variance trade-off & regularization",
+      "status": "core",
+      "description": "Why models underfit, why they overfit, why regularization (L1, L2, dropout, early stopping) is the dial. The mental model behind every model-debugging conversation.",
+      "doneWhen": "You can diagnose a learning curve as under- or overfitting and pick the right intervention.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": ["ml-train-val-test"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "ml-evaluation-metrics",
+      "label": "Evaluation metrics",
+      "status": "core",
+      "description": "Accuracy, precision, recall, F1, ROC-AUC, PR-AUC for classification; MAE, MSE, R² for regression. When each one lies. The vocabulary of every results discussion.",
+      "doneWhen": "You can pick the right metric for a problem and explain when accuracy is the wrong default.",
+      "position": { "x": 320, "y": 400 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

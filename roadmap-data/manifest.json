@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "title": "AI Engineer Roadmap",
+  "tagline": "An interactive roadmap for becoming — and growing as — an AI engineer. The whole path, fundamentals to frontier, with curated resources on every node. Curated by an active AI researcher.",
+  "curator": {
+    "name": "Betty Guo (Dongxin Guo, 郭东欣)",
+    "affiliation": "PhD candidate (final year), Department of Computer Science, University of Hong Kong",
+    "advisor": "Prof. Siu-Ming Yiu",
+    "github": "bettyguo",
+    "orcid": "0009-0000-2388-1072"
+  },
+  "license": {
+    "content": "CC-BY-4.0",
+    "code": "MIT"
+  },
+  "lastUpdated": "2026-05-14",
+  "liveSite": "https://bettyguo.github.io/ai-engineer-roadmap/",
+  "repo": "https://github.com/bettyguo/ai-engineer-roadmap",
+  "stages": [
+    "01-prerequisites-math",
+    "02-programming-tooling",
+    "03-ml-fundamentals",
+    "04-dl-fundamentals",
+    "05-transformers-llm-internals",
+    "06-training-finetuning",
+    "07-inference-serving",
+    "08-retrieval-rag",
+    "09-agents-harnesses",
+    "10-evaluation-observability",
+    "11-deployment-production",
+    "12-safety-alignment-frontier"
+  ],
+  "palette": {
+    "01-prerequisites-math": "#6366F1",
+    "02-programming-tooling": "#0EA5E9",
+    "03-ml-fundamentals": "#14B8A6",
+    "04-dl-fundamentals": "#10B981",
+    "05-transformers-llm-internals": "#84CC16",
+    "06-training-finetuning": "#EAB308",
+    "07-inference-serving": "#F59E0B",
+    "08-retrieval-rag": "#F97316",
+    "09-agents-harnesses": "#EF4444",
+    "10-evaluation-observability": "#EC4899",
+    "11-deployment-production": "#D946EF",
+    "12-safety-alignment-frontier": "#A855F7"
+  }
+}

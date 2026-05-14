@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Node / site build
+site/node_modules/
+site/dist/
+site/.vite/
+site/pnpm-debug.log*
+site/*.tsbuildinfo
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Generated artifacts (regeneratable; not committed)
+content/
+site/src/data.generated.ts
+tools/_linkcheck_report.md

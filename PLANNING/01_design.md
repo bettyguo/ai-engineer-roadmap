@@ -8,7 +8,7 @@
 
 ## 1. The roadmap taxonomy
 
-12 stages, 96 nodes. Every node is reachable along a directed acyclic dependency graph rooted at Stage 1. Stages = visual clusters in the diagram. Nodes within a stage are mostly siblings; some have intra-stage dependencies.
+12 stages, 106 nodes. Every node is reachable along a directed acyclic dependency graph rooted at Stage 1. Stages = visual clusters in the diagram. Nodes within a stage are mostly siblings; some have intra-stage dependencies.
 
 > Status legend (drives the visual grammar): **core** = essential, study this. **recommended** = study this if your role/specialization touches it. **optional** = depth detour.
 
@@ -143,7 +143,7 @@
 - `frontier-open-research` (recommended)
 - `frontier-career-community` (core) — peer link to `llm-interview-prep`; staying current; contributing
 
-**Totals:** 12 stages, 96 nodes. About 60 core + 30 recommended + 6 optional.
+**Totals:** 12 stages, 106 nodes. About 70 core + 32 recommended + 4 optional.
 
 ### Dependency edges (high-level)
 - Stage forward dependency: each stage depends on the previous one's core nodes (a single forward edge between stages in the visual layout to keep the diagram clean).

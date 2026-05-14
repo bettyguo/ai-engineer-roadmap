@@ -1,0 +1,105 @@
+{
+  "id": "09-agents-harnesses",
+  "stageNumber": 9,
+  "title": "Agents & Harnesses",
+  "blurb": "Agents and harnesses are a craft of their own. This stage is a deliberate SUMMARY — enough to fit them into the career path. For the depth dive, see the sideways peer at the bottom of this stage: harness-engineer-roadmap.",
+  "color": "#EF4444",
+  "nodes": [
+    {
+      "id": "agent-tool-use",
+      "label": "Tool use",
+      "status": "core",
+      "description": "What it means for an LLM to call a tool, how the model decides, how tool outputs come back. The basic building block of every agent.",
+      "doneWhen": "You can build a single-tool agent and explain the control flow on a whiteboard.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": ["inf-prompt-engineering-craft"],
+      "resources": []
+    },
+    {
+      "id": "agent-function-calling-mcp",
+      "label": "Function calling & MCP",
+      "status": "core",
+      "description": "Provider function-calling APIs (Anthropic, OpenAI) and Model Context Protocol — the emerging cross-provider standard for tool exposure.",
+      "doneWhen": "You can wire a tool via function calling and via MCP and explain which to use when.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": ["agent-tool-use"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "agent-planning-patterns",
+      "label": "Planning patterns",
+      "status": "core",
+      "description": "ReAct, chain-of-thought, plan-and-solve, tree-of-thought, reflexion. A taxonomy of how agents structure their reasoning loops.",
+      "doneWhen": "You can name three planning patterns and explain when each is appropriate.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["agent-tool-use"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "agent-memory-context",
+      "label": "Memory & context engineering",
+      "status": "core",
+      "description": "Conversation memory, vector memory, scratchpads, context compaction, summarization. The agent equivalent of working memory and long-term memory.",
+      "doneWhen": "You can describe two memory patterns and the trade-offs between context-window pressure and recall.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "agent-multi-agent",
+      "label": "Multi-agent coordination",
+      "status": "recommended",
+      "description": "Multi-agent debate, orchestrator-worker, role specialization, agent-to-agent protocols. When the extra complexity pays off and when it doesn't.",
+      "doneWhen": "You can argue for or against multi-agent for a given task and not just default to it.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": ["agent-planning-patterns"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "agent-harnesses-scaffolds",
+      "label": "Harnesses / scaffolds (the concept)",
+      "status": "core",
+      "description": "What a harness is — the surrounding code that turns an LLM into an autonomous agent. Read this node, then go sideways: harness-engineer-roadmap is the depth dive on this craft.",
+      "doneWhen": "You can articulate what a harness is and what makes a harness good or bad.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": ["agent-tool-use"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "agent-evaluation",
+      "label": "Agent evaluation",
+      "status": "core",
+      "description": "End-to-end task evals (SWE-bench, WebArena, τ-bench), per-step evals, tool-call accuracy. Why agent eval is harder than LLM eval.",
+      "doneWhen": "You can design an eval suite for an agent and explain why a single end-to-end score isn't enough.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "agent-safety",
+      "label": "Agent safety",
+      "status": "core",
+      "description": "Prompt injection in tool outputs, indirect injection from web content, action authorization, blast-radius limiting, observability. Agents have an attack surface that ordinary LLM apps do not.",
+      "doneWhen": "You can list five concrete attack vectors against an agent and a mitigation for each.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ],
+  "sidewaysLinks": [
+    {
+      "to": "harness-engineer-roadmap",
+      "url": "https://github.com/bettyguo/harness-engineer-roadmap",
+      "label": "Going deep on this stage → harness-engineer-roadmap",
+      "blurb": "This stage summarizes agents and harnesses as one stop on the AI-engineer career path. The peer roadmap goes the whole way: building harnesses end-to-end — scaffolds, control loops, sandboxing, eval, hardening. Open it when you're ready to specialize."
+    }
+  ]
+}

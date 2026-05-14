@@ -1,0 +1,97 @@
+{
+  "id": "05-transformers-llm-internals",
+  "stageNumber": 5,
+  "title": "Transformers & LLM Internals",
+  "blurb": "How a modern large language model is built, from self-attention up to model anatomy. The architecture that won, and what's actually inside the boxes labeled 'LLM' in every system diagram.",
+  "color": "#84CC16",
+  "nodes": [
+    {
+      "id": "tx-self-attention",
+      "label": "Self-attention",
+      "status": "core",
+      "description": "Query / key / value, scaled dot-product, the softmax, what attention 'looks at'. The single most-important operation in modern AI.",
+      "doneWhen": "You can derive scaled dot-product attention from first principles and explain the role of each Q/K/V.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": ["dl-attention-history"],
+      "resources": []
+    },
+    {
+      "id": "tx-multi-head-attention",
+      "label": "Multi-head attention",
+      "status": "core",
+      "description": "Why multiple heads, what they specialize on, how heads are concatenated and projected. The 'multi-head' that makes the architecture flexible.",
+      "doneWhen": "You can implement multi-head attention from scratch in PyTorch.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": ["tx-self-attention"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tx-architecture",
+      "label": "The Transformer architecture",
+      "status": "core",
+      "description": "Encoder / decoder / decoder-only. The block: attention + feed-forward + residual + norm. How modern LLMs are stacks of identical blocks.",
+      "doneWhen": "You can sketch a decoder-only transformer's forward pass on a whiteboard and explain the residual stream.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["tx-multi-head-attention"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tx-tokenization",
+      "label": "Tokenization (BPE, SentencePiece)",
+      "status": "core",
+      "description": "Why we tokenize subwords, how BPE works, how vocabularies are chosen, why tokenization shapes everything downstream (cost, multilinguality, edge-case behavior).",
+      "doneWhen": "You can explain why a string-length and a token-length differ, and predict tokenization weirdness for code or non-English text.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tx-positional-encoding-rope",
+      "label": "Positional encoding & RoPE",
+      "status": "recommended",
+      "description": "Sinusoidal vs learned vs RoPE vs ALiBi. Why position matters, and why the rotary embedding family won the modern LLM.",
+      "doneWhen": "You can describe what RoPE does and why it generalizes better to long contexts than absolute positions.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": ["tx-architecture"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tx-pretraining-objectives",
+      "label": "Pretraining objectives",
+      "status": "core",
+      "description": "Next-token prediction (causal LM), masked LM, prefix-LM, span corruption. Why next-token won, and what it means for what an LLM can do.",
+      "doneWhen": "You can explain why next-token-prediction trains a surprisingly capable model.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": ["tx-architecture"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tx-scaling-laws",
+      "label": "Scaling laws & compute economics",
+      "status": "recommended",
+      "description": "Kaplan / Chinchilla / DeepMind scaling laws, parameter count vs data vs compute, the empirical curves. The reason the field moves the way it moves.",
+      "doneWhen": "You can read a scaling-law plot and explain what it tells you about training budget.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": ["tx-pretraining-objectives"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tx-model-anatomy",
+      "label": "Anatomy of a 2026 LLM",
+      "status": "core",
+      "description": "What's actually inside a modern frontier model: decoder-only stack, GQA, SwiGLU, RoPE, MoE, KV cache, long-context techniques. The picture you should have when someone says 'an LLM'.",
+      "doneWhen": "You can describe the anatomy of a typical open-weights 2026 LLM and explain each design choice in one sentence.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": ["tx-architecture", "tx-positional-encoding-rope"],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

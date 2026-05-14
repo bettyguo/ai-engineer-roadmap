@@ -1,0 +1,97 @@
+{
+  "id": "02-programming-tooling",
+  "stageNumber": 2,
+  "title": "Programming & Tooling for AI",
+  "blurb": "The tools every AI engineer reaches for daily: Python, the scientific stack, PyTorch, git, the shell, containers, GPUs, and the data formats that the field has converged on.",
+  "color": "#0EA5E9",
+  "nodes": [
+    {
+      "id": "tool-python",
+      "label": "Python (real proficiency)",
+      "status": "core",
+      "description": "Not just syntax — typing, packaging, virtual environments, async, the standard library, the ecosystem. AI engineering runs on Python; you should be fluent, not survival-level.",
+      "doneWhen": "You can read and debug a non-trivial Python codebase (e.g., a small open-source library) without flailing.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tool-numpy-scientific-stack",
+      "label": "NumPy & the scientific stack",
+      "status": "core",
+      "description": "NumPy, Pandas, SciPy, Matplotlib. Vectorized thinking, broadcasting, einops, the difference between a column-major and row-major mental model. The substrate for every framework above.",
+      "doneWhen": "You can express a small data pipeline in vectorized NumPy without writing a Python for-loop over elements.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": ["tool-python"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tool-pytorch",
+      "label": "PyTorch",
+      "status": "core",
+      "description": "The framework. Tensors, autograd, nn.Module, the training loop, GPU placement, distributed basics. TensorFlow exists; in 2026, the practical AI-engineer default is PyTorch.",
+      "doneWhen": "You can write a training loop from scratch (no Lightning, no Trainer) for a small model and explain every line.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["tool-numpy-scientific-stack"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tool-git",
+      "label": "Git & GitHub workflows",
+      "status": "core",
+      "description": "Branches, rebasing, commits-as-units-of-thought, PR reviews, conflict resolution, history that future-you can read. Not optional — every AI engineer reads and contributes to open-source.",
+      "doneWhen": "You can rebase a feature branch cleanly, write a useful commit message, and review a PR thoughtfully.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tool-linux-shell",
+      "label": "Linux, the shell, SSH",
+      "status": "core",
+      "description": "The terminal, file permissions, processes, pipes, SSH, screen/tmux, basic networking. You will be on a GPU box more often than you expect.",
+      "doneWhen": "You can SSH into a remote GPU machine, set up a Python environment, kick off a training run, and come back to its logs.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tool-docker",
+      "label": "Docker & containers",
+      "status": "recommended",
+      "description": "Containers for reproducible environments, Dockerfile basics, image layers, GPU containers. The standard packaging for any model that ships.",
+      "doneWhen": "You can write a Dockerfile for a small ML service and explain image layering.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": ["tool-linux-shell"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tool-gpu-cuda-basics",
+      "label": "GPU & CUDA basics",
+      "status": "recommended",
+      "description": "What a GPU is, what VRAM is, what blocks/threads/warps are conceptually, how PyTorch uses CUDA, why memory bandwidth matters. You don't need to write CUDA kernels; you do need to debug OOMs and understand throughput.",
+      "doneWhen": "You can diagnose an out-of-memory error and choose batch size + precision intentionally.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "tool-data-formats",
+      "label": "Data formats & loading",
+      "status": "recommended",
+      "description": "Parquet, Arrow, the `datasets` library, streaming datasets, sharding. The realities of moving training-scale data around.",
+      "doneWhen": "You can stream a multi-GB dataset through a training loop without OOMing the host.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": ["tool-python"],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "08-retrieval-rag",
+  "stageNumber": 8,
+  "title": "Retrieval & RAG",
+  "blurb": "How LLMs get access to knowledge they weren't trained on. Embeddings, vector stores, hybrid search, reranking, chunking, the architecture patterns that actually work, and how to evaluate any of it.",
+  "color": "#F97316",
+  "nodes": [
+    {
+      "id": "rag-embeddings",
+      "label": "Embeddings (text, multimodal)",
+      "status": "core",
+      "description": "Modern embedding models (text and multimodal), how to choose one, what dimensions and pooling mean, why bigger isn't always better.",
+      "doneWhen": "You can pick an embedding model for a task, defend the choice, and run an A/B against an alternative.",
+      "position": { "x": 0, "y": 0 },
+      "dependsOn": [],
+      "crossStageDependsOn": ["dl-embeddings-representations"],
+      "resources": []
+    },
+    {
+      "id": "rag-vector-stores",
+      "label": "Vector stores",
+      "status": "core",
+      "description": "pgvector, FAISS, Pinecone, Weaviate, Qdrant, Milvus. ANN indexes (HNSW, IVF), filtering, hybrid storage. The right choice depends on scale and operational reality.",
+      "doneWhen": "You can pick a vector store for a deployment and explain its index choice.",
+      "position": { "x": 320, "y": 0 },
+      "dependsOn": ["rag-embeddings"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "rag-hybrid-search",
+      "label": "Hybrid search (BM25 + vector)",
+      "status": "core",
+      "description": "Why BM25 still beats vector on exact-match queries, why combining the two is the practical default, score fusion (RRF).",
+      "doneWhen": "You can implement BM25 + dense hybrid search with reciprocal rank fusion and measure its lift.",
+      "position": { "x": 640, "y": 0 },
+      "dependsOn": ["rag-vector-stores"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "rag-reranking",
+      "label": "Reranking",
+      "status": "core",
+      "description": "Cross-encoders, ColBERT-style late interaction, LLM rerankers. Why retrieval+rerank is almost always better than retrieval alone.",
+      "doneWhen": "You can add a reranker to a retrieval pipeline and measure recall-at-k vs precision-at-k changes.",
+      "position": { "x": 960, "y": 0 },
+      "dependsOn": ["rag-hybrid-search"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "rag-chunking",
+      "label": "Chunking strategies",
+      "status": "core",
+      "description": "Fixed-size, sentence, recursive, semantic, structure-aware. The most-overlooked lever in a mediocre RAG system.",
+      "doneWhen": "You can run a chunking-size sweep and report which choice wins on your evaluation set.",
+      "position": { "x": 0, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "rag-document-parsing",
+      "label": "Document parsing (PDF, HTML, OCR)",
+      "status": "recommended",
+      "description": "Where most production RAG systems lose accuracy. Layout-aware PDF parsers, HTML cleanup, OCR for scans, table extraction.",
+      "doneWhen": "You can build a parser that turns a messy corpus of PDFs and HTML into clean, structured text.",
+      "position": { "x": 320, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "rag-query-reformulation",
+      "label": "Query reformulation & expansion",
+      "status": "recommended",
+      "description": "HyDE, multi-query, decomposition, step-back prompting. Letting the model rewrite the query before retrieval.",
+      "doneWhen": "You can add a query-rewriting step to a RAG pipeline and measure its effect on retrieval quality.",
+      "position": { "x": 640, "y": 200 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "rag-architecture-patterns",
+      "label": "RAG architecture patterns",
+      "status": "core",
+      "description": "Naive RAG, modular RAG, agentic RAG, multi-hop retrieval, query routing. The decision tree from 'simplest works' to 'this case justifies complexity'.",
+      "doneWhen": "You can pick the simplest RAG architecture that meets your accuracy target and defend not making it more complex.",
+      "position": { "x": 960, "y": 200 },
+      "dependsOn": ["rag-reranking"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "rag-advanced-contextual-graph",
+      "label": "Advanced RAG (contextual retrieval, GraphRAG)",
+      "status": "recommended",
+      "description": "Contextual Retrieval (Anthropic's chunk-prefix trick), GraphRAG (Microsoft), late-chunking, ColBERT, fine-tuned embeddings. The frontier of retrieval research that's already in production.",
+      "doneWhen": "You can describe Contextual Retrieval and GraphRAG and explain when each is worth the complexity.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": ["rag-architecture-patterns"],
+      "crossStageDependsOn": [],
+      "resources": []
+    },
+    {
+      "id": "rag-evaluation",
+      "label": "RAG evaluation",
+      "status": "core",
+      "description": "Faithfulness, context relevance, answer relevance, retrieval recall. ragas, deepeval, the LLM-as-judge approach. Eval is the difference between a RAG demo and a RAG product.",
+      "doneWhen": "You have a RAG eval set, a faithfulness metric, and a regression suite that catches index drift.",
+      "position": { "x": 320, "y": 400 },
+      "dependsOn": [],
+      "crossStageDependsOn": [],
+      "resources": []
+    }
+  ]
+}
