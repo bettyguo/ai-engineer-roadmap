@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-label="AI Engineer Roadmap — twelve-stage career path">
+  <title>AI Engineer Roadmap</title>
+  <desc>Curated by Betty Guo (Dongxin Guo), PhD candidate, University of Hong Kong CS. Twelve stages from math fundamentals to the AI research frontier.</desc>
+
+  <defs>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#1A1814" />
+    </pattern>
+
+    <!-- A hand-drawn-feeling underline pattern (the "signature flourish" referenced in PLANNING/01_design.md §4). -->
+    <pattern id="signature" width="10" height="3" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.5" r="1.1" fill="#D9D2C3" opacity="0.85" />
+    </pattern>
+
+    <linearGradient id="curtain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050505" />
+      <stop offset="1" stop-color="#0D0C0A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1600" height="1000" fill="url(#curtain)" />
+  <rect width="1600" height="1000" fill="url(#dots)" opacity="0.55" />
+
+  <!-- Top corner: tiny eyebrow + repo handle -->
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#7A746A" letter-spacing="2.5">
+    <text x="80" y="64" text-anchor="start">A I — E N G I N E E R — R O A D M A P</text>
+    <text x="1520" y="64" text-anchor="end">v 0 . 1 . 0</text>
+  </g>
+
+  <!-- Title -->
+  <g font-family="'Source Serif Pro', 'IBM Plex Serif', Georgia, serif" fill="#F8F7F4">
+    <text x="800" y="180" font-size="92" font-weight="700" text-anchor="middle" letter-spacing="-2">AI Engineer Roadmap</text>
+  </g>
+
+  <!-- Signature underline beneath the title -->
+  <rect x="540" y="200" width="520" height="3" fill="url(#signature)" opacity="0.95" />
+
+  <!-- Tagline -->
+  <text x="800" y="246" font-family="ui-sans-serif, Inter, system-ui, sans-serif" font-size="22" fill="#B6B0A2" text-anchor="middle" letter-spacing="0.1">
+    The whole career path, fundamentals to frontier, curated by an active AI researcher.
+  </text>
+
+  <!-- 12-stage stripe stack: the structural shape of the artifact, legible at thumbnail size -->
+  <!-- Each stripe: 12 rows × (37 height + 5 gap) = 504, starting at y=300 -->
+  <g font-family="ui-sans-serif, Inter, system-ui, sans-serif">
+
+    <!-- Stage 01 -->
+    <g transform="translate(80, 300)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#6366F1" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#6366F1" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">01</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Prerequisites &amp; Math</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">8 nodes  ·  linear algebra · calculus · probability · optimization</text>
+    </g>
+
+    <!-- Stage 02 -->
+    <g transform="translate(80, 342)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#0EA5E9" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#0EA5E9" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">02</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Programming &amp; Tooling for AI</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">8 nodes  ·  Python · NumPy · PyTorch · git · Linux · Docker · CUDA</text>
+    </g>
+
+    <!-- Stage 03 -->
+    <g transform="translate(80, 384)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#14B8A6" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#14B8A6" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">03</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Machine Learning Fundamentals</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">10 nodes  ·  supervised loop · bias-variance · regularization · metrics</text>
+    </g>
+
+    <!-- Stage 04 -->
+    <g transform="translate(80, 426)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#10B981" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#10B981" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">04</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Deep Learning Fundamentals</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">10 nodes  ·  backprop · optimizers · normalization · embeddings · CNNs</text>
+    </g>
+
+    <!-- Stage 05 -->
+    <g transform="translate(80, 468)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#84CC16" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#84CC16" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">05</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Transformers &amp; LLM Internals</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">8 nodes  ·  self-attention · GQA · RoPE · FlashAttention · MoE · anatomy</text>
+    </g>
+
+    <!-- Stage 06 -->
+    <g transform="translate(80, 510)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#EAB308" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#EAB308" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">06</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Training &amp; Fine-tuning</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">10 nodes  ·  SFT · instruction tuning · RLHF · DPO · LoRA / QLoRA · FSDP</text>
+    </g>
+
+    <!-- Stage 07 -->
+    <g transform="translate(80, 552)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#F59E0B" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#F59E0B" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">07</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Inference &amp; Serving</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">10 nodes  ·  KV cache · quantization · vLLM / TGI / SGLang · structured output</text>
+    </g>
+
+    <!-- Stage 08 -->
+    <g transform="translate(80, 594)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#F97316" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#F97316" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">08</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Retrieval &amp; RAG</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">10 nodes  ·  embeddings · hybrid search · reranking · chunking · evaluation</text>
+    </g>
+
+    <!-- Stage 09 -->
+    <g transform="translate(80, 636)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#EF4444" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#EF4444" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">09</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Agents &amp; Harnesses  →  depth peer</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">8 nodes  ·  tool use · MCP · planning · memory · eval · harness-engineer-roadmap</text>
+    </g>
+
+    <!-- Stage 10 -->
+    <g transform="translate(80, 678)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#EC4899" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#EC4899" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">10</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Evaluation &amp; Observability</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">8 nodes  ·  benchmarks · LLM-as-judge · golden sets · tracing · continuous eval</text>
+    </g>
+
+    <!-- Stage 11 -->
+    <g transform="translate(80, 720)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#D946EF" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#D946EF" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">11</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Deployment &amp; Production</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">8 nodes  ·  APIs · SLOs · caching · fallback · multi-tenant · cost engineering</text>
+    </g>
+
+    <!-- Stage 12 -->
+    <g transform="translate(80, 762)">
+      <rect x="0" y="0" width="1440" height="37" rx="4" fill="#A855F7" opacity="0.18" />
+      <rect x="0" y="0" width="8" height="37" rx="2" fill="#A855F7" />
+      <text x="34" y="24" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#B6B0A2" letter-spacing="2">12</text>
+      <text x="86" y="25" font-family="'Source Serif Pro', Georgia, serif" font-size="20" font-weight="600" fill="#F8F7F4">Safety, Alignment &amp; the Research Frontier</text>
+      <text x="1432" y="25" font-size="13" fill="#7A746A" text-anchor="end">8 nodes  ·  alignment · injection · mech-interp · reasoning · long-context</text>
+    </g>
+  </g>
+
+  <!-- Numbers strip -->
+  <g font-family="ui-sans-serif, Inter, system-ui, sans-serif">
+    <text x="800" y="848" font-size="14" fill="#7A746A" letter-spacing="3" text-anchor="middle">
+      12 STAGES   ·   106 NODES   ·   231 LINK-VERIFIED RESOURCES
+    </text>
+  </g>
+
+  <!-- Curator + license + URL -->
+  <g font-family="ui-sans-serif, Inter, system-ui, sans-serif" fill="#B6B0A2">
+    <text x="80" y="932" font-size="16" font-weight="600">Betty Guo (Dongxin Guo, 郭东欣)</text>
+    <text x="80" y="952" font-size="13" fill="#7A746A">PhD candidate, Department of Computer Science, University of Hong Kong · advised by Prof. Siu-Ming Yiu</text>
+    <text x="80" y="972" font-size="13" fill="#7A746A">ORCID 0009-0000-2388-1072  ·  Content CC BY 4.0  ·  Code MIT</text>
+  </g>
+
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" fill="#D9D2C3">
+    <text x="1520" y="932" font-size="14" text-anchor="end">→ bettyguo.github.io/ai-engineer-roadmap</text>
+    <text x="1520" y="952" font-size="12" fill="#7A746A" text-anchor="end">github.com/bettyguo/ai-engineer-roadmap</text>
+    <text x="1520" y="972" font-size="11" fill="#4F4940" text-anchor="end" letter-spacing="2">L A S T   U P D A T E D   2 0 2 6 - 0 5 - 1 4</text>
+  </g>
+</svg>

@@ -1,64 +1,95 @@
-# Banner & social card — how to make them
+# Banner & social card — status and how to refresh
 
-Image generation isn't available in the environment this repo was scaffolded
-in, so the marketing visuals are left as a deliberate to-do for the
-maintainer. They are the highest-leverage manual launch step — the
-diagram screenshot is the asset every Show HN post, LinkedIn share, and
-X thread will lead with.
+## Current status
 
-## What to produce
+Two hand-authored SVG launch assets ship with this repo:
 
-1. **`assets/diagram-hero.png`** — referenced from the README and Twitter
-   card. **1600 × 1000 px** (will display at ~900 px wide on GitHub).
-2. **`assets/social-card-1200x630.png`** — referenced from `site/index.html`
-   as the Open Graph image. **1200 × 630 px** (the LinkedIn / Twitter
-   recommendation).
-3. **`site/public/og-card.png`** — copy of the social card placed where the
-   live site can serve it.
+- **[`assets/diagram-hero.svg`](./diagram-hero.svg)** — 1600×1000 hero
+  image referenced from the README. Distinctive, dark-canvas editorial
+  style, 12 colored stage stripes, curator credit, live-URL.
+- **[`assets/social-card-1200x630.svg`](./social-card-1200x630.svg)** —
+  1200×630 social-card variant; a copy is also at
+  `site/public/og-card.svg`.
 
-## How (the literal step-by-step)
+These satisfy the README hero slot today (GitHub renders SVG in
+`<img>` tags). They are the "launch plate" — structural overview,
+curator credit, URL — not a screenshot of the interactive diagram.
 
-1. Build and deploy the site (or run it locally — `npm run dev`).
-2. Open the live site in a real browser. Maximize the window.
-3. Zoom the diagram out (use the React Flow controls in the lower-left)
-   so the full 12-stage stack is visible.
-4. Take a screenshot of the **diagram area only** (not the chrome / top
-   bar / footer).
-   - macOS: `Cmd+Shift+4` then drag.
-   - Windows: Snipping Tool, rectangle mode.
-   - Linux: Flameshot or `gnome-screenshot --interactive`.
-5. Save as `assets/diagram-hero.png`.
-6. Crop a 1200×630 region of the same screenshot — the part that includes
-   the title row plus the top 2–3 stages, so the picture looks
-   "in motion" at thumbnail size. Save as both
-   `assets/social-card-1200x630.png` and `site/public/og-card.png`.
-7. Commit the three files.
+## What's still on the human's to-do
 
-## Why a manual screenshot rather than an SVG export
+**The OG card slot in `site/index.html` references `./og-card.png`**, not the
+SVG, because Twitter / LinkedIn / Slack / iMessage previewers render PNG
+reliably and SVG inconsistently. Until you produce the PNG, social shares
+will show the default-preview fallback (page title + description).
 
-A flat SVG export of the React Flow canvas would also work, but a PNG
-screenshot has two advantages: (a) it reads identically on GitHub, LinkedIn,
-X, and previewers that don't render SVG OG cards reliably; (b) it captures
-the dark editorial canvas plus the React Flow grid/controls texture, which
-is part of what makes the visual distinctive at thumbnail size.
+Three ways to produce the PNG, in increasing order of effort:
 
-## If you want a designed banner above the README screenshot
+### Option A — convert the SVG (5 minutes)
 
-Optional, but high-leverage: a wordmark / banner. Suggested spec:
-**1600 × 480 px**, dark canvas (`#050505`), the title `AI Engineer Roadmap`
-in Source Serif Pro 600 white-cream (`#F8F7F4`), with a single
-hand-drawn-feeling underline (the `signature-underline` motif from
-`site/src/styles/theme.css`). Below in JetBrains Mono uppercase:
-`CURATED · BETTY GUO · HKU · CC BY 4.0`. Save to
-`assets/banner.png` and add it above the diagram in the README.
+```bash
+# Requires rsvg-convert (librsvg) or Inkscape
+rsvg-convert -w 1200 -h 630 assets/social-card-1200x630.svg \
+  > site/public/og-card.png
 
-## Tested with
+# or with Inkscape:
+inkscape assets/social-card-1200x630.svg \
+  --export-type=png --export-width=1200 --export-filename=site/public/og-card.png
+```
 
-Confirm at thumbnail size:
+Then delete `site/public/og-card.png.placeholder` and commit the PNG.
 
-- Does it read as **distinctively designed** rather than generic-AI-slop?
-  (Goal of `PLANNING/01_design.md` §4.)
-- Can a stranger glance at the thumbnail and infer "this is a roadmap"?
-- Is the title legible at 1/8 size (Twitter card thumbnail)?
+### Option B — screenshot the interactive diagram (10 minutes)
 
-If yes to all three, ship it.
+If you'd rather the social card *be* the interactive diagram (a
+genuinely striking choice once the live site is up):
+
+1. Deploy the site (`docs/DEPLOY.md`).
+2. Open `https://bettyguo.github.io/ai-engineer-roadmap/` in a browser.
+3. Zoom out until all 12 stages are visible.
+4. Take a screenshot of the diagram area only — no chrome.
+5. Crop to 1200×630.
+6. Save as `site/public/og-card.png` and `assets/diagram-screenshot.png`.
+7. Optionally update the README to use the screenshot instead of the SVG.
+
+### Option C — commission designed visuals
+
+If the maintainer wants designed launch assets — a wordmark, custom
+illustration, branded social card — keep the SVGs as the v1 baseline
+and replace at leisure. Nothing about the rest of the repo depends on
+the visual.
+
+## Why both an SVG and a PNG?
+
+| Asset slot | Best format | Why |
+|---|---|---|
+| GitHub README hero | SVG | GitHub renders SVG cleanly; scales for retina; ~5 KB; no rasterization. |
+| GitHub social preview (`og:image` for the repo) | PNG | GitHub specifically rasterizes a 1280×640 PNG for its OG card. SVG won't render in this slot. |
+| Twitter / LinkedIn / Slack OG card | PNG | Most previewers don't render SVG. |
+| The live site's social card | PNG | Same as above. |
+| Internal documentation, dev preview | SVG | Crisper. |
+
+So the canonical pairing: SVG in the repo, PNG exported from the SVG for
+every OG-card consumer.
+
+## Why the SVG layout looks the way it does
+
+Each visual choice maps to a Phase 0 / Phase 1 decision:
+
+- **Dark canvas (`#050505`).** Differentiates from every other roadmap
+  in the field (all light-mode). High screenshot legibility.
+  Editorial-not-productized direction from `PLANNING/01_design.md` §4.
+- **12 colored stripes.** The structural shape of the artifact at
+  thumbnail size. A reader skimming on Twitter sees the colors and
+  immediately reads "structured, ordered, complete." Block colors
+  survive aggressive thumbnailing better than fine detail.
+- **The signature underline beneath the title.** The one signature
+  flourish from `PLANNING/01_design.md` §4 — a single deliberate
+  detail marks the artifact as curator-made.
+- **Serif title + sans body + mono labels.** Same three-typeface
+  system as the live site (`site/src/styles/theme.css`). The asset
+  and the product agree on aesthetic.
+- **Curator credit + ORCID at the bottom.** Citable identity is part
+  of the editorial-coherence argument; visible on the launch asset,
+  not just in the README.
+- **Live URL bottom-right.** The post-clipboard test: someone who saves
+  this image without the surrounding context can still find the site.

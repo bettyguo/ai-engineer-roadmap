@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="AI Engineer Roadmap social card">
+  <title>AI Engineer Roadmap</title>
+  <desc>The whole AI-engineer career path, fundamentals to frontier, curated by Betty Guo (HKU CS).</desc>
+
+  <defs>
+    <pattern id="dots-sc" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#1A1814" />
+    </pattern>
+    <pattern id="signature-sc" width="9" height="3" patternUnits="userSpaceOnUse">
+      <circle cx="1.3" cy="1.5" r="1" fill="#D9D2C3" opacity="0.9" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#050505" />
+  <rect width="1200" height="630" fill="url(#dots-sc)" opacity="0.55" />
+
+  <!-- Eyebrow -->
+  <text x="60" y="58" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#7A746A" letter-spacing="2.5">A I  —  E N G I N E E R  —  R O A D M A P</text>
+
+  <!-- Title -->
+  <text x="60" y="158" font-family="'Source Serif Pro', 'IBM Plex Serif', Georgia, serif" font-size="72" font-weight="700" fill="#F8F7F4" letter-spacing="-1.5">AI Engineer Roadmap</text>
+  <rect x="60" y="172" width="430" height="3" fill="url(#signature-sc)" opacity="0.95" />
+
+  <!-- Tagline -->
+  <text x="60" y="222" font-family="ui-sans-serif, Inter, system-ui, sans-serif" font-size="22" fill="#B6B0A2">
+    The whole career path, fundamentals to frontier.
+  </text>
+  <text x="60" y="250" font-family="ui-sans-serif, Inter, system-ui, sans-serif" font-size="18" fill="#7A746A">
+    Curated by an active AI researcher. 12 stages, 106 nodes, 231 link-verified resources.
+  </text>
+
+  <!-- 12-stripe palette (compact, horizontal) -->
+  <g transform="translate(60, 300)">
+    <rect x="0"    y="0" width="86" height="38" rx="3" fill="#6366F1" />
+    <rect x="92"   y="0" width="86" height="38" rx="3" fill="#0EA5E9" />
+    <rect x="184"  y="0" width="86" height="38" rx="3" fill="#14B8A6" />
+    <rect x="276"  y="0" width="86" height="38" rx="3" fill="#10B981" />
+    <rect x="368"  y="0" width="86" height="38" rx="3" fill="#84CC16" />
+    <rect x="460"  y="0" width="86" height="38" rx="3" fill="#EAB308" />
+    <rect x="552"  y="0" width="86" height="38" rx="3" fill="#F59E0B" />
+    <rect x="644"  y="0" width="86" height="38" rx="3" fill="#F97316" />
+    <rect x="736"  y="0" width="86" height="38" rx="3" fill="#EF4444" />
+    <rect x="828"  y="0" width="86" height="38" rx="3" fill="#EC4899" />
+    <rect x="920"  y="0" width="86" height="38" rx="3" fill="#D946EF" />
+    <rect x="1012" y="0" width="86" height="38" rx="3" fill="#A855F7" />
+  </g>
+
+  <!-- Stage labels under the stripes -->
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#7A746A" letter-spacing="1.5">
+    <text x="103"  y="358" text-anchor="middle">01 MATH</text>
+    <text x="195"  y="358" text-anchor="middle">02 PY</text>
+    <text x="287"  y="358" text-anchor="middle">03 ML</text>
+    <text x="379"  y="358" text-anchor="middle">04 DL</text>
+    <text x="471"  y="358" text-anchor="middle">05 TX</text>
+    <text x="563"  y="358" text-anchor="middle">06 TRAIN</text>
+    <text x="655"  y="358" text-anchor="middle">07 INF</text>
+    <text x="747"  y="358" text-anchor="middle">08 RAG</text>
+    <text x="839"  y="358" text-anchor="middle">09 AGENT</text>
+    <text x="931"  y="358" text-anchor="middle">10 EVAL</text>
+    <text x="1023" y="358" text-anchor="middle">11 PROD</text>
+    <text x="1115" y="358" text-anchor="middle">12 FRONT</text>
+  </g>
+
+  <!-- Big call-to-action URL -->
+  <text x="60" y="448" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="28" fill="#D9D2C3" letter-spacing="-0.5">
+    → bettyguo.github.io/ai-engineer-roadmap
+  </text>
+
+  <!-- Curator + license -->
+  <g font-family="ui-sans-serif, Inter, system-ui, sans-serif">
+    <text x="60" y="540" font-size="16" font-weight="600" fill="#B6B0A2">Betty Guo (Dongxin Guo)</text>
+    <text x="60" y="562" font-size="13" fill="#7A746A">PhD candidate, Department of Computer Science, University of Hong Kong</text>
+    <text x="60" y="584" font-size="12" fill="#4F4940">ORCID 0009-0000-2388-1072  ·  Content CC BY 4.0  ·  Code MIT</text>
+  </g>
+</svg>

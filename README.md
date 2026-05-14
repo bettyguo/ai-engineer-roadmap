@@ -12,8 +12,12 @@
 
 <p align="center">
   <a href="https://bettyguo.github.io/ai-engineer-roadmap/">
-    <img src="assets/diagram-hero.png" alt="AI Engineer Roadmap — interactive diagram" width="900" />
+    <img src="assets/diagram-hero.svg" alt="AI Engineer Roadmap — twelve-stage career path, fundamentals to frontier" width="900" />
   </a>
+</p>
+
+<p align="center">
+  <sub>The image above is a structural overview. The <em>interactive</em> diagram — pannable, zoomable, click-any-node for resources — lives at the live site below.</sub>
 </p>
 
 <p align="center">
