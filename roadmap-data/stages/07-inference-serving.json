@@ -430,6 +430,53 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "inf-disaggregated",
+      "label": "Disaggregated inference (prefill / decode pools)",
+      "status": "recommended",
+      "description": "Splitting prefill (compute-bound) and decode (memory-bound) onto separate GPU pools. Eliminates prefill-decode interference, lets you size and parallelize each phase independently, and is the architectural move behind most 2026 high-throughput serving stacks.",
+      "doneWhen": "You can argue for or against disaggregated serving for a given workload and identify the latency/cost trade-off it changes.",
+      "position": { "x": 640, "y": 400 },
+      "dependsOn": ["inf-loop-kv-cache", "inf-batching"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized LLM Serving",
+          "author": "Zhong et al.",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2401.09670",
+          "annotation": "The paper that crystallized the pattern. Read for the goodput-vs-throughput framing — that's the conceptual win, not just the numbers.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Splitwise: Efficient Generative LLM Inference Using Phase Splitting",
+          "author": "Patel et al. (Microsoft)",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2311.18677",
+          "annotation": "The contemporaneous Microsoft paper. Same idea, different framing — read both to see which arguments survived contact with production.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "LLMServe/DistServe (reference implementation)",
+          "author": "Zhong et al.",
+          "type": "repo",
+          "url": "https://github.com/LLMServe/DistServe",
+          "annotation": "The reference implementation. Pair with the paper; the scheduler is the part most people copy when adopting the pattern.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

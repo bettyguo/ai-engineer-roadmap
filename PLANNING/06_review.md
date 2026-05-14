@@ -88,9 +88,9 @@ After edits: `validate_data.py` passes, `linkcheck.py` passes, `tsc --noEmit` pa
 
 These should land in `.github/ISSUE_TEMPLATE/`-tracked issues post-launch so contributors can pick them up:
 
-1. **Add a node:** State-space models (Mamba, RWKV) — Stage 5 or 12.
-2. **Add a node:** Multimodal models (CLIP / LLaVA / multimodal MoE) — Stage 12 `frontier-multimodal`.
-3. **Add a node:** Disaggregated inference (prefill/decode-pool separation) — Stage 7 once a major engine ships it stably.
+1. ~~**Add a node:** State-space models (Mamba, RWKV) — Stage 5 or 12.~~ **CLOSED 2026-05-14:** `frontier-state-space-models` shipped in Stage 12 with 4 verified resources (Mamba paper, Mamba-2, the canonical repo, Maarten Grootendorst's visual guide). Status: `recommended`.
+2. ~~**Add a node:** Multimodal models (CLIP / LLaVA / multimodal MoE) — Stage 12 `frontier-multimodal`.~~ **CLOSED 2026-05-14:** `frontier-multimodal` shipped in Stage 12 with 4 verified resources (CLIP, LLaVA, LLaVA-1.5, the LLaVA project page). Status: `core` (the original review framing flagged it as "canonical references are already clear" so it ships as core, not recommended).
+3. ~~**Add a node:** Disaggregated inference (prefill/decode-pool separation) — Stage 7 once a major engine ships it stably.~~ **CLOSED 2026-05-14:** `inf-disaggregated` shipped in Stage 7 with 3 verified resources (DistServe paper, Splitwise paper, DistServe reference implementation). Status: `recommended`. Major engines have shipped enough disaggregated-serving support that the pattern is now teachable as a stable concept, not a moving target.
 4. ~~**Enrich `edges.json`:** 3–5 more cross-stage suggestion edges.~~ **CLOSED 2026-05-14:** added 5 edges (ml-bias-variance → train-eval, tool-pytorch → train-sft, dl-optimizers → train-pretraining, ml-train-val-test → eval-golden-datasets, tool-gpu-cuda-basics → inf-quantization). edges.json now has 13 cross-stage suggestion edges.
 5. **Add a tooltip / first-interaction hint** in the renderer to make dependency-chip clickability legible.
 6. ~~**Add a "challenge a curatorial pick" issue template** to honor the editorial-transparency posture in `CONTRIBUTING.md`.~~ **CLOSED 2026-05-14:** `.github/ISSUE_TEMPLATE/challenge-pick.yml` shipped. CONTRIBUTING.md and CODE_OF_CONDUCT.md both link to it.
@@ -101,6 +101,35 @@ Also shipped in the same enhancement pass (not previously in the backlog but rel
 - `CODE_OF_CONDUCT.md` — Contributor Covenant 2.1 with editorial-disagreement carve-out clarifying the "Challenge a pick" channel.
 - `tools/.linkcheck-ignore` — URL-prefix allowlist for the link-checker, with documented entries for the pre-launch peer-repo URLs and known bot-blockers.
 - CI workflow migration pnpm → npm with verified build (`npm ci && npx tsc --noEmit && npx vite build` all green).
+
+### Second enhancement pass (2026-05-14, post-launch-prep)
+
+The "Enhance further and add a lot more content" pass closed the
+three deferred-node items above and shipped one node not previously on
+the backlog (`agent-computer-use` — computer-use agents emerged as
+table-stakes in late 2024 and warranted first-class coverage in
+Stage 9, not just a mention). It also produced three docs the README
+referenced but did not carry:
+
+- `docs/READING_PATHS.md` — three concrete reader-shaped subsets of the
+  map (CS-student, transitioning-engineer, working-AI-engineer) with
+  node-by-node order, honest time budgets, and a "one project to lock
+  it in" per path. Closes the "reading paths exist in README copy but
+  not as an artifact" gap.
+- `docs/FAQ.md` — the questions every roadmap reader asks. The
+  highest-anxiety question ("how long does this take?") gets the most
+  honest answer, not the marketing one.
+- `docs/GLOSSARY.md` — A–Z terminology lookup. ~60 entries, each
+  pointing to the node where the term is developed. Useful when a
+  later-stage node references a term defined earlier.
+
+Counts after the pass: 110 nodes (+4), 245 verified URLs (+14), 0
+broken links, build green, taxonomy stable.
+
+The remaining backlog items (the renderer's first-interaction tooltip,
+PNG export of the OG card, and the symmetric reference from the peer
+repos once they exist) are deliberately left for the human / the
+post-launch quarterly review.
 
 ## Sign-off
 

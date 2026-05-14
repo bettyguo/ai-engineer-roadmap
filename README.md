@@ -31,7 +31,7 @@
 AI engineering moves so fast that no single course, blog post, or Twitter
 thread holds the whole picture. The result is the most common anxiety in
 the industry right now: *am I learning the right things? am I about to
-fall behind?* This roadmap is the picture: **12 stages, 106 nodes, 227
+fall behind?* This roadmap is the picture: **12 stages, 110 nodes, 245
 link-verified resources**, every stage of the career path, every required
 idea, the best one or two resources for each, kept current.
 
@@ -58,14 +58,25 @@ any node to open a resource panel. The repo holds the structured source
 of truth (`roadmap-data/`) and a static markdown view (`content/`) for
 SEO, accessibility, and offline reading.
 
-Three reading paths:
+Three reading paths — each one is a curated subset, not the full 110-node
+map. See **[docs/READING_PATHS.md](docs/READING_PATHS.md)** for the
+node-by-node plan, time budgets, and "one project to lock it in" per path:
 
 - **CS student or new grad pivoting into AI** — read top-to-bottom; the
-  core nodes in every stage are the whole path.
+  core nodes in every stage are the whole path. 6–10 months @ 15 hrs/week.
 - **Working software engineer transitioning in** — skim Stages 1–4 to
-  self-locate, then focus on 5–11.
+  self-locate, then focus on 5–11. 8–12 weeks @ 10 hrs/week.
 - **Working AI engineer staying current** — go to the **Recently added**
   view and the **Frontier** stage; both are refreshed quarterly.
+  2–4 hrs/week, indefinitely.
+
+Other companion docs:
+
+- **[docs/FAQ.md](docs/FAQ.md)** — the questions every reader asks. How
+  long does this take? Do I need a PhD? Can I skip the math? Why not
+  just use roadmap.sh? How is the roadmap maintained?
+- **[docs/GLOSSARY.md](docs/GLOSSARY.md)** — A–Z terminology lookup, each
+  term pointing to the node where it's developed.
 
 ## Scope
 

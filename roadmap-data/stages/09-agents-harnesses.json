@@ -313,6 +313,53 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "agent-computer-use",
+      "label": "Computer-use agents",
+      "status": "core",
+      "description": "Agents that drive a real computer: screen capture, mouse, keyboard, no purpose-built APIs. Anthropic's Computer Use (Oct 2024) was the first frontier-lab implementation; OpenAI's Operator and others followed. The pattern raises the agent surface area dramatically — and the safety bar with it.",
+      "doneWhen": "You can describe how a computer-use agent grounds its actions in screen pixels and name two failure modes that browser-API or function-call agents do not have.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": ["agent-tool-use", "agent-safety"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "Introducing computer use, a new Claude 3.5 Sonnet",
+          "author": "Anthropic",
+          "year": 2024,
+          "type": "official",
+          "url": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+          "annotation": "The launch post. The clearest framing of what computer-use changes about agent architecture and why pixel-counting is the load-bearing detail.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Computer use tool — Claude API documentation",
+          "author": "Anthropic",
+          "type": "official",
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
+          "annotation": "The reference docs. Read for the actual tool schema and the prompt-engineering patterns the docs recommend — those are the load-bearing operational details.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Initial explorations of Anthropic's new Computer Use capability",
+          "author": "Simon Willison",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://simonwillison.net/2024/Oct/22/computer-use/",
+          "annotation": "The practitioner's first read. Captures the day-one excitement and the immediate prompt-injection-via-screen concern that every computer-use deploy needs to think about.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ],
   "sidewaysLinks": [

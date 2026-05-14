@@ -333,6 +333,124 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "frontier-state-space-models",
+      "label": "State-space models (Mamba & successors)",
+      "status": "recommended",
+      "description": "The post-transformer architectural alternative being seriously explored. Selective SSMs (Mamba) and the SSD framework (Mamba-2) trade attention for linear-time recurrences. Read this to understand what 'beyond transformers' actually looks like in 2026 and why the answer is still mostly 'transformers, but'.",
+      "doneWhen": "You can describe what selective state-space models do differently from attention and where they win or lose against transformer baselines.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": [],
+      "crossStageDependsOn": ["tx-architecture"],
+      "resources": [
+        {
+          "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+          "author": "Gu & Dao",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2312.00752",
+          "annotation": "The original Mamba paper. Read for the selection mechanism — that's the idea everyone built on.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms (Mamba-2)",
+          "author": "Dao & Gu",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2405.21060",
+          "annotation": "The follow-up that connected SSMs and attention through the SSD framework. The clearest explanation of why these architectures are siblings, not rivals.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "state-spaces/mamba (reference implementation)",
+          "author": "state-spaces (Gu, Dao et al.)",
+          "type": "repo",
+          "url": "https://github.com/state-spaces/mamba",
+          "annotation": "The canonical implementation. Read the kernel + the selective-scan code; the rest of the repo is the practical artifact you'd actually deploy.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "A Visual Guide to Mamba and State Space Models",
+          "author": "Maarten Grootendorst",
+          "year": 2024,
+          "type": "blog",
+          "url": "https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mamba-and-state",
+          "annotation": "The on-ramp if the papers are too dense. Animated explanations of S4 → S6 → Mamba; pair it with the original paper.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
+    },
+    {
+      "id": "frontier-multimodal",
+      "label": "Multimodal models (vision-language and beyond)",
+      "status": "core",
+      "description": "Vision-language models, the architectural patterns (CLIP-style encoders + LLM decoders, native multimodal training), and what's now table-stakes (image input, OCR, charts, video). Multimodal isn't a frontier anymore — it's a 2026 product expectation — but the canonical references live here for orientation.",
+      "doneWhen": "You can describe how a CLIP-style encoder plugs into an LLM, and pick between a frozen-vision-encoder approach (LLaVA-style) and a natively multimodal model for a given task.",
+      "position": { "x": 320, "y": 400 },
+      "dependsOn": [],
+      "crossStageDependsOn": ["dl-embeddings-representations"],
+      "resources": [
+        {
+          "title": "Learning Transferable Visual Models From Natural Language Supervision (CLIP)",
+          "author": "Radford et al. (OpenAI)",
+          "year": 2021,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2103.00020",
+          "annotation": "The CLIP paper. The architectural primitive every modern vision-language model still leans on; required reading for the lineage.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Visual Instruction Tuning (LLaVA)",
+          "author": "Liu et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2304.08485",
+          "annotation": "The paper that made open multimodal LLMs practical. Frozen ViT + projector + LLM, GPT-generated instruction data. The starter pattern most multimodal projects clone.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Improved Baselines with Visual Instruction Tuning (LLaVA-1.5)",
+          "author": "Liu et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2310.03744",
+          "annotation": "The follow-up that closed most of the gap to GPT-4V on benchmarks with a simpler recipe. Read together with the original LLaVA paper.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "LLaVA project page (models, demos, code)",
+          "author": "Haotian Liu et al.",
+          "type": "official",
+          "url": "https://llava-vl.github.io/",
+          "annotation": "Models, demos, a working chat interface, and the lineage of LLaVA / LLaVA-NeXT releases. The fastest way to actually try a multimodal model.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

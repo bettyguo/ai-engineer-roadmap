@@ -61,14 +61,14 @@ EXPECTED_STAGES: list[tuple[str, int, int]] = [
     ("04-dl-fundamentals", 4, 10),
     ("05-transformers-llm-internals", 5, 8),
     ("06-training-finetuning", 6, 10),
-    ("07-inference-serving", 7, 10),
+    ("07-inference-serving", 7, 11),
     ("08-retrieval-rag", 8, 10),
-    ("09-agents-harnesses", 9, 8),
+    ("09-agents-harnesses", 9, 9),
     ("10-evaluation-observability", 10, 8),
     ("11-deployment-production", 11, 8),
-    ("12-safety-alignment-frontier", 12, 8),
+    ("12-safety-alignment-frontier", 12, 10),
 ]
-EXPECTED_TOTAL_NODES = sum(n for (_, _, n) in EXPECTED_STAGES)  # 96
+EXPECTED_TOTAL_NODES = sum(n for (_, _, n) in EXPECTED_STAGES)  # 110
 
 
 class Problems:
