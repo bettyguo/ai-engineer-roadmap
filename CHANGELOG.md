@@ -58,13 +58,45 @@ removals.
 
 ### Changed
 - Node count 110 → 122 (six explicit additions + six from concurrent
-  curation in stages 2, 8, 9, 10, 11).
+  curation in stages 2, 8, 9, 10, 11 —
+  `tool-experiment-tracking`, `rag-self-corrective`,
+  `agent-deep-research`, `eval-red-teaming`,
+  `prod-progressive-rollout`, `prod-incident-response`).
 - Auto-verified URL count 245 → 276.
 - Total resources in the data 272 → 317.
 - README opening framing updated; `122 nodes, 276 link-verified
   resources`. Reading-paths section now also links the new docs.
 - SVG hero and social card counts updated and re-synced into
   `site/public/og-card.svg`.
+
+### Site performance & infrastructure
+- **Bundle code-split** — React Flow now ships in its own lazy chunk
+  (`xyflow-*.js`), loaded via `React.lazy` only when the user reaches
+  the diagram. Initial-paint bundle dropped from 502 KB / 153 KB gz to
+  ~332 KB / ~99 KB gz (−35%). The TopBar + Sidebar + loading state
+  paint and become interactive before the graph engine arrives.
+- **`tools/build.py`** now also emits:
+  - `content/RECENTLY_ADDED.md` — last-90-days view, newest first.
+    The "Recently added" artifact the reading-paths doc has long
+    referenced now exists as a real file.
+  - `site/public/sitemap.xml` — one entry per node so search engines
+    can index the hash-fragment deep URLs.
+- **Site assets added:**
+  - `site/public/manifest.webmanifest` — PWA-lite installable manifest.
+  - `site/public/robots.txt` — explicit allow-list pointing at the sitemap.
+  - `site/public/404.html` — hash-redirect recovery so bare
+    `/node-id` URLs (missing the `#`) bounce to `/#node-id`.
+- **`site/index.html`** — `LearningResource` JSON-LD structured data,
+  canonical URL, sharper OG/Twitter meta, theme-color, deferred font
+  loading via `<link rel="preload" as="style" onload="...">`, a
+  pre-hydration `<noscript>` fallback pointing at `content/`.
+- **Site accessibility** — skip-to-content link, focus-visible rings,
+  `aria-live` selection announcement for screen readers, MiniMap hidden
+  below 768 px, `prefers-reduced-motion` + print stylesheets.
+- **`docs/DEPLOY.md`** — explicit "**Settings → Pages → GitHub
+  Actions**" one-time enable step (the most common cause of 404s after
+  pushing the repo), a smoke-test curl recipe, an updated bundle-size
+  table.
 
 ### Added (second enhancement pass, 2026-05-14)
 - **Four new nodes** closing Phase 6 GAPS-ISSUE items #1, #2, #3, plus
