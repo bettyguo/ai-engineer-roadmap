@@ -451,6 +451,54 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "frontier-test-time-compute",
+      "label": "Test-time compute & process reward models",
+      "status": "recommended",
+      "description": "The 2024–2026 paradigm shift: spend more compute at inference to get better answers, not just at training. Process-reward-model search, self-consistency, best-of-N, tree search; the substrate that o-style reasoning models sit on. Distinct from `frontier-reasoning-models` — that node is about the trained behavior, this one is about the underlying scaling law.",
+      "doneWhen": "You can describe two test-time-compute strategies (search vs. revise) and explain when each beats scaling parameters, given a budget.",
+      "position": { "x": 640, "y": 400 },
+      "dependsOn": ["frontier-reasoning-models"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters",
+          "author": "Snell et al. (Google DeepMind & UC Berkeley)",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2408.03314",
+          "annotation": "The clearest empirical study of when test-time compute beats parameter-count scaling. The search-vs-revise framing is the load-bearing concept.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Let's Verify Step by Step",
+          "author": "Lightman et al. (OpenAI)",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2305.20050",
+          "annotation": "The process-reward-model paper. Required reading to understand why per-step verifier signals beat outcome-only training for reasoning.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+          "author": "DeepSeek-AI",
+          "year": 2025,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2501.12948",
+          "annotation": "The first open-weights model in the o-class. The R1-Zero ablation — pure RL on a base model produces self-verifying reasoning — is the result that reshaped the field's intuitions.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

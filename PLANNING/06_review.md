@@ -102,6 +102,48 @@ Also shipped in the same enhancement pass (not previously in the backlog but rel
 - `tools/.linkcheck-ignore` — URL-prefix allowlist for the link-checker, with documented entries for the pre-launch peer-repo URLs and known bot-blockers.
 - CI workflow migration pnpm → npm with verified build (`npm ci && npx tsc --noEmit && npx vite build` all green).
 
+### Third enhancement pass (2026-05-14, "optimize further and add more content" #2)
+
+This pass closed the remaining easy "more content" gaps and shipped
+the governance / process artifacts an OSS launch is expected to carry.
+
+**Six more nodes** with verified resources:
+
+- `dl-vision-transformers` (Stage 4) — ViT as a first-class node.
+- `train-synthetic-data` (Stage 6) — the post-training shift of 2025.
+- `inf-flashattention` (Stage 7) — promoted from cross-node resource
+  to its own node (FA 1/2/3 + the canonical repo).
+- `agent-coding-agents` (Stage 9) — Claude Code / Aider / SWE-bench.
+- `eval-arena-elo` (Stage 10) — pairwise crowdsourced preference.
+- `frontier-test-time-compute` (Stage 12) — Snell et al., Lightman
+  et al., DeepSeek-R1. Distinct from `frontier-reasoning-models`.
+
+**Three more docs:**
+- `docs/SUGGESTED_PROJECTS.md` — one project per stage; together they
+  assemble a coherent portfolio.
+- `docs/CAREER_LADDERS.md` — roadmap × L1/L2/L3/L4 AI-engineer levels.
+- `docs/WHAT_CHANGED.md` — monthly-pulse changelog template + the
+  launch-month first entry.
+
+**Two governance files:**
+- `SECURITY.md` — vulnerability / abuse reporting policy specific to
+  a curated content artifact.
+- `MAINTAINERS.md` — single-curator model rationale, decision rules,
+  COI disclosure, soft + hard succession protocol.
+
+**One new tool:**
+- `tools/stats.py` — canonical count source so the README, the SVG
+  assets, and the CHANGELOG cannot drift apart.
+
+**One fix:** the broken `eugeneyan.com/writing/shadow-mode/` URL on
+the `prod-canary-shadow-rollout` node was swapped for the verified
+Christopher Samiullah writeup of the same pattern; linkcheck went
+276/276 green.
+
+Counts after the third pass: **122 nodes** (+12, including concurrent
+curatorial additions in Stages 2, 8, 9, 10, 11), **317 resources**
+(+45), **276 auto-verified URLs**.
+
 ### Second enhancement pass (2026-05-14, post-launch-prep)
 
 The "Enhance further and add a lot more content" pass closed the

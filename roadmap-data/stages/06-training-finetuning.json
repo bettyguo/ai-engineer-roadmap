@@ -396,6 +396,64 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "train-synthetic-data",
+      "label": "Synthetic data generation",
+      "status": "core",
+      "description": "Using LLMs to generate the training data for other LLMs. Started as a hack (Self-Instruct, Alpaca) and became the dominant post-training pattern by 2025 (Phi, Tülu 3, Llama 3.1 post-training). The highest-leverage area for an engineer with no human-labeling budget.",
+      "doneWhen": "You can design a synthetic-data pipeline for a task — generator + filter + dedup + quality scoring — and explain how it will fail without each step.",
+      "position": { "x": 640, "y": 400 },
+      "dependsOn": ["train-data-curation", "train-sft"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+          "author": "Wang et al.",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2212.10560",
+          "annotation": "The paper that made synthetic instruction data respectable. The bootstrapping pipeline here is the conceptual ancestor of almost every modern post-training dataset.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Tülu 3: Pushing Frontiers in Open Language Model Post-Training",
+          "author": "Lambert et al. (Ai2)",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2411.15124",
+          "annotation": "The most-detailed open post-training recipe in print. The persona-driven synthetic-data section is the part to study; the rest is the cohesion model.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "yizhongw/self-instruct (reference implementation)",
+          "author": "Yizhong Wang",
+          "type": "repo",
+          "url": "https://github.com/yizhongw/self-instruct",
+          "annotation": "The Self-Instruct codebase. Reading this end-to-end is the fastest way to internalize the generate / filter / dedup loop.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "tatsu-lab/stanford_alpaca",
+          "author": "Stanford",
+          "type": "repo",
+          "url": "https://github.com/tatsu-lab/stanford_alpaca",
+          "annotation": "The repo that made fine-tuning-on-synthetic-data the default. Worth reading for the 52K-example dataset's structure as much as for the code.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

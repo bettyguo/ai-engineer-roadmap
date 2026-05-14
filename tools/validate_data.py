@@ -56,19 +56,19 @@ MIN_DESCRIPTION_LEN = 20
 EXPECTED_STAGES: list[tuple[str, int, int]] = [
     # (stage_id, stage_number, expected_node_count)
     ("01-prerequisites-math", 1, 8),
-    ("02-programming-tooling", 2, 8),
+    ("02-programming-tooling", 2, 9),
     ("03-ml-fundamentals", 3, 10),
-    ("04-dl-fundamentals", 4, 10),
+    ("04-dl-fundamentals", 4, 11),
     ("05-transformers-llm-internals", 5, 8),
-    ("06-training-finetuning", 6, 10),
-    ("07-inference-serving", 7, 11),
-    ("08-retrieval-rag", 8, 10),
-    ("09-agents-harnesses", 9, 9),
-    ("10-evaluation-observability", 10, 8),
-    ("11-deployment-production", 11, 8),
-    ("12-safety-alignment-frontier", 12, 10),
+    ("06-training-finetuning", 6, 11),
+    ("07-inference-serving", 7, 12),
+    ("08-retrieval-rag", 8, 11),
+    ("09-agents-harnesses", 9, 11),
+    ("10-evaluation-observability", 10, 10),
+    ("11-deployment-production", 11, 10),
+    ("12-safety-alignment-frontier", 12, 11),
 ]
-EXPECTED_TOTAL_NODES = sum(n for (_, _, n) in EXPECTED_STAGES)  # 110
+EXPECTED_TOTAL_NODES = sum(n for (_, _, n) in EXPECTED_STAGES)  # 122
 
 
 class Problems:

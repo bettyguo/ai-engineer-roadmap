@@ -1,6 +1,6 @@
 # Reading paths
 
-The roadmap has 110 nodes across 12 stages. Reading it linearly takes
+The roadmap has 122 nodes across 12 stages. Reading it linearly takes
 many months. This doc collapses the map to **three concrete reader-
 shaped subsets** so you can start without staring at the full graph.
 

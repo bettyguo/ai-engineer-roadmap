@@ -412,6 +412,52 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "dl-vision-transformers",
+      "label": "Vision Transformers (ViT)",
+      "status": "core",
+      "description": "The architecture that brought transformers to vision: image patches as tokens, attention over patches. The bridge from the transformer mental model of Stage 5 to the multimodal models of Stage 12, and the encoder behind most production vision-language stacks.",
+      "doneWhen": "You can describe how ViT tokenizes an image into patches and explain why it beats CNNs at scale but not always at small data.",
+      "position": { "x": 640, "y": 400 },
+      "dependsOn": ["dl-cnns"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+          "author": "Dosovitskiy et al.",
+          "year": 2020,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2010.11929",
+          "annotation": "The ViT paper. Read for the patch-as-token framing — that's the conceptual move every multimodal stack still relies on.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "lucidrains/vit-pytorch (reference implementation)",
+          "author": "Phil Wang (lucidrains)",
+          "type": "repo",
+          "url": "https://github.com/lucidrains/vit-pytorch",
+          "annotation": "The community-favorite minimal PyTorch implementation, with variants. The fastest way to actually run a ViT end-to-end.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "google/vit-base-patch16-224 (Hugging Face model card)",
+          "author": "Google",
+          "type": "official",
+          "url": "https://huggingface.co/google/vit-base-patch16-224",
+          "annotation": "The canonical pretrained ViT on Hugging Face. Useful to inspect for the practical details of inputs, preprocessing, and the head.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

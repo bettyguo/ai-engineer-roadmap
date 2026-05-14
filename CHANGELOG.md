@@ -7,7 +7,66 @@ removals.
 
 ## [Unreleased]
 
-### Added
+### Added (third enhancement pass, late 2026-05)
+- **Six more new nodes** covering identified gaps:
+  - `dl-vision-transformers` (Stage 4, core) — ViT as a first-class
+    node, the bridge from transformers to multimodal. 3 verified
+    resources (Dosovitskiy et al. paper, lucidrains/vit-pytorch,
+    google/vit-base-patch16-224 model card).
+  - `train-synthetic-data` (Stage 6, core) — the biggest post-training
+    shift of 2025. 4 verified resources (Self-Instruct paper, Tülu 3
+    paper, yizhongw/self-instruct repo, tatsu-lab/stanford_alpaca).
+  - `inf-flashattention` (Stage 7, core) — was mentioned as a resource
+    on multiple other nodes; promoted to its own. 4 verified resources
+    (FlashAttention 1/2/3 papers + the Dao-AILab repo).
+  - `agent-coding-agents` (Stage 9, recommended) — Claude Code, Aider,
+    SWE-bench. 3 verified resources.
+  - `eval-arena-elo` (Stage 10, recommended) — the Chatbot Arena
+    pattern, pairwise crowdsourced preference with Bradley-Terry. 3
+    verified resources (Chatbot Arena paper, LMSYS launch blog,
+    lm-sys/FastChat).
+  - `frontier-test-time-compute` (Stage 12, recommended) — distinct
+    from `frontier-reasoning-models`; the underlying scaling-law
+    paradigm. 3 verified resources (Snell et al., Lightman et al.,
+    DeepSeek-R1).
+- **Three more new docs:**
+  - `docs/SUGGESTED_PROJECTS.md` — one concrete project per stage,
+    ~1-3 days each, designed so completing all twelve assembles into
+    a coherent portfolio.
+  - `docs/CAREER_LADDERS.md` — maps the roadmap onto L1/L2/L3/L4
+    AI-engineer levels with comp-band context, hiring-loop framing,
+    and the "PhD or not" question addressed honestly.
+  - `docs/WHAT_CHANGED.md` — the monthly-pulse changelog template, with
+    the launch-month entry as the first row.
+- **Two governance files:**
+  - `SECURITY.md` — vulnerability and abuse reporting policy.
+    Defines what counts as a security issue for a content artifact
+    (malicious URLs, doxxing in PRs, supply-chain attacks on the
+    renderer) vs. ordinary maintenance.
+  - `MAINTAINERS.md` — single-curator model rationale, decision rules,
+    COI disclosure norms, and the soft + hard succession protocol.
+- **New tool: `tools/stats.py`** — canonical count source. Emits
+  stages / nodes / resources / unique URLs / status breakdown /
+  type breakdown / difficulty / free-paid / per-stage rollup. Used to
+  keep the README, SVGs, and CHANGELOG count claims from drifting
+  apart.
+
+### Fixed
+- Broken `eugeneyan.com/writing/shadow-mode/` URL on
+  `prod-canary-shadow-rollout` swapped for the verified Christopher
+  Samiullah writeup of the same pattern.
+
+### Changed
+- Node count 110 → 122 (six explicit additions + six from concurrent
+  curation in stages 2, 8, 9, 10, 11).
+- Auto-verified URL count 245 → 276.
+- Total resources in the data 272 → 317.
+- README opening framing updated; `122 nodes, 276 link-verified
+  resources`. Reading-paths section now also links the new docs.
+- SVG hero and social card counts updated and re-synced into
+  `site/public/og-card.svg`.
+
+### Added (second enhancement pass, 2026-05-14)
 - **Four new nodes** closing Phase 6 GAPS-ISSUE items #1, #2, #3, plus
   one not previously on the backlog:
   - `frontier-state-space-models` (Stage 12) — Mamba and the SSD

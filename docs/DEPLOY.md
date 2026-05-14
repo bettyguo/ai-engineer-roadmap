@@ -46,7 +46,25 @@ npm run build
 # Output is in site/dist/. Static files. Host anywhere.
 ```
 
-Verified locally: produces ~30 KB CSS and ~390 KB JS (~125 KB gzipped).
+Verified locally with `npm run build`:
+
+| Chunk | Raw | Gzipped | When loaded |
+|---|---|---|---|
+| `index.html` | 6 KB | 2 KB | initial |
+| `index-*.css` | 19 KB | 5 KB | initial |
+| `index-*.js` | 190 KB | 52 KB | initial |
+| `react-*.js` | 142 KB | 45 KB | initial |
+| `xyflow-*.css` | 16 KB | 3 KB | lazy (diagram) |
+| `xyflow-*.js` | 181 KB | 59 KB | lazy (diagram) |
+| `Diagram-*.js` | 4 KB | 2 KB | lazy (diagram) |
+
+Initial paint ships ~99 KB gzipped; the React Flow diagram chunk lazy-loads
+in parallel, so the TopBar + Sidebar + loader are interactive before the
+graph engine arrives.
+
+The build also emits `dist/sitemap.xml` (one entry per node), `dist/robots.txt`,
+`dist/manifest.webmanifest` (PWA), and `dist/404.html` (with a hash-redirect
+recovery for direct `/<node-id>` links missing the `#`).
 
 ## Path A — GitHub Pages (recommended)
 
@@ -60,6 +78,26 @@ This is what `.github/workflows/deploy.yml` does. One-time setup:
 4. The workflow builds the site with `BASE_PATH=/ai-engineer-roadmap/`, uploads
    the artifact, and deploys it to
    `https://bettyguo.github.io/ai-engineer-roadmap/`.
+
+> **Until step 2 is done, the live URL returns 404.** This is the most common
+> "the site is broken" report: the repo is pushed but Pages isn't enabled.
+> Verify in the **Actions** tab that the `deploy-pages` workflow ran green.
+
+### Verify the deployment
+
+After enabling Pages and pushing, the deploy should be reachable inside ~2
+minutes. Smoke-test:
+
+```bash
+curl -sI https://bettyguo.github.io/ai-engineer-roadmap/ | head -1
+# Expect: HTTP/2 200
+
+curl -s https://bettyguo.github.io/ai-engineer-roadmap/sitemap.xml | head -3
+# Expect: <?xml version="1.0" encoding="UTF-8"?>
+```
+
+Direct node links (e.g. `https://bettyguo.github.io/ai-engineer-roadmap/#math-linear-algebra`)
+should open the diagram with that node selected.
 
 If you want a custom domain, put it in **Settings → Pages → Custom domain**;
 the workflow also serves the right base path if you set

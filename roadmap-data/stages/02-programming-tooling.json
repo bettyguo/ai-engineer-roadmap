@@ -355,6 +355,48 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "tool-experiment-tracking",
+      "label": "Experiment tracking",
+      "status": "recommended",
+      "description": "Recording runs, hyperparameters, metrics, artifacts and lineage. The point at which 'I had a good result last week' becomes reproducible. Weights & Biases and MLflow are the two defaults; Aim and Neptune cover the niches.",
+      "doneWhen": "You can rerun a result from three weeks ago — same config, same data, same model — without a notebook screenshot.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": ["tool-python", "tool-pytorch"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "Weights & Biases — Quickstart",
+          "type": "official",
+          "url": "https://docs.wandb.ai/quickstart",
+          "annotation": "The de-facto experiment tracker in 2026. Two lines of code; integrates with every trainer. Free tier covers personal/academic use.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "MLflow — Tracking",
+          "type": "official",
+          "url": "https://mlflow.org/docs/latest/tracking.html",
+          "annotation": "The open-source alternative you self-host. Right pick when sending runs to a third party is off the table (enterprise, regulated data).",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Aim — open-source experiment tracker",
+          "type": "repo",
+          "url": "https://github.com/aimhubio/aim",
+          "annotation": "A focused, fast, self-host-friendly alternative. Worth knowing exists when wandb feels heavy and MLflow feels enterprise-y.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

@@ -3,43 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FAF8F2" media="(prefers-color-scheme: light)" />
 
     <title>AI Engineer Roadmap — the whole career path, curated</title>
     <meta
       name="description"
-      content="An interactive roadmap for becoming — and growing as — an AI engineer. The whole path, fundamentals to frontier, with curated and link-verified resources on every node. Curated by Betty Guo, an active AI researcher (HKU)."
+      content="An interactive roadmap for becoming — and growing as — an AI engineer. The whole path, fundamentals to frontier, with curated and link-verified resources on every node. Curated by an active AI researcher."
     />
+    <meta
+      name="keywords"
+      content="AI engineer, machine learning, deep learning, transformers, LLM, RAG, agents, inference, alignment, roadmap, curriculum"
+    />
+    <meta name="author" content="Betty Guo (Dongxin Guo)" />
+    <link rel="canonical" href="https://bettyguo.github.io/ai-engineer-roadmap/" />
 
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="manifest" href="./manifest.webmanifest" />
 
     <!-- Open Graph / social -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="AI Engineer Roadmap" />
+    <meta property="og:site_name" content="AI Engineer Roadmap" />
+    <meta property="og:title" content="AI Engineer Roadmap — the whole career path, curated" />
     <meta
       property="og:description"
-      content="An interactive roadmap for becoming an AI engineer. The whole path, curated by an active AI researcher."
+      content="The whole AI-engineer career path, fundamentals to frontier, with curated and link-verified resources on every node. Curated by an active AI researcher."
     />
-    <meta property="og:image" content="./og-card.png" />
+    <meta property="og:image" content="./og-card.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI Engineer Roadmap — twelve-stage path, fundamentals to frontier" />
     <meta property="og:url" content="https://bettyguo.github.io/ai-engineer-roadmap/" />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AI Engineer Roadmap" />
+    <meta name="twitter:title" content="AI Engineer Roadmap — the whole career path, curated" />
     <meta
       name="twitter:description"
-      content="An interactive roadmap for becoming an AI engineer. The whole path, curated by an active AI researcher."
+      content="The whole AI-engineer career path, fundamentals to frontier, with curated and link-verified resources on every node."
     />
-    <meta name="twitter:image" content="./og-card.png" />
+    <meta name="twitter:image" content="./og-card.svg" />
 
-    <!-- Fonts -->
+    <!-- Resource hints: the user will click out to GitHub or arXiv often;
+         preconnect to shave 100–300ms off the first outbound click. -->
+    <link rel="preconnect" href="https://github.com" crossorigin />
+    <link rel="preconnect" href="https://arxiv.org" crossorigin />
+
+    <!-- Fonts. Async-load so they don't block first paint; the
+         system-font stack covers us until they arrive. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      />
+    </noscript>
+
+    <!-- Structured data: LearningResource (the whole roadmap).
+         Helps Google index this as an educational artifact, not a blog. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LearningResource",
+        "name": "AI Engineer Roadmap",
+        "description": "An interactive roadmap for becoming — and growing as — an AI engineer. Twelve stages, hand-curated nodes, link-verified resources.",
+        "url": "https://bettyguo.github.io/ai-engineer-roadmap/",
+        "inLanguage": "en",
+        "learningResourceType": "Curriculum",
+        "educationalLevel": "Undergraduate to Professional",
+        "isAccessibleForFree": true,
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "author": {
+          "@type": "Person",
+          "name": "Betty Guo (Dongxin Guo)",
+          "url": "https://github.com/bettyguo",
+          "identifier": "https://orcid.org/0009-0000-2388-1072",
+          "affiliation": {
+            "@type": "EducationalOrganization",
+            "name": "University of Hong Kong, Department of Computer Science"
+          }
+        },
+        "about": [
+          "Machine Learning",
+          "Deep Learning",
+          "Large Language Models",
+          "Transformers",
+          "Retrieval-Augmented Generation",
+          "AI Agents",
+          "Inference Serving",
+          "AI Safety",
+          "AI Alignment"
+        ]
+      }
+    </script>
   </head>
   <body class="bg-ink-950 text-ink-50 font-sans">
-    <div id="root"></div>
+    <div id="root">
+      <!-- Pre-hydration loading state, also visible if JS is disabled.
+           Falls back to a link to the static markdown view. -->
+      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:ui-sans-serif,system-ui,sans-serif;color:#B6B0A2;padding:2rem;text-align:center">
+        <div style="max-width:32rem">
+          <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#7A746A;margin-bottom:1rem">
+            AI Engineer Roadmap
+          </div>
+          <div style="font-size:14px;line-height:1.6">
+            Loading the interactive diagram…
+          </div>
+          <noscript>
+            <div style="font-size:13px;line-height:1.6;margin-top:1.5rem">
+              JavaScript is disabled. The static markdown view of all twelve stages
+              is available at
+              <a style="color:#F8F7F4;text-decoration:underline" href="https://github.com/bettyguo/ai-engineer-roadmap/tree/main/content">github.com/bettyguo/ai-engineer-roadmap/tree/main/content</a>.
+            </div>
+          </noscript>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Not found — AI Engineer Roadmap</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      :root { color-scheme: dark light; }
+      html, body { margin: 0; background: #050505; color: #F8F7F4; height: 100%; font-family: ui-sans-serif, system-ui, Inter, sans-serif; }
+      main { min-height: 100%; display: flex; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+      .wrap { max-width: 36rem; }
+      h1 { font-family: "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 1.5rem; margin: 0 0 1rem; }
+      p { color: #B6B0A2; line-height: 1.6; font-size: 14px; }
+      a.btn { display: inline-block; margin-top: 1.5rem; padding: 0.6rem 1.1rem; border: 1px solid #2A2723; border-radius: 4px; color: #F8F7F4; text-decoration: none; font-family: ui-monospace, "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.04em; }
+      a.btn:hover { border-color: #D9D2C3; }
+      .small { font-size: 12px; color: #7A746A; margin-top: 1.5rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrap">
+        <h1>This page isn't here.</h1>
+        <p>
+          Direct links to roadmap nodes look like
+          <code>/#node-id</code> — the <code>#</code> is required.
+          If you arrived from a bare <code>/node-id</code> link, that's the bug.
+        </p>
+        <p class="small">
+          Redirecting you to the roadmap. If nothing happens in a moment,
+          use the button below.
+        </p>
+        <a class="btn" href="/ai-engineer-roadmap/">open the roadmap →</a>
+      </div>
+    </main>
+    <script>
+      // GitHub Pages serves 404.html for unknown paths. If a user landed on
+      // /something-id (no hash) and "something-id" looks like a node id,
+      // forward them to /#something-id so the SPA can pick it up.
+      (function () {
+        var path = location.pathname.replace(/^\/ai-engineer-roadmap\//, "").replace(/\/$/, "");
+        var maybeId = path.match(/^[a-z0-9-]{3,80}$/);
+        var target = "/ai-engineer-roadmap/" + (maybeId ? "#" + path : "");
+        setTimeout(function () { location.replace(target); }, 600);
+      })();
+    </script>
+  </body>
+</html>

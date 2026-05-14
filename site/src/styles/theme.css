@@ -110,3 +110,25 @@ html.light {
   --accent: #3A3530;
 }
 html.light body { background: var(--bg); color: var(--text); }
+
+/* MiniMap is helpful on desktop, distracting on small screens. */
+@media (max-width: 768px) {
+  .react-flow__minimap { display: none; }
+}
+
+/* Respect prefers-reduced-motion: kill the dot-cluster pulse, smooth
+   transitions, and the connection-line dashes that animate. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print: collapse to a long-form readable page (in case anyone prints
+   the live site — falls through to plain text without the diagram). */
+@media print {
+  .react-flow, .react-flow__minimap, .react-flow__controls { display: none !important; }
+  html, body { background: #fff !important; color: #000 !important; }
+}

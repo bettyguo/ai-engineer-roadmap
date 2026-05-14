@@ -291,6 +291,94 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "prod-progressive-rollout",
+      "label": "Progressive rollout (canary, feature flags, shadow traffic)",
+      "status": "recommended",
+      "description": "Rolling out a new model or a new prompt without breaking production: feature flags, percentage canary, shadow-traffic comparison, automatic rollback on guard-rail breach. The fast-feedback variant of LLMOps.",
+      "doneWhen": "You can design a rollout plan for swapping a prompt or a model and name the metric that would trigger an automatic rollback.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": ["prod-api-design"],
+      "crossStageDependsOn": ["eval-ab-testing", "eval-continuous-production"],
+      "resources": [
+        {
+          "title": "Feature Toggles (aka Feature Flags)",
+          "author": "Pete Hodgson (martinfowler.com)",
+          "year": 2017,
+          "type": "blog",
+          "url": "https://martinfowler.com/articles/feature-toggles.html",
+          "annotation": "The canonical taxonomy of release / experiment / ops / permission toggles. Old but the categorization is exactly right and the LLM use cases map cleanly.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Google SRE Workbook — Canarying Releases",
+          "type": "book",
+          "url": "https://sre.google/workbook/canarying-releases/",
+          "annotation": "The clearest practitioner-level write-up of canary-rollout design: what to measure, how long to wait, when to fail open vs closed.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Deploying Machine Learning Applications in Shadow Mode",
+          "author": "Christopher Samiullah",
+          "year": 2019,
+          "type": "blog",
+          "url": "https://christophergs.com/machine%20learning/2019/03/30/deploying-machine-learning-applications-in-shadow-mode/",
+          "annotation": "The clearest practitioner write-up of the shadow-mode pattern: mirror traffic to a candidate model, diff the outputs, no user exposure. The fastest way to de-risk a model swap.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
+    },
+    {
+      "id": "prod-incident-response",
+      "label": "Incident response & runbooks",
+      "status": "recommended",
+      "description": "When a model regresses, a vendor outages, a prompt-injection lands, or a cost-spike fires — the on-call discipline that turns chaos into a 90-minute resolution. Severity definitions, runbooks, blameless postmortems, the LLM-specific failure modes.",
+      "doneWhen": "You can write a usable runbook for the three most likely failure modes of a deployed LLM feature.",
+      "position": { "x": 320, "y": 400 },
+      "dependsOn": ["prod-rate-limit-fallback"],
+      "crossStageDependsOn": ["eval-tracing-observability"],
+      "resources": [
+        {
+          "title": "Google SRE Book — Managing Incidents",
+          "type": "book",
+          "url": "https://sre.google/sre-book/managing-incidents/",
+          "annotation": "The reference chapter. Incident command, communication, the difference between IC / OL / CL. The framing applies to LLM ops with no translation.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Google SRE Book — Postmortem Culture",
+          "type": "book",
+          "url": "https://sre.google/sre-book/postmortem-culture/",
+          "annotation": "Blameless postmortems, the discipline that turns one outage into a lesson. The bar to aim for, not the bar you'll hit on incident #1.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "PagerDuty Incident Response documentation",
+          "type": "official",
+          "url": "https://response.pagerduty.com/",
+          "annotation": "The open-source-licensed playbook the rest of the industry copies from. Useful as a runnable template when you're standing up on-call for the first time.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

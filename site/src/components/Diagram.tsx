@@ -10,6 +10,7 @@ import {
   type Edge,
   type NodeTypes,
 } from "@xyflow/react";
+import "@xyflow/react/dist/style.css";
 import type { CrossStageEdge, Stage } from "../types";
 import { NodeCard } from "./NodeCard";
 import { StageHeader } from "./StageHeader";

@@ -299,6 +299,97 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "eval-arena-elo",
+      "label": "Pairwise human preference & Arena-Elo",
+      "status": "recommended",
+      "description": "Head-to-head comparison with crowdsourced votes, scored by Elo / Bradley-Terry. The Chatbot Arena pattern is the dominant 'real preference' signal in 2026 — the eval that everyone watches and the one no static benchmark can replicate. Adopt the pattern for your own product.",
+      "doneWhen": "You can run an A/B between two model versions of your product as pairwise human preference, compute a Bradley-Terry score, and explain why the result differs from any single-rubric eval.",
+      "position": { "x": 0, "y": 400 },
+      "dependsOn": ["eval-ab-testing", "eval-golden-datasets"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference",
+          "author": "Chiang et al. (LMSYS)",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2403.04132",
+          "annotation": "The paper that legitimized pairwise crowdsourced preference as an eval methodology. Read for the Elo-to-Bradley-Terry transition — that's the part most replications get wrong.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Chatbot Arena: Benchmarking LLMs in the Wild with Elo Ratings",
+          "author": "LMSYS",
+          "year": 2023,
+          "type": "blog",
+          "url": "https://lmsys.org/blog/2023-05-03-arena/",
+          "annotation": "The launch blog post. Plain-language explanation of the pairwise / Elo / human-vote design. Pair with the paper for the methodology refinements.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "lm-sys/FastChat",
+          "author": "LMSYS",
+          "type": "repo",
+          "url": "https://github.com/lm-sys/FastChat",
+          "annotation": "The reference code behind Chatbot Arena and the LMSYS evaluation stack. Worth reading for the head-to-head session protocol and the vote pipeline.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
+    },
+    {
+      "id": "eval-red-teaming",
+      "label": "Red-teaming & adversarial eval",
+      "status": "recommended",
+      "description": "Stress-test models against jailbreaks, prompt injection, data exfiltration, and the OWASP LLM Top-10 failure modes. The eval discipline that complements clean-benchmark scoring with 'how does this fail when someone tries'.",
+      "doneWhen": "You can run a focused red-team pass against an LLM feature and produce a triaged list of findings with severity.",
+      "position": { "x": 320, "y": 400 },
+      "dependsOn": ["eval-harnesses"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "OWASP Top 10 for LLM Applications",
+          "type": "official",
+          "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+          "annotation": "The vendor-neutral taxonomy of LLM application risks. Use it as the checklist that anchors a red-team pass.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Anthropic's responsible scaling policy & red-team practice",
+          "author": "Anthropic",
+          "type": "official",
+          "url": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy",
+          "annotation": "The clearest public account of how a frontier lab structures red-teaming against capability thresholds. Useful as the high-rigor reference point.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "PyRIT",
+          "author": "Microsoft",
+          "type": "repo",
+          "url": "https://github.com/Azure/PyRIT",
+          "annotation": "Python Risk Identification Tool for LLMs. The open-source automation layer for running attack prompts at scale against your own systems.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

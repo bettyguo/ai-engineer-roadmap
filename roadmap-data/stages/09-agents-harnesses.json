@@ -360,6 +360,98 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "agent-coding-agents",
+      "label": "Coding agents",
+      "status": "recommended",
+      "description": "The 2024-2026 product category: agents that read code, edit files, run tests, and submit PRs. Claude Code, Cursor, Aider, OpenHands, and friends. SWE-bench is the benchmark that drove their development. The clearest commercial application of agentic AI in 2026 — and the one most AI engineers will be asked to evaluate, deploy, or build against.",
+      "doneWhen": "You can compare two coding agents on a real task, articulate the SWE-bench Verified score's limits, and name two cases where a coding agent will fail predictably.",
+      "position": { "x": 320, "y": 400 },
+      "dependsOn": ["agent-tool-use", "agent-planning-patterns"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "Claude Code",
+          "author": "Anthropic",
+          "type": "official",
+          "url": "https://www.anthropic.com/product/claude-code",
+          "annotation": "Anthropic's terminal-first agentic coder. Read the product page for the model + read GitHub anthropics/claude-code for the surface; the design is the reference shape for terminal-native coding agents.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Aider — AI pair programming in your terminal",
+          "author": "Paul Gauthier et al.",
+          "type": "repo",
+          "url": "https://github.com/Aider-AI/aider",
+          "annotation": "The leading open-source coding agent. Worth reading the codebase: the repo-map, the chat-message format, and the diff-application strategies are all instructive.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "SWE-bench (leaderboards)",
+          "author": "Jimenez et al.",
+          "type": "official",
+          "url": "https://www.swebench.com/",
+          "annotation": "The benchmark every coding agent reports against. Read the Verified leaderboard methodology — it's the trustworthy slice; the original SWE-bench has known contamination issues.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
+    },
+    {
+      "id": "agent-deep-research",
+      "label": "Deep-research agents",
+      "status": "recommended",
+      "description": "Agents that decompose a research question, run many parallel web/tool searches, read and judge sources, and synthesize a sourced report. The pattern behind OpenAI Deep Research, Anthropic's research workflow, and Perplexity's research mode — and the most powerful general-purpose agent pattern on the market.",
+      "doneWhen": "You can describe the planner/searcher/synthesizer split, how source quality is judged, and where deep research still hallucinates.",
+      "position": { "x": 640, "y": 400 },
+      "dependsOn": ["agent-planning-patterns", "agent-tool-use"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "Introducing deep research",
+          "author": "OpenAI",
+          "year": 2025,
+          "type": "official",
+          "url": "https://openai.com/index/introducing-deep-research/",
+          "annotation": "The launch post and methodology overview for the agent that defined the category. Read for the architecture sketch, not the marketing.",
+          "difficulty": "intro",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "How we built our multi-agent research system",
+          "author": "Anthropic",
+          "year": 2025,
+          "type": "blog",
+          "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+          "annotation": "The other side of the room. The orchestrator/subagent split, the prompts that work, the failure modes — Anthropic's engineering team writing about it candidly.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "open-deep-research",
+          "author": "LangChain",
+          "type": "repo",
+          "url": "https://github.com/langchain-ai/open_deep_research",
+          "annotation": "A fully open reference implementation of the deep-research pattern. The code is the clearest way to internalize the planner/researcher/writer loop.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ],
   "sidewaysLinks": [

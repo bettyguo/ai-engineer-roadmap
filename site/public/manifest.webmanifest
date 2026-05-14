@@ -1,0 +1,21 @@
+{
+  "name": "AI Engineer Roadmap",
+  "short_name": "AI Roadmap",
+  "description": "An interactive roadmap for becoming — and growing as — an AI engineer. The whole path, fundamentals to frontier.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "landscape-primary",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity", "developer"],
+  "lang": "en"
+}

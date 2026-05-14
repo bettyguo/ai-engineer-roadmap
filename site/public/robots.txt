@@ -1,0 +1,17 @@
+# AI Engineer Roadmap — robots.txt
+# Open to all well-behaved crawlers.
+
+User-agent: *
+Allow: /
+
+# AI crawlers: this site is CC BY 4.0 content. We don't block training,
+# but per the license, attribution is required and "in the style of" without
+# the attribution is not. See LICENSE-CONTENT in the source repo.
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://bettyguo.github.io/ai-engineer-roadmap/sitemap.xml

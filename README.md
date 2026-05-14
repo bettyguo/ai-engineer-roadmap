@@ -31,7 +31,7 @@
 AI engineering moves so fast that no single course, blog post, or Twitter
 thread holds the whole picture. The result is the most common anxiety in
 the industry right now: *am I learning the right things? am I about to
-fall behind?* This roadmap is the picture: **12 stages, 110 nodes, 245
+fall behind?* This roadmap is the picture: **12 stages, 122 nodes, 276
 link-verified resources**, every stage of the career path, every required
 idea, the best one or two resources for each, kept current.
 
@@ -58,7 +58,7 @@ any node to open a resource panel. The repo holds the structured source
 of truth (`roadmap-data/`) and a static markdown view (`content/`) for
 SEO, accessibility, and offline reading.
 
-Three reading paths — each one is a curated subset, not the full 110-node
+Three reading paths — each one is a curated subset, not the full 122-node
 map. See **[docs/READING_PATHS.md](docs/READING_PATHS.md)** for the
 node-by-node plan, time budgets, and "one project to lock it in" per path:
 
@@ -66,9 +66,9 @@ node-by-node plan, time budgets, and "one project to lock it in" per path:
   core nodes in every stage are the whole path. 6–10 months @ 15 hrs/week.
 - **Working software engineer transitioning in** — skim Stages 1–4 to
   self-locate, then focus on 5–11. 8–12 weeks @ 10 hrs/week.
-- **Working AI engineer staying current** — go to the **Recently added**
-  view and the **Frontier** stage; both are refreshed quarterly.
-  2–4 hrs/week, indefinitely.
+- **Working AI engineer staying current** — go to the
+  [**Recently added**](content/RECENTLY_ADDED.md) view and the **Frontier**
+  stage; both are refreshed monthly. 2–4 hrs/week, indefinitely.
 
 Other companion docs:
 
@@ -117,6 +117,9 @@ Pick the one that matches what you're trying to do:
   revised, or removed, and a brief frontier review.
 - **Weekly:** an automated link-check (CI cron). Broken links are opened
   as issues.
+- **Recently added view:** auto-generated from the data on every build —
+  see [content/RECENTLY_ADDED.md](content/RECENTLY_ADDED.md) for the
+  last 90 days of additions, sorted newest first.
 - **PR-friendly:** every node has a clear contribution path. See
   [CONTRIBUTING.md](CONTRIBUTING.md).
 

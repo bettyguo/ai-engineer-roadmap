@@ -366,6 +366,52 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "rag-self-corrective",
+      "label": "Self-RAG & corrective retrieval",
+      "status": "recommended",
+      "description": "Self-RAG (model-decided retrieval and self-critique), Corrective RAG (CRAG — verify-then-retrieve-again), agentic RAG loops. The 'when retrieval fails, fail well' patterns that push pipeline robustness past the obvious bar.",
+      "doneWhen": "You can describe Self-RAG's reflection tokens and CRAG's lightweight evaluator and pick the right one for a given failure mode.",
+      "position": { "x": 640, "y": 400 },
+      "dependsOn": ["rag-evaluation"],
+      "crossStageDependsOn": [],
+      "resources": [
+        {
+          "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+          "author": "Asai et al.",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2310.11511",
+          "annotation": "The model emits reflection tokens that decide when to retrieve and whether its own draft is supported. The clearest single paper for 'retrieval as a learned policy'.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Corrective Retrieval Augmented Generation (CRAG)",
+          "author": "Yan et al.",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2401.15884",
+          "annotation": "A lightweight evaluator grades retrieved docs and triggers a web fallback when confidence is low. Often more pragmatic than Self-RAG to ship.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Agentic RAG (LangGraph tutorial)",
+          "type": "official",
+          "url": "https://langchain-ai.github.io/langgraph/tutorials/rag/langgraph_agentic_rag/",
+          "annotation": "Worked-through example of an agentic RAG loop: grade retrieval, rewrite the query, decide to retrieve more. Useful as a code-level reference even if you don't use LangGraph.",
+          "difficulty": "intermediate",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }

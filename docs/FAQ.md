@@ -224,7 +224,7 @@ to argue with. The right reaction to a pick you disagree with is
 
 ## "I'm overwhelmed."
 
-110 nodes is a lot. The whole point of [`READING_PATHS.md`](READING_PATHS.md)
+122 nodes is a lot. The whole point of [`READING_PATHS.md`](READING_PATHS.md)
 is to collapse the map to a ~30-node subset that maps to your specific
 goal. Pick a path, finish a project, then re-open the map.
 

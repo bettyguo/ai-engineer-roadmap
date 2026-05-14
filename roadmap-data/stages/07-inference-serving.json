@@ -477,6 +477,65 @@
           "verifiedAt": "2026-05-14"
         }
       ]
+    },
+    {
+      "id": "inf-flashattention",
+      "label": "FlashAttention",
+      "status": "core",
+      "description": "The IO-aware fused-attention kernel that's both faster and lower-VRAM than the naive implementation. Mentioned as a resource on other nodes but warrants its own: it's the single most-deployed optimization in 2026 inference and training, and the FA-2 / FA-3 lineage is still actively shipping.",
+      "doneWhen": "You can explain why FlashAttention is faster despite computing the same exact attention (tiling + SRAM-vs-HBM bandwidth), and pick FA-2 vs FA-3 for a given GPU.",
+      "position": { "x": 960, "y": 400 },
+      "dependsOn": ["inf-loop-kv-cache"],
+      "crossStageDependsOn": ["tx-self-attention"],
+      "resources": [
+        {
+          "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+          "author": "Dao, Fu, Ermon, Rudra, Ré",
+          "year": 2022,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2205.14135",
+          "annotation": "The original paper. The IO-aware-algorithms framing is the part that pays for itself; everything else has been refined in FA-2 and FA-3.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+          "author": "Tri Dao",
+          "year": 2023,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2307.08691",
+          "annotation": "The follow-up that hit ~2× speedup over FA-1 via better work partitioning. The deployed default on A100/H100 through 2024.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision",
+          "author": "Shah et al.",
+          "year": 2024,
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2407.08608",
+          "annotation": "The Hopper-tuned version that brought async-execution and FP8 into the picture. The current state of the art on H100/H200 in 2026.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        },
+        {
+          "title": "Dao-AILab/flash-attention (canonical implementation)",
+          "author": "Tri Dao et al.",
+          "type": "repo",
+          "url": "https://github.com/Dao-AILab/flash-attention",
+          "annotation": "The reference implementation. Every modern training and inference stack either uses this or replicates it; read the README and the v3 kernel skeleton.",
+          "difficulty": "advanced",
+          "free": true,
+          "addedAt": "2026-05-14",
+          "verifiedAt": "2026-05-14"
+        }
+      ]
     }
   ]
 }
