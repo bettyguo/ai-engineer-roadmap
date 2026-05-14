@@ -30,22 +30,19 @@ jobs:
         run: python tools/validate_data.py
       - name: Generate site data
         run: python tools/build.py
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "pnpm"
-          cache-dependency-path: site/pnpm-lock.yaml
+          cache: "npm"
+          cache-dependency-path: site/package-lock.json
       - name: Install
         working-directory: site
-        run: pnpm install --frozen-lockfile
+        run: npm ci
       - name: Build
         working-directory: site
         env:
           BASE_PATH: "/ai-engineer-roadmap/"
-        run: pnpm build
+        run: npx vite build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

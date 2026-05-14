@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The visual grammar lives here. Deliberate, restrained, editorial. */
+
+:root {
+  --bg: #050505;
+  --bg-elev-1: #0E0D0B;
+  --bg-elev-2: #161513;
+  --border: #2A2723;
+  --text: #F8F7F4;
+  --text-muted: #B6B0A2;
+  --text-dim: #7A746A;
+  --accent: #D9D2C3;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* React Flow canvas inherits the dark editorial background; tame the
+   default grid + minimap chrome so it doesn't read as a productized
+   flow-builder. */
+.react-flow {
+  background: var(--bg);
+}
+.react-flow__background {
+  opacity: 0.18;
+}
+.react-flow__minimap {
+  background: var(--bg-elev-1) !important;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.react-flow__controls {
+  background: var(--bg-elev-1);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.react-flow__controls-button {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.react-flow__controls-button:hover {
+  background: var(--bg-elev-2);
+  color: var(--text);
+}
+
+/* Edges: thin and quiet. The diagram should look read, not played. */
+.react-flow__edge-path {
+  stroke-width: 1.4;
+  stroke: #3A3530;
+}
+.react-flow__edge--dotted .react-flow__edge-path {
+  stroke-dasharray: 4 4;
+  stroke: #2F2A26;
+}
+
+/* Node base styling — the rest is in NodeCard.tsx. */
+.rf-node {
+  font-family: ui-sans-serif, system-ui, Inter, sans-serif;
+}
+
+/* The single signature flourish: a hand-drawn-feeling underline under
+   stage titles. Marks the artifact as curator-made, not auto-generated. */
+.signature-underline {
+  position: relative;
+  display: inline-block;
+}
+.signature-underline::after {
+  content: "";
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  bottom: -4px;
+  height: 2px;
+  background:
+    radial-gradient(circle at 4px 1px, currentColor 0.9px, transparent 1.2px) 0 0 / 8px 2px repeat-x;
+  opacity: 0.7;
+}
+
+/* Focus ring — consistent across the whole UI. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Light theme (paper-warm alternative). Toggled by .light on <html>. */
+html.light {
+  --bg: #FAF8F2;
+  --bg-elev-1: #F2EFE5;
+  --bg-elev-2: #E6E0CC;
+  --border: #D9D2C3;
+  --text: #1A1814;
+  --text-muted: #4F4940;
+  --text-dim: #807870;
+  --accent: #3A3530;
+}
+html.light body { background: var(--bg); color: var(--text); }
