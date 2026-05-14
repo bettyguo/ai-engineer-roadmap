@@ -110,6 +110,10 @@ GitHub: [@bettyguo](https://github.com/bettyguo) · ORCID:
 
 Citing in academic work: see [CITATION.cff](CITATION.cff).
 
+## Star history
+
+[![Star History Chart](https://api.star-history.com/svg?repos=bettyguo/ai-engineer-roadmap&type=Date)](https://star-history.com/#bettyguo/ai-engineer-roadmap&Date)
+
 ## Contributing
 
 Most welcome contributions:
