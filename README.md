@@ -91,7 +91,3 @@ This is the **breadth** roadmap — the whole career path, end to end:
 11. Deployment & Production
 12. Safety, Alignment & the Research Frontier
 
-**Stage 9 is deliberately a summary.** Agents and harnesses are a full
-craft of their own; for the depth dive, see the peer roadmap
-**[harness-engineer-roadmap](https://github.com/bettyguo/harness-engineer-roadmap)**.
-
