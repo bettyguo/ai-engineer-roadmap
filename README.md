@@ -20,10 +20,6 @@
   <sub>The image above is a structural overview. The <em>interactive</em> diagram — pannable, zoomable, click-any-node for resources — lives at the live site below.</sub>
 </p>
 
-<p align="center">
-  <b><a href="https://bettyguo.github.io/ai-engineer-roadmap/">→ Open the interactive roadmap</a></b>
-</p>
-
 ---
 
 ## Why this exists
