@@ -99,15 +99,3 @@ This is the **breadth** roadmap — the whole career path, end to end:
 craft of their own; for the depth dive, see the peer roadmap
 **[harness-engineer-roadmap](https://github.com/bettyguo/harness-engineer-roadmap)**.
 
-## The constellation
-
-These four repos are standalone equals — peers, not parent-and-children.
-Pick the one that matches what you're trying to do:
-
-| Repo | What it is | When you want it |
-|---|---|---|
-| **ai-engineer-roadmap** *(this repo)* | The whole-field breadth roadmap. | "Where does this fit in the picture?" |
-| **[harness-engineer-roadmap](https://github.com/bettyguo/harness-engineer-roadmap)** | The depth roadmap for the Agents & Harnesses stage. | "I want to specialize in building harnesses." |
-| **[llm-interview-prep](https://github.com/bettyguo/llm-interview-prep)** | AI-engineer interview preparation. | "I am about to interview." |
-| **[build-your-own-ai](https://github.com/bettyguo/build-your-own-ai)** | Hands-on "build it yourself" companion. | "I want to learn by building." |
-
